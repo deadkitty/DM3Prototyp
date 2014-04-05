@@ -57,7 +57,9 @@
       <SubType>Designer</SubType>
     </ApplicationDefinition>
     <Compile Include="Controll\IView.cs" />
+    <Compile Include="Controll\LanguageController.cs" />
     <Compile Include="Controll\SettingsController.cs" />
+    <Compile Include="Controll\WindowController.cs" />
     <Compile Include="Model\Learnset.cs" />
     <Compile Include="Model\Sentence.cs" />
     <Compile Include="Model\Word.cs" />

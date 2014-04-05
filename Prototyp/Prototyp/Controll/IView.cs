@@ -20,6 +20,6 @@ namespace Controll
     {
         void UpdateView();
         void OpenScreen(EScreen screen);
-        Window GetParent();
+        IView GetParent();
     }
 }
