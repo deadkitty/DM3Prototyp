@@ -2,16 +2,48 @@
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
+using System.Data.Linq.Mapping;
 
 namespace Model
 {
+    [Table]
     class Word
     {
-        public int ID { get; set; }
-        public int SetID { get; set; }
+        [Column(IsPrimaryKey = true, IsDbGenerated = true, DbType = "INT NOT NULL Identity", CanBeNull = false, AutoSync = AutoSync.OnInsert)]
+        public int ID;
 
-        public int JWord { get; set; }
-        public int Translation { get; set; }
-        public bool IsImagePath { get; set; }        
+        [Column(CanBeNull = false)]
+        public int SetID;
+
+        [Column(CanBeNull = false)]
+        public String JWord;
+
+        [Column(CanBeNull = false)]
+        public String Translation;
+
+        [Column(CanBeNull = false)]
+        public bool IsImagePath;
+
+        public Word()
+        {
+
+        }
+
+        public Word(String text, int setID)
+        {
+            String[] wordLineFragments = text.Split('|');
+
+            JWord = wordLineFragments[0];
+            Translation = wordLineFragments[1];
+
+            IsImagePath = false;
+
+            this.SetID = setID;
+        }
+
+        public override string ToString()
+        {
+            return JWord;
+        }
     }
 }

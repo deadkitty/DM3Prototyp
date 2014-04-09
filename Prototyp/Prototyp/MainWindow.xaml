@@ -3,6 +3,9 @@
         xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
         Title="MainWindow" Height="350" Width="525">
     <Grid>
-        
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="246*" />
+            <ColumnDefinition Width="257*" />
+        </Grid.ColumnDefinitions>
     </Grid>
 </Window>

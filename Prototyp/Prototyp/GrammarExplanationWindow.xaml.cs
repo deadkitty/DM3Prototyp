@@ -9,23 +9,18 @@ using System.Windows.Documents;
 using System.Windows.Input;
 using System.Windows.Media;
 using System.Windows.Media.Imaging;
-using System.Windows.Navigation;
 using System.Windows.Shapes;
-using Model;
 
 namespace Prototyp
 {
     /// <summary>
-    /// Interaktionslogik für MainWindow.xaml
+    /// Interaktionslogik für GrammarExplanationWindow.xaml
     /// </summary>
-    public partial class MainWindow : Window
+    public partial class GrammarExplanationWindow : Window
     {
-        DataModel data;
-
-        public MainWindow()
+        public GrammarExplanationWindow()
         {
             InitializeComponent();
-            data = DataModel.GetInstance();
         }
     }
 }

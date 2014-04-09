@@ -64,9 +64,16 @@ namespace Controll
             application.Shutdown();
         }
 
+        public void OpenWindow()
+        {
+
+            view.UpdateView();
+        }
+
         public void CloseWindow()
         {
 
+            view.UpdateView();
         }
 
         #endregion
