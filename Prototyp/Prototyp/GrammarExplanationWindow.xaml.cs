@@ -16,9 +16,10 @@ namespace Prototyp
     /// <summary>
     /// Interaktionslogik für GrammarExplanationWindow.xaml
     /// </summary>
-    public partial class GrammarExplanationWindow : Window
+    public partial class GrammarExplanationWindow : BasicWindow
     {
         public GrammarExplanationWindow()
+            : base()
         {
             InitializeComponent();
         }

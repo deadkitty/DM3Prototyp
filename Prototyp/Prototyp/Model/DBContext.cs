@@ -6,7 +6,7 @@ using System.Data.Linq;
 
 namespace Model
 {
-    class DBContext : DataContext
+    public class DBContext : DataContext
     {
         #region Fields
 

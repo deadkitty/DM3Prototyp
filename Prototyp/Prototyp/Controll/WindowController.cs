@@ -7,13 +7,15 @@ using System.Windows;
 
 namespace Controll
 {
-    class WindowController
+    public class WindowController
     {
         #region Fields
 
         App application;
 
         IView view;
+
+        bool closeWindow;
 
         #endregion
 
@@ -52,7 +54,7 @@ namespace Controll
 
         private WindowController()
         {
-
+            application = App.GetInstance();
         }
 
         #endregion
@@ -61,18 +63,28 @@ namespace Controll
 
         public void CloseApp()
         {
-            application.Shutdown();
+            if (closeWindow)
+            {
+                closeWindow = false;
+            }
+            else
+            {
+                application.Shutdown();
+            }
         }
 
         public void OpenWindow()
         {
+            EScreen screen = EScreen.chooseLearnsetsScreen;
 
+            view.OpenScreen(screen);
             view.UpdateView();
         }
 
         public void CloseWindow()
         {
-
+            closeWindow = true;
+            
             view.UpdateView();
         }
 

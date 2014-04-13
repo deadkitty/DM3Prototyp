@@ -7,7 +7,7 @@ using System.Data.Linq.Mapping;
 namespace Model
 {
     [Table]
-    class Word
+    public class Word
     {
         [Column(IsPrimaryKey = true, IsDbGenerated = true, DbType = "INT NOT NULL Identity", CanBeNull = false, AutoSync = AutoSync.OnInsert)]
         public int ID;

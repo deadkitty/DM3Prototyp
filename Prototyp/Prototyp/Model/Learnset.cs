@@ -6,14 +6,14 @@ using System.Data.Linq.Mapping;
 
 namespace Model
 {
-    enum ESetType
+    public enum ESetType
     {
         wordsPractice = 0,
         insertPractice = 1,
     }
 
     [Table]
-    class Learnset
+    public class Learnset
     {
         [Column(IsPrimaryKey = true, IsDbGenerated = true, DbType = "INT NOT NULL Identity", CanBeNull = false, AutoSync = AutoSync.OnInsert)]
         public int ID;

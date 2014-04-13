@@ -5,7 +5,7 @@ using System.Text;
 
 namespace Model
 {
-    class DataModel
+    public class DataModel
     {
         #region Fields
 

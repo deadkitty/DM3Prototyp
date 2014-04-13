@@ -16,9 +16,10 @@ namespace Prototyp
     /// <summary>
     /// Interaktionslogik für GrammarPracticeWindow.xaml
     /// </summary>
-    public partial class GrammarPracticeWindow : Window
+    public partial class GrammarPracticeWindow : BasicWindow
     {
         public GrammarPracticeWindow()
+            : base()
         {
             InitializeComponent();
         }

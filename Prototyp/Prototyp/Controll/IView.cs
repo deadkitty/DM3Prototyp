@@ -13,12 +13,14 @@ namespace Controll
         chooseLearnsetsScreen,
         wordsPracticeScreen,
         insertPracticeScreen,
+        grammarExplanationScreen,
         settingsScreen,
     }
 
     public interface IView
     {
         void UpdateView();
+        void UpdateView(String s);
         void OpenScreen(EScreen screen);
         IView GetParent();
     }

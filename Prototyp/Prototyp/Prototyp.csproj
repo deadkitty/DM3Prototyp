@@ -75,6 +75,7 @@
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </ApplicationDefinition>
+    <Compile Include="BasicWindow.cs" />
     <Compile Include="Controll\IView.cs" />
     <Compile Include="Controll\LanguageController.cs" />
     <Compile Include="Controll\SettingsController.cs" />

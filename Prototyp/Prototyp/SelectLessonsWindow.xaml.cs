@@ -16,11 +16,19 @@ namespace Prototyp
     /// <summary>
     /// Interaktionslogik für SelectLessonsWindow.xaml
     /// </summary>
-    public partial class SelectLessonsWindow : Window
+    public partial class SelectLessonsWindow : BasicWindow
     {
         public SelectLessonsWindow()
+            : base()
         {
             InitializeComponent();
+        }
+
+        private void backButton_Click(object sender, RoutedEventArgs e)
+        {
+            WindowCtrl.CloseWindow();
+            ParentWindow.Show();
+            this.Close();
         }
     }
 }

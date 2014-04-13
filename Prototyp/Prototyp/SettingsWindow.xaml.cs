@@ -16,9 +16,10 @@ namespace Prototyp
     /// <summary>
     /// Interaktionslogik für SettingsWindow.xaml
     /// </summary>
-    public partial class SettingsWindow : Window
+    public partial class SettingsWindow : BasicWindow
     {
         public SettingsWindow()
+            : base()
         {
             InitializeComponent();
         }

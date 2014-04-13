@@ -16,9 +16,10 @@ namespace Prototyp
     /// <summary>
     /// Interaktionslogik für WordsPracticeWindow.xaml
     /// </summary>
-    public partial class WordsPracticeWindow : Window
+    public partial class WordsPracticeWindow : BasicWindow
     {
         public WordsPracticeWindow()
+            : base()
         {
             InitializeComponent();
         }
