@@ -1,9 +1,0 @@
-﻿<src:BasicWindow x:Class="Prototyp.GrammarExplanationWindow"
-        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
-        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
-        xmlns:src="clr-namespace:Prototyp"
-        Title="GrammarExplanationWindow" Height="300" Width="300">
-    <Grid>
-        
-    </Grid>
-</src:BasicWindow>
