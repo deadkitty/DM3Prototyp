@@ -22,7 +22,7 @@
     <DebugType>full</DebugType>
     <Optimize>false</Optimize>
     <OutputPath>bin\Debug\</OutputPath>
-    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <DefineConstants>TRACE;DEBUG</DefineConstants>
     <ErrorReport>prompt</ErrorReport>
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
@@ -68,6 +68,7 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>RecognizeStrings.resx</DependentUpon>
     </Compile>
+    <Compile Include="Speech\ResourceStrings.cs" />
     <Compile Include="View\Controls\GrammarExplanationControl.xaml.cs">
       <DependentUpon>GrammarExplanationControl.xaml</DependentUpon>
     </Compile>

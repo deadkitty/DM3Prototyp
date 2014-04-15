@@ -5,25 +5,34 @@ using System.Text;
 using System.Speech.Recognition;
 using Prototype.View;
 using Prototype.Resources;
+using System.Globalization;
 
 namespace Prototype.Speech
 {
     class SpeechCtrl
-    {
+    {        
         #region Fields
         
         private const String openWindowGrammar = "openWindowGrammar";
         private const String closeWindowGrammar = "closeWindowGrammar";
 
+#if japaneseVersion
         SpeechRecognitionEngine recognitionEngine;
+#else
+        SpeechRecognizer recognitionEngine;
+#endif
 
         WindowCtrl windowCtrl;
 
         #endregion
 
         #region Properties
-        
-        public SpeechRecognitionEngine RecognitionEngine
+
+#if japaneseVersion
+        public SpeechRecognitionEngine RecognitionEngine 
+#else
+        public SpeechRecognizer RecognitionEngine
+#endif
         {
             get { return recognitionEngine; }
             set { recognitionEngine = value; }
@@ -61,40 +70,49 @@ namespace Prototype.Speech
         {
             windowCtrl = WindowCtrl.GetInstance();
 
-            recognitionEngine = new SpeechRecognitionEngine(System.Globalization.CultureInfo.GetCultureInfo("ja-JP"));
+#if japaneseVersion
+            recognitionEngine = new SpeechRecognitionEngine(CultureInfo.GetCultureInfo(ResourceStrings.cultureIdentifier));
+#else
+            recognitionEngine = new SpeechRecognizer();    
+#endif
+
             recognitionEngine.SpeechRecognized +=new EventHandler<SpeechRecognizedEventArgs>(recognitionEngine_SpeechRecognized);
 
             LoadOpenWindowGrammar();
             LoadCloseWindowGrammar();
 
+#if japaneseVersion
             recognitionEngine.SetInputToDefaultAudioDevice();
             recognitionEngine.RecognizeAsync(RecognizeMode.Multiple);
+#endif
         }
 
         private void LoadOpenWindowGrammar()
         {
             String[] windowStrings =
             {     
-                RecognizeStrings.grammarExplanation,//ぶんぽうの説明
-                RecognizeStrings.grammarExercise,   //ぶんぽうの練習
-                RecognizeStrings.wordsExercise,     //ことばの練習
-                RecognizeStrings.options,           //オプション
+                ResourceStrings.grammarExplanation,//ぶんぽうの説明
+                ResourceStrings.grammarExercise,   //ぶんぽうの練習
+                ResourceStrings.wordsExercise,     //ことばの練習
+                ResourceStrings.options,           //オプション
             };
             Choices windowChoices = new Choices(windowStrings);
 
             String[] openStrings =
             {
-                RecognizeStrings.openRu,        //開ける
-                RecognizeStrings.openMasu,      //開けます
-                RecognizeStrings.openTekudasai, //開けてください
-                RecognizeStrings.openTe,        //開けて
+                ResourceStrings.openRu,        //開ける
+                ResourceStrings.openMasu,      //開けます
+                ResourceStrings.openTekudasai, //開けてください
+                ResourceStrings.openTe,        //開けて
             };
             Choices openChoices = new Choices(openStrings);
 
             GrammarBuilder gb = new GrammarBuilder();
-            gb.Culture = System.Globalization.CultureInfo.GetCultureInfo("ja-JP");
+            gb.Culture = CultureInfo.GetCultureInfo(ResourceStrings.cultureIdentifier);
             gb.Append(windowChoices);
-            gb.Append(RecognizeStrings.wo, 0, 1);
+#if japaneseVersion
+            gb.Append(ResourceStrings.wo, 0, 1); 
+#endif
             gb.Append(openChoices);
             Grammar grammar = new Grammar(gb);
             grammar.Name = openWindowGrammar;
@@ -106,35 +124,38 @@ namespace Prototype.Speech
         {
             String[] closeObjects =
             {
-                RecognizeStrings.program,    //プログラム
-                RecognizeStrings.thisWindow, //この窓
-                RecognizeStrings.back,       //バック
-                RecognizeStrings.menu,       //メニュー
+                ResourceStrings.program,    //プログラム
+                ResourceStrings.thisWindow, //この窓
+                ResourceStrings.back,       //バック
+                ResourceStrings.menu,       //メニュー
             };
             Choices objectChoices = new Choices(closeObjects);
-
+#if japaneseVersion
             String[] particleStrings = 
             {
-                RecognizeStrings.wo,    //を
-                RecognizeStrings.he,    //へ
+                ResourceStrings.wo,    //を
+                ResourceStrings.he,    //へ
             };
-            Choices particleChoices = new Choices(particleStrings);
+            Choices particleChoices = new Choices(particleStrings); 
+#endif
 
             String[] closeStrings =
             {
-                RecognizeStrings.closeRu,       　//閉める
-                RecognizeStrings.closeMasu,     　//閉めます
-                RecognizeStrings.closeTekudasai,　//閉めてください
-                RecognizeStrings.closeTe,       　//閉めて
-                RecognizeStrings.goRu,          　//行く
-                RecognizeStrings.goMasu,        　//行きます
+                ResourceStrings.closeRu,       　//閉める
+                ResourceStrings.closeMasu,     　//閉めます
+                ResourceStrings.closeTekudasai,　//閉めてください
+                ResourceStrings.closeTe,       　//閉めて
+                ResourceStrings.goRu,          　//行く
+                ResourceStrings.goMasu,        　//行きます
             };
             Choices closeChoices = new Choices(closeStrings);
                         
             GrammarBuilder gb = new GrammarBuilder();
-            gb.Culture = System.Globalization.CultureInfo.GetCultureInfo("ja-JP");
+            gb.Culture = CultureInfo.GetCultureInfo(ResourceStrings.cultureIdentifier);
             gb.Append(objectChoices);
-            gb.Append(particleChoices, 0, 1);
+#if japaneseVersion
+            gb.Append(particleChoices, 0, 1); 
+#endif
             gb.Append(closeChoices);
 
             Grammar grammar = new Grammar(gb);
@@ -160,11 +181,11 @@ namespace Prototype.Speech
         {
             EContentType type = EContentType.mainMenuContent;
 
-            if (RecognizeStrings.grammarExplanation == result.Words[0].Text)
+            switch (result.Words[0].Text)
             {
-                type = EContentType.grammarExplanationContent;
+                case ResourceStrings.grammarExplanation: type = EContentType.grammarExplanationContent; break;
             }
-
+            
             windowCtrl.ChangeWindowContent(type);
         }
 
@@ -172,10 +193,14 @@ namespace Prototype.Speech
         {
             EContentType type = EContentType.mainMenuContent;
 
-            if (RecognizeStrings.program == result.Words[0].Text)
+            switch (result.Words[0].Text)
             {
-                windowCtrl.CloseApp();
+                case ResourceStrings.program: windowCtrl.CloseApp(); return;
+                case ResourceStrings.back: type = EContentType.mainMenuContent; break;
             }
+
+            windowCtrl.ChangeWindowContent(type);
+
 
             //if (result.Words.Count == 2)
             //{
@@ -186,8 +211,8 @@ namespace Prototype.Speech
 
             //}
 
-            //if (RecognizeStrings.back == result.Words[0].Text ||
-            //    RecognizeStrings.thisWindow == result.Words[0].Text)
+            //if (ResourceStrings.back == result.Words[0].Text ||
+            //    ResourceStrings.thisWindow == result.Words[0].Text)
             //{
 
             //}
