@@ -15,31 +15,26 @@ using System.Windows.Shapes;
 namespace Prototype.View.Controls
 {
     /// <summary>
-    /// Interaktionslogik für MainControl.xaml
+    /// Interaktionslogik für GrammarExerciseControl.xaml
     /// </summary>
-    public partial class MainControl : UserControl
+    public partial class GrammarExerciseControl : UserControl
     {
         WindowCtrl ctrl;
 
-        public MainControl()
+        public GrammarExerciseControl()
         {
             InitializeComponent();
             ctrl = WindowCtrl.GetInstance();
         }
 
-        private void grammarExplanationButton_Click(object sender, RoutedEventArgs e)
+        private void backButton_Click(object sender, RoutedEventArgs e)
         {
-            ctrl.ChangeWindowContent(EContentType.grammarExplanationContent);
+            ctrl.GoBack();
         }
 
-        private void grammarExerciseButton_Click(object sender, RoutedEventArgs e)
+        private void mainMenuButton_Click(object sender, RoutedEventArgs e)
         {
-            ctrl.ChangeWindowContent(EContentType.grammarExerciseContent);
-        }
-
-        private void closeAppButton_Click(object sender, RoutedEventArgs e)
-        {
-            ctrl.CloseApp();
+            ctrl.ChangeWindowContent(EContentType.mainMenuContent);
         }
     }
 }

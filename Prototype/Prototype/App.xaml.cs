@@ -4,6 +4,7 @@ using System.Configuration;
 using System.Data;
 using System.Linq;
 using System.Windows;
+using Prototype.Speech;
 
 namespace Prototype
 {
@@ -30,6 +31,8 @@ namespace Prototype
         {
             base.OnStartup(e);
             sInstance = this;
+
+            ResourceStrings.Initialize();
 
             ShutdownMode = System.Windows.ShutdownMode.OnMainWindowClose;
         }

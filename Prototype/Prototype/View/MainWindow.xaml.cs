@@ -13,6 +13,7 @@ using System.Windows.Navigation;
 using System.Windows.Shapes;
 using Prototype.View.Controls;
 using Prototype.Speech;
+using Prototype.DataModel;
 
 namespace Prototype.View
 {
@@ -23,6 +24,10 @@ namespace Prototype.View
     {
         WindowCtrl windowCtrl;
         SpeechCtrl speechCtrl;
+
+        Data data;
+
+        int commandCounter = 0;
 
         #region Constructor
 
@@ -36,6 +41,8 @@ namespace Prototype.View
             speechCtrl = SpeechCtrl.GetInstance();
             speechCtrl.Initialize();
 
+            data = Data.GetInstance();
+
             ChangeWindowContent(EContentType.mainMenuContent);
         }
         
@@ -48,13 +55,14 @@ namespace Prototype.View
             switch (newContentType)
             {
                 case EContentType.grammarExplanationContent: contentControl.Content = new GrammarExplanationControl(); break;
+                case EContentType.   grammarExerciseContent: contentControl.Content = new    GrammarExerciseControl(); break;
                 case EContentType.          mainMenuContent: contentControl.Content = new               MainControl(); break;
             }
         }
 
         public void UpdateView()
         {
-
+            Title = (++commandCounter) + data.CurrentComand;
         }
         
         #endregion

@@ -25,13 +25,14 @@
     <DefineConstants>TRACE;DEBUG</DefineConstants>
     <ErrorReport>prompt</ErrorReport>
     <WarningLevel>4</WarningLevel>
+    <AllowUnsafeBlocks>true</AllowUnsafeBlocks>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|x86' ">
     <PlatformTarget>x86</PlatformTarget>
     <DebugType>pdbonly</DebugType>
     <Optimize>true</Optimize>
     <OutputPath>bin\Release\</OutputPath>
-    <DefineConstants>TRACE</DefineConstants>
+    <DefineConstants>TRACE;japaneseVersion</DefineConstants>
     <ErrorReport>prompt</ErrorReport>
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
@@ -63,12 +64,10 @@
     <Compile Include="Data\Tables\Lesson.cs" />
     <Compile Include="Data\Tables\Sentence.cs" />
     <Compile Include="Data\Tables\Word.cs" />
-    <Compile Include="Resources\RecognizeStrings.Designer.cs">
-      <AutoGen>True</AutoGen>
-      <DesignTime>True</DesignTime>
-      <DependentUpon>RecognizeStrings.resx</DependentUpon>
-    </Compile>
     <Compile Include="Speech\ResourceStrings.cs" />
+    <Compile Include="View\Controls\GrammarExerciseControl.xaml.cs">
+      <DependentUpon>GrammarExerciseControl.xaml</DependentUpon>
+    </Compile>
     <Compile Include="View\Controls\GrammarExplanationControl.xaml.cs">
       <DependentUpon>GrammarExplanationControl.xaml</DependentUpon>
     </Compile>
@@ -77,6 +76,10 @@
     </Compile>
     <Compile Include="View\IView.cs" />
     <Compile Include="View\WindowCtrl.cs" />
+    <Page Include="View\Controls\GrammarExerciseControl.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
     <Page Include="View\Controls\GrammarExplanationControl.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
@@ -118,10 +121,6 @@
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>
       <LastGenOutput>Resources.Designer.cs</LastGenOutput>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Resources\RecognizeStrings.resx">
-      <Generator>ResXFileCodeGenerator</Generator>
-      <LastGenOutput>RecognizeStrings.Designer.cs</LastGenOutput>
     </EmbeddedResource>
     <None Include="app.config" />
     <None Include="Properties\Settings.settings">

@@ -4,25 +4,26 @@ using System.Linq;
 using System.Text;
 using System.Speech.Recognition;
 using Prototype.View;
-using Prototype.Resources;
 using System.Globalization;
+using Prototype.DataModel;
 
 namespace Prototype.Speech
 {
     class SpeechCtrl
-    {        
+    {
         #region Fields
         
-        private const String openWindowGrammar = "openWindowGrammar";
-        private const String closeWindowGrammar = "closeWindowGrammar";
+        private const String windowOperationsGrammar = "windowOperationsGrammar";
+        
+        WindowCtrl windowCtrl;
+
+        Data data;
 
 #if japaneseVersion
         SpeechRecognitionEngine recognitionEngine;
 #else
         SpeechRecognizer recognitionEngine;
 #endif
-
-        WindowCtrl windowCtrl;
 
         #endregion
 
@@ -65,21 +66,23 @@ namespace Prototype.Speech
         #endregion
 
         #region Public Methods
+        
+        #region Initialize/Deinitialize
 
         public void Initialize()
         {
+            data = Data.GetInstance();
             windowCtrl = WindowCtrl.GetInstance();
-
+            
 #if japaneseVersion
             recognitionEngine = new SpeechRecognitionEngine(CultureInfo.GetCultureInfo(ResourceStrings.cultureIdentifier));
 #else
             recognitionEngine = new SpeechRecognizer();    
 #endif
 
-            recognitionEngine.SpeechRecognized +=new EventHandler<SpeechRecognizedEventArgs>(recognitionEngine_SpeechRecognized);
+            recognitionEngine.SpeechRecognized += new EventHandler<SpeechRecognizedEventArgs>(recognitionEngine_SpeechRecognized);
 
-            LoadOpenWindowGrammar();
-            LoadCloseWindowGrammar();
+            LoadWindowOperationsGrammar();
 
 #if japaneseVersion
             recognitionEngine.SetInputToDefaultAudioDevice();
@@ -87,137 +90,216 @@ namespace Prototype.Speech
 #endif
         }
 
-        private void LoadOpenWindowGrammar()
+        public void DeInitialize()
         {
-            String[] windowStrings =
-            {     
+            recognitionEngine.Dispose();
+        }
+
+        private void LoadWindowOperationsGrammar()
+        {
+            GrammarBuilder gb = new GrammarBuilder();
+            gb.Culture = CultureInfo.GetCultureInfo(ResourceStrings.cultureIdentifier);
+
+            String[] nouns =
+            {
+                ResourceStrings.back,              //バック
                 ResourceStrings.grammarExplanation,//ぶんぽうの説明
                 ResourceStrings.grammarExercise,   //ぶんぽうの練習
                 ResourceStrings.wordsExercise,     //ことばの練習
                 ResourceStrings.options,           //オプション
+                ResourceStrings.program,           //プログラム
+                ResourceStrings.thisWindow,        //この窓
+                ResourceStrings.menu,              //メニュー
             };
-            Choices windowChoices = new Choices(windowStrings);
+            Choices nounChoices = new Choices(nouns);
+            gb.Append(nounChoices);
 
-            String[] openStrings =
+#if japaneseVersion
+            String[] particle = 
             {
+                ResourceStrings.wo,    //を
+                ResourceStrings.he,    //へ
+            };
+            Choices particleChoices = new Choices(particle);
+            gb.Append(particleChoices, 0, 1);
+#endif
+
+            String[] verbs =
+            {
+                ResourceStrings.closeRu,       //閉める
+                ResourceStrings.closeMasu,     //閉めます
+                ResourceStrings.closeTekudasai,//閉めてください
+                ResourceStrings.closeTe,       //閉めて
+                ResourceStrings.goRu,          //行く
+                ResourceStrings.goMasu,        //行きます
                 ResourceStrings.openRu,        //開ける
                 ResourceStrings.openMasu,      //開けます
                 ResourceStrings.openTekudasai, //開けてください
                 ResourceStrings.openTe,        //開けて
             };
-            Choices openChoices = new Choices(openStrings);
+            Choices verbChoices = new Choices(verbs);
+            gb.Append(verbChoices);
 
-            GrammarBuilder gb = new GrammarBuilder();
-            gb.Culture = CultureInfo.GetCultureInfo(ResourceStrings.cultureIdentifier);
-            gb.Append(windowChoices);
-#if japaneseVersion
-            gb.Append(ResourceStrings.wo, 0, 1); 
-#endif
-            gb.Append(openChoices);
             Grammar grammar = new Grammar(gb);
-            grammar.Name = openWindowGrammar;
-
+            grammar.Name = windowOperationsGrammar;
             recognitionEngine.LoadGrammar(grammar);
         }
 
-        private void LoadCloseWindowGrammar()
-        {
-            String[] closeObjects =
-            {
-                ResourceStrings.program,    //プログラム
-                ResourceStrings.thisWindow, //この窓
-                ResourceStrings.back,       //バック
-                ResourceStrings.menu,       //メニュー
-            };
-            Choices objectChoices = new Choices(closeObjects);
-#if japaneseVersion
-            String[] particleStrings = 
-            {
-                ResourceStrings.wo,    //を
-                ResourceStrings.he,    //へ
-            };
-            Choices particleChoices = new Choices(particleStrings); 
-#endif
+        #endregion
 
-            String[] closeStrings =
-            {
-                ResourceStrings.closeRu,       　//閉める
-                ResourceStrings.closeMasu,     　//閉めます
-                ResourceStrings.closeTekudasai,　//閉めてください
-                ResourceStrings.closeTe,       　//閉めて
-                ResourceStrings.goRu,          　//行く
-                ResourceStrings.goMasu,        　//行きます
-            };
-            Choices closeChoices = new Choices(closeStrings);
-                        
-            GrammarBuilder gb = new GrammarBuilder();
-            gb.Culture = CultureInfo.GetCultureInfo(ResourceStrings.cultureIdentifier);
-            gb.Append(objectChoices);
-#if japaneseVersion
-            gb.Append(particleChoices, 0, 1); 
-#endif
-            gb.Append(closeChoices);
+        #region Recognize Speech
 
-            Grammar grammar = new Grammar(gb);
-            grammar.Name = closeWindowGrammar;
-            recognitionEngine.LoadGrammar(grammar);
-        }
-        
-        public void DeInitialize()
-        {
-            recognitionEngine.Dispose();
-        }
-        
         void recognitionEngine_SpeechRecognized(object sender, SpeechRecognizedEventArgs e)
         {
+            data.CurrentComand = e.Result.Text;
+
             switch (e.Result.Grammar.Name)
             {
-                case openWindowGrammar: ComputeOpenWindowResult(e.Result); break;
-                case closeWindowGrammar: ComputeCloseWindowResult(e.Result); break;
+                case windowOperationsGrammar: ComputeCloseWindowResult(e.Result); break;
             }
-        }
 
-        private void ComputeOpenWindowResult(RecognitionResult result)
-        {
-            EContentType type = EContentType.mainMenuContent;
-
-            switch (result.Words[0].Text)
-            {
-                case ResourceStrings.grammarExplanation: type = EContentType.grammarExplanationContent; break;
-            }
-            
-            windowCtrl.ChangeWindowContent(type);
+            windowCtrl.View.UpdateView();
         }
 
         private void ComputeCloseWindowResult(RecognitionResult result)
         {
-            EContentType type = EContentType.mainMenuContent;
-
-            switch (result.Words[0].Text)
+            EVerbs action = EVerbs.undefined;
+            ENouns noun = ENouns.undefined;
+            //traverse recognized words
+            for (int i = result.Words.Count - 1; i >= 0; --i)
             {
-                case ResourceStrings.program: windowCtrl.CloseApp(); return;
-                case ResourceStrings.back: type = EContentType.mainMenuContent; break;
+                if (action == EVerbs.undefined)
+                {
+                    //traverse resource strings
+                    for (int j = 0; j < ResourceStrings.verbs.Length; ++j)
+                    {
+                        //compare recognized and resource words
+                        if (result.Words[i].Text == ResourceStrings.verbs[j])
+                        {
+                            //if they match check for the matching action and break loops
+                            if (j <= (int)EVerbs.close)
+                            {
+                                action = EVerbs.close;
+                                break;
+                            }
+                            if (j <= (int)EVerbs.goTo)
+                            {
+                                action = EVerbs.goTo;
+                                break;
+                            }
+                            if (j <= (int)EVerbs.open)
+                            {
+                                action = EVerbs.open;
+                                break;
+                            }
+                        }
+                    }
+                }
+                else if (noun == ENouns.undefined)
+                {
+                    for (int j = 0; j < ResourceStrings.nouns.Length; ++j)
+                    {
+                        if (result.Words[i].Text == ResourceStrings.nouns[j])
+                        {
+                            if (j <= (int)ENouns.back)
+                            {
+                                noun = ENouns.back;
+                                break;
+                            }
+                            if (j <= (int)ENouns.grammarExercise)
+                            {
+                                noun = ENouns.grammarExercise;
+                                break;
+                            }
+                            if (j <= (int)ENouns.grammarExplanation)
+                            {
+                                noun = ENouns.grammarExplanation;
+                                break;
+                            }
+                            if (j <= (int)ENouns.menu)
+                            {
+                                noun = ENouns.menu;
+                                break;
+                            }
+                            if (j <= (int)ENouns.options)
+                            {
+                                noun = ENouns.options;
+                                break;
+                            }
+                            if (j <= (int)ENouns.program)
+                            {
+                                noun = ENouns.program;
+                                break;
+                            }
+                            if (j <= (int)ENouns.thisWindow)
+                            {
+                                noun = ENouns.thisWindow;
+                                break;
+                            }
+                            if (j <= (int)ENouns.wordsExercise)
+                            {
+                                noun = ENouns.wordsExercise;
+                                break;
+                            }
+                        }
+                    }
+                }
             }
 
-            windowCtrl.ChangeWindowContent(type);
+            ComputeComand(noun, action);
+        }
 
+        private void ComputeComand(ENouns noun, EVerbs action)
+        {
+            if (action == EVerbs.close)
+            {
+                switch (noun)
+                {
+                    case ENouns.program: windowCtrl.CloseApp(); break;
+                    case ENouns.thisWindow: CloseThisWindow(); break;
+                }
+            }
 
-            //if (result.Words.Count == 2)
-            //{
+            if (action == EVerbs.open)
+            {
+                switch (noun)
+                {
+                    case ENouns.grammarExercise: windowCtrl.ChangeWindowContent(EContentType.grammarExerciseContent); break;
+                    case ENouns.grammarExplanation: windowCtrl.ChangeWindowContent(EContentType.grammarExplanationContent); break;
+                    case ENouns.menu: windowCtrl.ChangeWindowContent(EContentType.mainMenuContent); break;
+                    case ENouns.options: windowCtrl.ChangeWindowContent(EContentType.optionsContent); break;
+                    case ENouns.wordsExercise: windowCtrl.ChangeWindowContent(EContentType.wordsExerciseContent); break;
+                }
+            }
 
-            //}
-            //else
-            //{
-
-            //}
-
-            //if (ResourceStrings.back == result.Words[0].Text ||
-            //    ResourceStrings.thisWindow == result.Words[0].Text)
-            //{
-
-            //}
+            if (action == EVerbs.goTo)
+            {
+                switch (noun)
+                {
+                    case ENouns.back: windowCtrl.GoBack(); break;
+                    case ENouns.grammarExercise: windowCtrl.ChangeWindowContent(EContentType.grammarExerciseContent); break;
+                    case ENouns.grammarExplanation: windowCtrl.ChangeWindowContent(EContentType.grammarExplanationContent); break;
+                    case ENouns.menu: windowCtrl.ChangeWindowContent(EContentType.mainMenuContent); break;
+                    case ENouns.options: windowCtrl.ChangeWindowContent(EContentType.optionsContent); break;
+                    case ENouns.wordsExercise: windowCtrl.ChangeWindowContent(EContentType.wordsExerciseContent); break;
+                }
+            }
 
         }
+
+        private void CloseThisWindow()
+        {
+            if (windowCtrl.CurrentContentType == EContentType.mainMenuContent)
+            {
+                windowCtrl.CloseApp();
+            }
+            else
+            {
+                windowCtrl.ChangeWindowContent(EContentType.mainMenuContent);
+            }
+        }
+
+        #endregion
 
         #endregion
     }

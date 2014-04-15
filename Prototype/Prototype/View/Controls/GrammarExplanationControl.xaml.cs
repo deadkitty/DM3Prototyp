@@ -29,6 +29,11 @@ namespace Prototype.View.Controls
 
         private void backButton_Click(object sender, RoutedEventArgs e)
         {
+            ctrl.GoBack();
+        }
+
+        private void mainMenuButton_Click(object sender, RoutedEventArgs e)
+        {
             ctrl.ChangeWindowContent(EContentType.mainMenuContent);
         }
     }

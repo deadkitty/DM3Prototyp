@@ -10,10 +10,11 @@ namespace Prototype.View
         firstStartContent,
         mainMenuContent,
         chooseLearnsetsContent,
-        wordsPracticeContent,
-        insertPracticeContent,
+        wordsExerciseContent,
+        grammarExerciseContent,
         grammarExplanationContent,
-        settingsContent,
+        optionsContent,
+        undefined,
     }
 
     public interface IView

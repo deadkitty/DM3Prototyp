@@ -6,7 +6,8 @@
              mc:Ignorable="d" 
              Height="350" Width="525">
     <Grid>
-        <Button Content="Programm Beenden" Height="23" HorizontalAlignment="Left" Margin="12,39,0,0" Name="closeAppButton" VerticalAlignment="Top" Width="141" Click="closeAppButton_Click" />
+        <Button Content="Programm Beenden" Height="23" HorizontalAlignment="Left" Margin="12,68,0,0" Name="closeAppButton" VerticalAlignment="Top" Width="141" Click="closeAppButton_Click" />
         <Button Content="Grammatik Erklärungen" Height="23" HorizontalAlignment="Left" Margin="10,10,0,0" Name="grammarExplanationButton" VerticalAlignment="Top" Width="143" Click="grammarExplanationButton_Click" />
+        <Button Content="Grammatik Übungen" Height="23" HorizontalAlignment="Left" Margin="10,39,0,0" Name="grammarExerciseButton" VerticalAlignment="Top" Width="143" Click="grammarExerciseButton_Click" />
     </Grid>
 </UserControl>
