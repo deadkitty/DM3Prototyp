@@ -24,9 +24,20 @@ namespace Prototype.DataModel.Tables
         [Column(CanBeNull = false)]
         public int type;
 
+        public int itemCount;
+
         public Lesson()
         {
 
+        }
+
+        public Lesson(String text)
+        {
+            String[] textFragments = text.Split('|');
+
+            Name = textFragments[0];
+            type = Convert.ToInt32(textFragments[1]);
+            itemCount = Convert.ToInt32(textFragments[2]);
         }
 
         public override string ToString()

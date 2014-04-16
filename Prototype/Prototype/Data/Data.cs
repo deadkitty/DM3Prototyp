@@ -6,7 +6,7 @@ using Prototype.DataModel.Tables;
 
 namespace Prototype.DataModel
 {
-    class Data
+    public class Data
     {        
         #region Fields
 
@@ -15,6 +15,9 @@ namespace Prototype.DataModel
 
         Word[] words;
         Sentence[] sentences;
+
+        Word activeWord;
+        Sentence activeSentence;
 
         Database db;
 
@@ -46,6 +49,18 @@ namespace Prototype.DataModel
         {
             get { return sentences; }
             set { sentences = value; }
+        }
+
+        public Word ActiveWord
+        {
+            get { return activeWord; }
+            set { activeWord = value; }
+        }
+
+        public Sentence ActiveSentence
+        {
+            get { return activeSentence; }
+            set { activeSentence = value; }
         }
 
         public Database DB
@@ -81,16 +96,7 @@ namespace Prototype.DataModel
 
         private Data()
         {
-			//using (db = new Database(Database.connectionString))
-			//{
-			//    if (!db.DatabaseExists())
-			//    {
-			//        db.CreateDatabase();
-			//    }
 
-			//    wordLessons = GetLessons(Lesson.EType.wordsPractice);
-			//    sentenceLessons = GetLessons(Lesson.EType.grammarPractice);
-			//}
         }
 
         #endregion

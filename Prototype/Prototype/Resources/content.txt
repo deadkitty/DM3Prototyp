@@ -1,0 +1,1536 @@
+49
+Minna No Nihongo L 1|0|29
+Minna No Nihongo L 1 Kanji - Kana|0|22
+Minna No Nihongo L 2|0|44
+Minna No Nihongo L 2 Kanji - Kana|0|15
+Minna No Nihongo L 3|0|39
+Minna No Nihongo L 3 Kanji - Kana|0|20
+Minna No Nihongo L 4|0|42
+Minna No Nihongo L 4 Kanji - Kana|0|39
+Minna No Nihongo L 5|0|40
+Minna No Nihongo L 5 Kanji - Kana|0|50
+Minna No Nihongo L 6|0|48
+Minna No Nihongo L 6 Kanji - Kana|0|32
+Minna No Nihongo L 7|0|39
+Minna No Nihongo L 7 Kanji - Kana|0|19
+Minna No Nihongo L 8|0|49
+Minna No Nihongo L 8 Kanji - Kana|0|37
+Minna No Nihongo L 9|0|45
+Minna No Nihongo L 9 Kanji - Kana|0|28
+Minna No Nihongo L10|0|45
+Minna No Nihongo L10 Kanji - Kana|0|31
+Minna No Nihongo L11|0|52
+Minna No Nihongo L11 Kanji - Kana|0|28
+Minna No Nihongo L12|0|41
+Minna No Nihongo L12 Kanji - Kana|0|34
+Minna No Nihongo L13|0|36
+Minna No Nihongo L13 Kanji - Kana|0|27
+Minna No Nihongo L14|0|38
+Minna No Nihongo L14 Kanji - Kana|0|25
+Minna No Nihongo L15|0|25
+Minna No Nihongo L15 Kanji - Kana|0|23
+Minna No Nihongo L16|0|42
+Minna No Nihongo L16 Kanji - Kana|0|32
+Minna No Nihongo L17|0|38
+Minna No Nihongo L17 Kanji - Kana|0|30
+Minna No Nihongo L18|0|26
+Minna No Nihongo L18 Kanji - Kana|0|20
+Minna No Nihongo L19|0|30
+Minna No Nihongo L19 Kanji - Kana|0|21
+Minna No Nihongo L20|0|24
+Minna No Nihongo L20 Kanji - Kana|0|12
+Minna No Nihongo L21|0|33
+Minna No Nihongo L21 Kanji - Kana|0|16
+Minna No Nihongo L22|0|17
+Minna No Nihongo L22 Kanji - Kana|0|8
+Minna No Nihongo L23|0|29
+Minna No Nihongo L23 Kanji - Kana|0|26
+Minna No Nihongo L24|0|18
+Minna No Nihongo L24 Kanji - Kana|0|13
+Minna No Nihongo L24|1|9
+わたし|ich||6|0
+わたしたち|wir||11|0
+あなた|Sie||5|0
+あのひと|er, sie, die Person dort drüben||5|0
+あのかた|er, sie, die Person dort drüben|formell|6|0
+みなさん|alle, meine damen und Herren|als Anrede|5|0
+さん|Herr, Frau|respektfolle anrede|5|0
+ちゃん|suffix für vornamen von kindern anstelle von ~さん||6|0
+くん|suffix was oft für jungennamen verwendet wird||5|0
+じん|suffix, das die nationalität ausdrückt||6|0
+せんせい|Lehrer, Dozent|nicht für eigene Berufsbezeichnung|6|0
+きょうし|Lehrer, Dozent|für eigene Berufsbezeichnung|6|0
+がくせい|Student||5|0
+かいしゃいん|Angestellter||6|0
+しゃいん|Angestellter einer Firma|in zusammenhang mit Firmenname|5|0
+ぎんこういん|Bankangestellter||6|0
+いしゃ|Arzt||6|0
+けんきゅうしゃ|Forscher||6|0
+エンジニア|Ingenieur||6|0
+だいがく|Univärsität||5|0
+びょういん|Krankenhaus||6|0
+でんき|Elektrizität, Licht||5|0
+だれ|wer||5|0
+どなた|wer|formel|5|0
+～さい|~jahre alt||6|0
+なんさい|wie alt||5|0
+おいくつ|wie alt|formel|6|0
+はい|ja||5|0
+いいえ|nein||5|0
+わたし|私||6|0
+あのひと|あの人||6|0
+あのかた|あの方||6|0
+みなさん|皆さん||6|0
+～くん|～君||5|0
+～じん|～人|suffix, das die nationalität ausdrückt|5|0
+せんせい|先生||5|0
+きょうし|教師||5|0
+がくせい|学生||6|0
+かいしゃいん|会社員||5|0
+しゃいん|社員||5|0
+ぎんこういん|銀行員||5|0
+いしゃ|医者||6|0
+けんきゅうしゃ|研究者||6|0
+だいがく|大学||5|0
+びょういん|病院||6|0
+でんき|電気||5|0
+～さい|～歳||5|0
+なんさい|何歳||6|0
+かんこく|韓国||5|0
+ちゅうごく|中国||5|0
+にほん|日本||6|0
+これ|diese/r/s hier|beim Sprecher|5|0
+それ|diese/r/s da|beim Gesprächspartner|5|0
+あれ|jene/r/s dort|vom Sprecher und Gesprächspartner entfernt|5|0
+この～|diese/r/s ... hier|beim Sprecher|6|0
+その～|diese/r/s ... da|beim Gesprächspartner|5|0
+あの～|jene/r/s ... dort drüben|vom Sprecher und Gesprächspartner entfernt|5|0
+ほん|Buch||5|0
+じしょ|Wörterbuch||5|0
+ざっし|Zeitschrift||5|0
+しんぶん|Zeitung||6|0
+ノート|Heft||5|0
+てちょう|Notizbuch||5|0
+めいし|Visitenkarte||5|0
+カード|Karte||5|0
+テレホンカード|Telefonkarte||6|0
+えんぴつ|Bleistift||6|0
+ボールペン|Kugelschreiber||6|0
+シャープペンシル|Drehbleistift, Druckbleistift||5|0
+かぎ|Schlüssel||5|0
+とけい|Uhr||5|0
+かさ|Schirm||5|0
+かばん|Tasche||6|0
+カセット、テープ|Kassette||5|0
+テープレコーダー|Kassettenrekorder||6|0
+テレビ|Fernsehr||5|0
+ラジオ|Radio||5|0
+カメラ|Kamera||5|0
+コンピューター|Computer||6|0
+じどうしゃ|Auto||5|0
+つくえ|Schreibtisch||5|0
+いす|Stuhl||5|0
+チョクレート|Schokolade||6|0
+コーヒー|Kaffee|Getränk (L2)|5|0
+えいご|Englisch||6|0
+にほんご|Japanisch||5|0
+～ご|~Sprache||5|0
+なん|was||5|0
+そう|so||6|0
+ちがいます|Nein, ist es nicht.||5|0
+そうですか|Ach so. Ich Verstehe.||6|0
+あのう|Äh ...||5|0
+どうぞ|Bitte schön!||6|0
+どうも|Danke!||6|0
+ありがとう|Vielen Dank!||6|0
+ほん|本||5|0
+じしょ|辞書||6|0
+ざっし|雑誌||5|0
+しんぶん|新聞||5|0
+てちょう|手帳||6|0
+めいし|名刺||5|0
+えんぴつ|鉛筆||5|0
+とけい|時計||6|0
+かさ|傘||5|0
+じどうしゃ|自動車||5|0
+つくえ|机||15|1
+えいご|英語||5|0
+にほんご|日本語||5|0
+～ご|～語||5|0
+なん|何||6|0
+ここ|hier|beim sprecher|5|0
+そこ|da|beim Gesprächspartner|6|0
+あそこ|dort drüben|von beiden entfernt|6|0
+どこ|wo||5|0
+こちら|hierhin, hier|höfliche Entsprechung von ここ|6|0
+そちら|dahin, da|höfliche Entsprechung von そこ|5|0
+あちら|dorthin, dort drüben|höfliche Entsprechung von あそこ|6|0
+どちら|wohin, wo|höfliche Entsprechung von どこ|5|0
+きょうしつ|Unterrichtsraum||6|0
+しょくどう|Speisesaal, Kantine||6|0
+じむしょ|Büro||5|0
+かいぎしつ|Konferenzraum||5|0
+うけつけ|Anmeldung, Rezeption||5|0
+ロビー|Lobby||5|0
+へや|Zimmer, Raum||5|0
+トイレ|Toilette, WC|Katakana|6|0
+おてあらい|Toilette, WC||6|0
+かいだん|Treppe||6|0
+エレベーター|Fahrstuhl||6|0
+エスカレーター|Rolltreppe||5|0
+おくに|[Ihr]Land||6|0
+かいしゃ|Firma||5|0
+うち|Haus||6|0
+でんわ|Telefon, Anruf||5|0
+くつ|Schuhe||5|0
+ネクタイ|Schlips||6|0
+ワイン|Wein||5|0
+たばこ|Zigaretten||5|0
+うりば|Verkaufsabteilung|in einem Kaufhaus|6|0
+ちか|Untergeschoss||5|0
+～かい、～がい|~. Etage|2|5|0
+なんがい|welche Etage||12|0
+～えん|~Yen||5|0
+いくら|wie viel|nur für Geld|6|0
+ひゃく|Hundert||6|0
+せん|Tausend||5|0
+まん|Zehntausend||5|0
+でございます|höfliche entsprechung von です||6|0
+じゃ|nun, hm, dann|wenn man die Worte des Gesprächspartners aufnimmt|5|0
+きょうしつ|教室||6|0
+しょくどう|食堂||6|0
+じむしょ|事務所||9|1
+かいぎしつ|会議室||5|0
+うけつけ|受付||6|0
+へや|部屋||5|0
+おてあらい|お手洗い||5|0
+かいだん|階段||5|0
+おくに|お国||5|0
+かいしゃ|会社||6|0
+でんわ|電話||14|1
+くつ|靴||5|0
+うりば|売り場||5|0
+ちか|地下||5|0
+～かい、～がい|～階|2|5|0
+なんがい|何階||5|0
+～えん|～円||5|0
+ひゃく|百||5|0
+せん|千||6|0
+まん|万||6|0
+おきます|aufstehen|II|5|0
+ねます|schlafen, ins Bett gehen|II|5|0
+はたらきます|arbeiten|I|5|0
+やすみます|Pause machen, sich ausruhen, Urlaub nehmen|I|5|0
+べんきょうします|studieren, lernen|III|6|0
+おわります|enden|I|5|0
+デパート|Kaufhaus||5|0
+ぎんこう|Bank||5|0
+ゆうびんきょく|Postamt||9|1
+としょかん|Bibliothek||5|0
+びじゅつかん|Kunstmuseum ||5|0
+いま|jetzt||5|0
+～じ|~Uhr||5|0
+～ふん、～ぷん|~Minute/n|2|5|0
+はん|Hälfte, halb||5|0
+なんじ|wie spät, wieviel Uhr||5|0
+なんぷん|welche Minute, wie viel Minuten||5|0
+ごぜん|Vormittag, vormittags, morgens||5|0
+ごご|Nachmittag, nachmittags||5|0
+あさ|Morgen, morgens||5|0
+ひる|Mittag, mittags||5|0
+ばん、よる|Abend, abends|Nacht, nachts (2)|6|0
+おととい|Vorgestern||5|0
+きのう|Gestern||5|0
+きょう|Heute||5|0
+あした|Morgen||5|0
+あさって|Übermorgen||5|0
+けさ|Heute Morgen||5|0
+こんばん|Heute Abend||5|0
+やすみ|Pause, freier Tag, Ruhetag, Ferien||5|0
+ひるやすみ|Mittagspause||5|0
+まいあさ|jeden Morgen||5|0
+まいばん|jeden Abend||5|0
+まいにち|jeden Tag||5|0
+なんようび|welcher Wochentag||5|0
+ばんごう|Nummer|Telefon, Zimmer|5|0
+なんばん|welche Nummer||5|0
+～から|von~||5|0
+～まで|bis~||5|0
+と|und|Verbindung mit Nomina|5|0
+そちら|bei Ihnen|bei Kaufhäusern, Kunstmuseen, Firmen etc.|5|0
+えーと|äh, hmm||5|0
+おきます|起きます||5|0
+ねます|寝ます||5|0
+はたらきます|働きます||5|0
+やすみます|休みます||5|0
+べんきょうします|勉強します||5|0
+おわります|終わります||5|0
+ぎんこう|銀行||5|0
+ゆうびんきょく|郵便局||5|0
+としょかん|図書館||5|0
+びじゅつかん|美術館||5|0
+いま|今||5|0
+きょう|今日||5|0
+～じ|~時||5|0
+～ふん、～ぷん|～分|2|5|0
+はん|半||5|0
+なんじ|何時||5|0
+なんぷん|何分||5|0
+ごぜん|午前||5|0
+ごご|午後||5|0
+あさ|朝||5|0
+ひる|昼||5|0
+ばん|晩||5|0
+よる|夜||5|0
+こんばん|今晩||5|0
+やすみ|休み||5|0
+ひるやすみ|昼休み||5|0
+まいあさ|毎朝||5|0
+まいばん|毎晩||5|0
+まいにち|毎日||5|0
+げつようび|月曜日||5|0
+かようび|火曜日||5|0
+すいようび|水曜日||5|0
+もくようび|木曜日||5|0
+きんようび|金曜日||5|0
+どようび|土曜日||5|0
+にちようび|日曜日||6|0
+なんようび|何曜日||5|0
+ばんごう|番号||10|1
+なんばん|何番||5|0
+いきます|gehen, fahren, fliegen|I*|5|0
+きます|kommen|III|5|0
+かえります|nach Hause gehen, zurückkehren|I|5|0
+がっこう|Schule||5|0
+スーパー|Supermarkt||5|0
+えき|Bahnhof||5|0
+ひこうき|Flugzeug||5|0
+ふね|Schiff||5|0
+でんしゃ|Bahn, Zug||5|0
+ちかてつ|U-Bahn||5|0
+しんかんせん|japanischer Hochgeschwindigkeitszug||5|0
+バス|Bus||6|0
+タクシー|Taxi||6|0
+じてんしゃ|Fahrad||5|0
+あるいて|zu Fuß||5|0
+ひと|Person, Mensch, Leute||5|0
+ともだち|Freund/in||6|0
+かれ|er, Freund|Liebhaber|5|0
+かのじょ|sie, Freunding|Geliebte|5|0
+かぞく|Familie||5|0
+ひとりで|alleine||5|0
+せんしゅう|die letzte Woche, letzte Woche||5|0
+こんしゅう|diese Woche||5|0
+らいしゅう|die nächste Woche, nächste Woche||5|0
+せんげつ|der letzte Monat, letzter Monat||5|0
+こんげつ|dieser Monat||5|0
+らいげつ|der nächste Monat, nächster Monat||5|0
+きょねん|das letzte Jahr, letztes Jahr||5|0
+ことし|dieses Jahr||5|0
+らいねん|das nächste Jahr, nächstes Jahr||5|0
+～がつ|~Monat||5|0
+なんがつ|welcher Monat||5|0
+なんにち|welcher Tag, wieviele Tage||5|0
+いつ|wann||5|0
+たんじょうび|Geburtstag||5|0
+ふつう|Personenzug||5|0
+きょうこう|Schnellzug||5|0
+とっきゅう|Expresszug||5|0
+つぎの|nächste/r/s||5|0
+～ばんせん|Bahnsteig~, Gleis~||5|0
+いきます|行きます||5|0
+きます|来ます||5|0
+かえります|帰ります||5|0
+がっこう|学校||5|0
+えき|駅||5|0
+ひこうき|飛行機||5|0
+ふね|船||5|0
+でんしゃ|電車||5|0
+ちかてつ|地下鉄||5|0
+しんかんせん|新幹線||5|0
+じてんしゃ|自転車||5|0
+あるいて|歩いて||5|0
+ひと|人||5|0
+ともだち|友達||5|0
+かれ|彼||5|0
+かのじょ|彼女||5|0
+かぞく|家族||6|0
+ひとりで|一人で||5|0
+せんしゅう|先週||5|0
+こんしゅう|今週||5|0
+らいしゅう|来週||5|0
+せんげつ|先月||5|0
+こんげつ|今月||5|0
+らいげつ|来月||5|0
+きょねん|去年||5|0
+ことし|今年||5|0
+らいねん|来年||5|0
+～がつ|～月||6|0
+なんがつ|何月||5|0
+ついたち|１日||5|0
+ふつか|２日||5|0
+みっか|３日||5|0
+よっか|４日||5|0
+いつか|５日||5|0
+むいか|６日||5|0
+なのか|７日||5|0
+ようか|８日||5|0
+ここのか|９日||5|0
+とおか|１０日||5|0
+じゅうよっか|１４日||5|0
+はつか|２０日||5|0
+にじゅうよっか|２４日||5|0
+～にち|～日||5|0
+なんにち|何日||5|0
+たんじょうび|誕生日||5|0
+ふつう|普通||5|0
+きょうこう|強行||5|0
+とっきゅう|特急||5|0
+つぎの|次の||5|0
+～ばんせん|～番線||5|0
+たべます|essen|II|5|0
+のみます|trinken|I|5|0
+すいます|(zigaretten) rauchen|I|5|0
+みます|sehen|II|5|0
+ききます|hören|I|5|0
+よみます|lesen|I|5|0
+かきます|schreiben, malen|I|5|0
+かいます|kaufen|I|5|0
+とります|(fotos) machen, fotografieren|I|5|0
+します|tun, machen|III|5|0
+あいます|sich (mit freunden) treffen|I|5|0
+ごはん|Essen, gekochter Reis||5|0
+あさごはん|Frühstück||5|0
+ひるごはん|Mittagessen||9|1
+ばんごはん|Abendessen||5|0
+パン|Brot||5|0
+たまご|Ei||5|0
+にく|Fleisch|kein Fisch!|5|0
+さかな|Fisch||5|0
+やさい|Gemüse||5|0
+くだもの|Obst||5|0
+みず|Wasser||5|0
+おちゃ|Tee||5|0
+こうちゃ|Schwarzer Tee||5|0
+ぎゅうにゅう|Milch||5|0
+ミルク|Milch|Katakana|5|0
+ジュース|Saft||5|0
+ビール|Bier||5|0
+さけ|Alkohohl, Reiswein||5|0
+ビデオ|Video, Videorekorder||5|0
+えいが|(Kino)Film||5|0
+てがみ|Brief||5|0
+レポート|Bericht, Hausarbeit|für Seminar|5|0
+しゃしん|Foto||5|0
+みせ|Geschäft, Laden||5|0
+レストラン|Restaurant||5|0
+にわ|Garten||5|0
+しゅくだい|Hausaufgabe|～をします: Hausaufgaben machen|5|0
+テニス|Tennis|～をします: Tennis spielen|5|0
+サッカー|Fußbal|～をします: Fußball spielen|5|0
+はなみ|Kirschblütenschau|～をします: Kirschblüten anschauen|5|0
+なに|was|L6|5|0
+いっしょに|zusammen||5|0
+ちょっと|ein wenig, ein bisschen|...まて　(L6)|5|0
+いつも|immer||5|0
+ときどき|manchmal||5|0
+それから|danach, dann||5|0
+ええ|ja|informell|5|0
+たべます|食べます||5|0
+のみます|飲みます||5|0
+すいます|吸います||5|0
+みます|見ます||5|0
+ききます|聞きます||5|0
+よみます|読みます||6|0
+かきます|書きます||5|0
+かいます|買います||5|0
+とります|撮ります||5|0
+あいます|会います||5|0
+あさごはん|朝ごはん||5|0
+ひるごはん|昼ごはん||5|0
+ばんごはん|晩ごはん||5|0
+たまご|卵||5|0
+にく|肉||5|0
+さかな|魚||5|0
+やさい|野菜||5|0
+くだもの|果物||5|0
+みず|水||5|0
+おちゃ|お茶||5|0
+こうちゃ|紅茶||5|0
+ぎゅうにゅう|牛乳||5|0
+さけ|酒||5|0
+えいが|映画||5|0
+てがみ|手紙||5|0
+しゃしん|写真||5|0
+みせ|店||5|0
+にわ|庭||5|0
+しゅくだい|宿題||5|0
+はなみ|花見||5|0
+なに|何|L6|5|0
+ときどき|時々||5|0
+きります|schneiden||5|0
+おくります|schicken, abschicken|I - Paket,Päckchen,Fax,etc.|5|0
+あげます|geben,schenken|II|5|0
+もらいます|erhalten,bekommen|I|5|0
+かします|verleihen|I|5|0
+かります|borgen,sich ausleihen|II|5|0
+おしえます|lehren, beibringen|II|5|0
+ならいます|lernen|I - von jm. etwas lernen|5|0
+かけます|anrufen|II - 電話を～|5|0
+て|Hand,Arm||5|0
+はし|Essstäbchen||5|0
+スプーン|Löffel||5|0
+ナイフ|Messer||5|0
+フォーク|Gabel||5|0
+はさみ|Schere||5|0
+ファクス|Fax||5|0
+ワープロ|Word Processor|wie Pc, nur Textverarbeitung|5|0
+パソコン|PC||5|0
+パンチ|Locher||5|0
+ホッチキス|Hefter,Tacker||5|0
+セロテープ|Klebeband||5|0
+けしゴム|Radiergummi||5|0
+かみ|Papier||5|0
+はな|Blume,Blüte||5|0
+シャツ|Hemd||5|0
+プレゼント|Geschenk|kein Souvenir|5|0
+にもつ|Gepäck, Paket, Päckchen||5|0
+おかね|Geld||5|0
+きっぷ|(Fahr-)Karte,Ticket||5|0
+クリスマス|Weihnachten||6|0
+ちち|Vater||5|0
+はは|Mutter||5|0
+おとうさん|Vater|von jemand anderes|5|0
+おかあさん|Mutter|von jemand anderes|5|0
+もう|schon,bereits||5|0
+まだ|noch,noch nicht||5|0
+これから|jetzt, von jetzt an, gleich||5|0
+りょこう|Reise|～をします:verreisen|5|0
+おみやげ|Souvenir|von einer Reise, Gastgeschenk|5|0
+きります|切ります||5|0
+おくります|送ります||5|0
+かします|貸します||5|0
+かります|借ります||5|0
+おしえます|教えます||5|0
+ならいます|習います||5|0
+て|手||5|0
+けしゴム|消しゴム||5|0
+かみ|紙||6|0
+はな|花||5|0
+にもつ|荷物||5|0
+おかね|お金||6|0
+きっぷ|切符||9|1
+ちち|父||5|0
+はは|母||5|0
+おとうさん|お父さん||5|0
+おかあさん|お母さん||5|0
+りょこう|旅行||5|0
+おみやげ|お土産||5|0
+ハンサム|gutaussehend|für Männer|5|0
+きれい|hübsch, schön, sauber||5|0
+しずか|still, ruhig||5|0
+にぎやか|belebt||5|0
+ゆうめい|berümt||5|0
+しんせつ|freundlich, nett||5|0
+げんき|gesund, munter, fit||5|0
+ひま|frei|Freizeit|5|0
+べんり|praktisch||5|0
+すてき|wunderbar, toll, schön||5|0
+おおきい|groß||5|0
+ちいさい|klein||5|0
+あたらしい|neu||5|0
+ふるい|alt|nicht für Personen|5|0
+いい、よい|gut|2|5|0
+わるい|schlecht||5|0
+あつい|heiß||5|0
+さむい|kalt|Lufttemperatur|5|0
+つめたい|kalt|z.B. Getränke|5|0
+むずかしい|schwierig||5|0
+やさしい|einfach||5|0
+たかい|teuer, hoch||5|0
+やすい|billig||5|0
+ひくい|niedrig||5|0
+おもしろい|interessant, lustig||5|0
+おいしい|köstlich, lecker||6|0
+いそがしい|beschäftigt, viel zu tun haben||5|0
+たのしい|unterhaltsam, amüsant, schön, Spaß machen||6|0
+しろい|weiß||5|0
+くろい|schwarz||5|0
+あかい|rot||5|0
+あおい|blau||5|0
+さくら|Kirschblüte, -baum||6|0
+やま|Berg||5|0
+まち|Stadt||5|0
+たべもの|Lebensmittel|Essen|5|0
+くるま|Auto|L8|5|0
+ところ|Ort||5|0
+りょう|Wohnheim||5|0
+べんきょう|Studium||5|0
+せいかつ|(tägliches)Leben, Alltag||6|0
+しごと|Arbeit|~をします:Arbeit machen|5|0
+どう|wie||5|0
+どんな～|was für ein/e/s~||5|0
+どれ|welche/r/s|von 3 oder mehr Möglichkeiten|5|0
+とても|sehr||6|0
+あまり|nicht so, nicht sehr|wird mit negation verwendet|5|0
+そして|und|Verbindung von Sätzen|5|0
+～が、～|~, aber ~||5|0
+しずか|静か||5|0
+ゆうめい|有名||6|0
+しんせつ|親切||6|0
+げんき|元気||5|0
+ひま|暇||5|0
+べんり|便利||5|0
+おおきい|大きい||5|0
+ちいさい|小さい||5|0
+あたらしい|新しい||5|0
+ふるい|古い||5|0
+わるい|悪い||5|0
+あつい|暑い||5|0
+あつい|熱い||5|0
+さむい|寒い||5|0
+つめたい|冷たい||5|0
+むずかしい|難しい||5|0
+やさしい|易しい||5|0
+たかい|高い||5|0
+やすい|安い||5|0
+ひくい|低い||5|0
+いそがしい|忙しい||5|0
+たのしい|楽しい||5|0
+しろい|白い||5|0
+くろい|黒い||5|0
+あかい|赤い||5|0
+あおい|青い||5|0
+さくら|桜||5|0
+やま|山||5|0
+まち|町||5|0
+たべもの|食べ物||5|0
+くるま|車||5|0
+ところ|所||5|0
+りょう|寮||6|0
+べんきょう|勉強||5|0
+せいかつ|生活||5|0
+しごと|仕事||5|0
+おもしろい|面白い||5|0
+わかります|verstehen, begreifen|I|5|0
+あります|haben, besitzen|I|5|0
+すき|mögen||5|0
+きらい|hassen|nicht mögen|5|0
+じょうず|geschickt||5|0
+へた|ungeschickt||5|0
+りょうり|Essen, Gericht, Kochen||5|0
+のみもの|Getränke||5|0
+スポーツ|Sport|～をします|5|0
+やきゅう|Baseball||5|0
+ダンス|Tanz||5|0
+おんがく|Musik||5|0
+うた|Lied||5|0
+クラシック|klassische Musik||5|0
+ジャズ|Jazz||5|0
+コンサート|Konzert||5|0
+カラオケ|Karaoke||5|0
+え|Gemälde, Bild||5|0
+じ|Zeichen||5|0
+かんじ|Kanji||5|0
+ひらがな|Hiragana||5|0
+かたかな|Katakana||5|0
+ローマじ|lateinische Schrift||5|0
+こまかいおかね|Kleingeld||5|0
+チケット|Eintrittskarte|für Konzert, Kino, etc.|5|0
+じかん|(Uhr-)Zeit||5|0
+ようじ|etwas zu erledigen haben, Angelegenheit||5|0
+やくそく|Verschprechen, Verabredung||5|0
+ごしゅじん|Ehemann|einer anderen Person|5|0
+おっと、しゅじん|(mein)Ehemann|2|6|0
+おくさん|Ehefrau|einer anderen Person|5|0
+つま、かない|(meine)Ehefrau|2|5|0
+こども|Kind||5|0
+よく|gut|Adverb|5|0
+だいたい|größtenteils, ungefähr, meistens||5|0
+たくさん|viel/e||5|0
+すこし|ein bisschen, ein wenig|L9|6|0
+ぜんぜん|überhaupt nicht|nur in Verbindung mit Negationen|6|0
+はやく|früh, schnell||5|0
+～から|weil~||5|0
+どうして|warum||5|0
+ざんねんです|Das ist schade.||6|0
+すみません|Es tut mir leid./Verzeihung.||5|0
+もしもし|Hallo!|nur am Telefon|5|0
+ああ|Ah ja!|man hat verstanden, wer anruft|5|0
+すき|好き||5|0
+きらい|嫌い||5|0
+じょうず|上手||5|0
+へた|下手||9|1
+りょうり|料理||6|0
+のみもの|飲み物||5|0
+やきゅう|野球||10|1
+おんがく|音楽||5|0
+うた|歌||5|0
+かぶき|歌舞伎||6|0
+え|絵||5|0
+じ|字||5|0
+かんじ|漢字||5|0
+こまかいおかね|細かいお金||5|0
+じかん|時間||5|0
+ようじ|用事||5|0
+やくそく|約束||5|0
+ごしゅじん|ご主人||5|0
+おっと|夫||5|0
+おくさん|奥さん||5|0
+つま|妻||10|1
+こども|子ども||5|0
+すこし|少し||5|0
+ぜんぜん|全然||5|0
+はやく|早く||5|0
+しゅじん|主人||5|0
+かない|家内||5|0
+はやく|速く||5|0
+います|(da) sein, existieren, es gibt ~, sich befinden|I - für Lebewesen|5|0
+あります|(da) sein, existieren, es gibt ~, sich befinden|I - für Gegenstände|11|1
+いろいろ|verschiedene||5|0
+おとこのひと|Mann||5|0
+おんなのひと|Frau||5|0
+おとこのこ|Junge||5|0
+おんなのこ|Mädchen||5|0
+いぬ|Hund||5|0
+ねこ|Katze||5|0
+き|Baum||5|0
+もの|Ding, Gegenstand||5|0
+フィルム|Film|für die Kamera|5|0
+でんち|Batterie||5|0
+はこ|Schachtel, Kasten, Kiste||5|0
+スイッチ|Schalter||5|0
+れいぞうこ|Kühlschrank||5|0
+テーブル|(Ess-)Tisch||5|0
+ベッド|Bett||5|0
+たな|Regal||5|0
+ドア|Tür||5|0
+まど|Fenster||5|0
+ポスト|Briefkasten|zb von der Post|5|0
+ビル|Gebäude||5|0
+こうえん|Park||5|0
+きっさてん|Cafe|Laden (L9)|5|0
+ほんや|Buchladen||5|0
+～や|~geschäft, ~laden||5|0
+のりば|Halteplatz|Taxi, Bus etc.|5|0
+けん|Präfektur||5|0
+うえ|oben, über, auf||5|0
+した|unten, unter||5|0
+まえ|vor, vorne||5|0
+うしろ|hinter, hinten||5|0
+みぎ|rechts||5|0
+ひだり|links||5|0
+なか|innen||5|0
+そと|außen||5|0
+となり|neben||5|0
+ちかく|in der Nähe, nahe bei||5|0
+あいだ|zwischen||5|0
+～や～|~,~,|[usw.]|5|0
+いちばん～|der/die/das ~te|...うえ: der/die/das oberste|5|0
+～だんめ|das ~te Regal|だん ist das Zähleinheitssuffix für Regale|5|0
+おく|hinten||5|0
+スパイスコーナー|Gewürzecke||5|0
+おとこのひと|男の人||5|0
+おんなのひと|女の人||5|0
+おとこのこ|男の子||5|0
+おんなのこ|女の子||5|0
+いぬ|犬||5|0
+ねこ|猫||5|0
+き|木||5|0
+もの|物||5|0
+でんち|電池||5|0
+はこ|箱||5|0
+れいぞうこ|冷蔵庫||5|0
+たな|棚||5|0
+まど|窓||5|0
+こうえん|公園||5|0
+きっさてん|喫茶店||5|0
+ほんや|本屋||5|0
+～や|～屋||5|0
+のりば|乗り場||5|0
+けん|県||5|0
+うえ|上||5|0
+した|下||5|0
+まえ|前||5|0
+みぎ|右||5|0
+ひだり|左||5|0
+なか|中||5|0
+そと|外||5|0
+となり|隣||5|0
+ちかく|近く||5|0
+あいだ|間||5|0
+～だんめ|～段目||5|0
+おく|奥||5|0
+かかります|kosten, dauern|I - in Bezug auf Zeit oder Geld|5|0
+ひとつ|ein/e|zum zählen von Gegenständen, eins|5|0
+ふたつ|zwei|zum zählen von Gegenständen|5|0
+みっつ|drei|zum zählen von Gegenständen|5|0
+よっつ|vier|zum zählen von Gegenständen|5|0
+いつつ|fünf|zum zählen von Gegenständen|5|0
+むっつ|sechs|zum zählen von Gegenständen|5|0
+ななつ|sieben|zum zählen von Gegenständen|5|0
+やっつ|acht|zum zählen von Gegenständen|5|0
+ここのつ|neun|zum zählen von Gegenständen|5|0
+とお|zehn|zum zählen von Gegenständen|5|0
+いくつ|wie viel/e||5|0
+ひとり|eine Person||5|0
+ふたり|zwei Personen||5|0
+～にん|~Personen||5|0
+～だい|Zähleinheitssuffix für Maschinen, Autos, etc.||5|0
+～まい|Zähleinheitssuffix für dünne, flache Gegenstände|zb Blätter, Briefmarken, etc.|5|0
+～かい|~mal||5|0
+りんご|Apfel||5|0
+みかん|Mandarine||5|0
+サンドイッチ|Sandwich||5|0
+カレー|Curry||5|0
+アイスクリーム|Eiscreme||5|0
+きって|Briefmarke||5|0
+はがき|Postkarte||5|0
+ふうとう|Briefumschlag||5|0
+そくたつ|Eilzustellung, Eilpost||5|0
+かきとめ|Einschreiben||9|1
+エアマール|Luftpost|Katakana|5|0
+ふなびん|Seepost||5|0
+りょうしん|Eltern||5|0
+きょうだい|Geschwister||5|0
+あに|(mein) älterer Bruder||5|0
+おにいさん|älterer Bruder|einer anderen Person|5|0
+あね|(meine) ältere Schwester||5|0
+おねえさん|ältere Schwester|einer anderen Person|5|0
+おとうと|(mein) jüngerer Bruder||5|0
+おとうとさん|jüngerer Bruder|einer anderen Person|5|0
+いもうと|(meine) jüngere Schwester||5|0
+いもうとさん|jüngere Schwester|einer anderen Person|5|0
+がいこく|Ausland||5|0
+～じかん|~Stunden||5|0
+～しゅうかん|~Wochen||5|0
+～かげつ|~Monate||5|0
+～ねん|~Jahre||5|0
+～ぐらい|ungefähr~||15|2
+どのくらい|wie lange||5|0
+ぜんぶで|insgesamt||5|0
+みんな|alle/s||5|0
+～だけ|nur~||5|0
+いらっしゃいませ|Willkommen! Kann ich Ihnen helfen?|So werden Kunden in Geschäften, Restaurants etc. begrüßt|5|0
+こうくうびん|Luftpost|Hiragana|5|0
+ひとり|１人||5|0
+ふたり|２人||5|0
+～にん|～人|zum zählen von personen|5|0
+～だい|～台||5|0
+～まい|～枚||5|0
+～かい|～回||5|0
+きって|切手||5|0
+ふうとう|封筒||13|2
+そくたつ|速達||9|1
+かきとめ|書留||5|0
+こうくうびん|航空便||9|1
+ふなびん|船便||5|0
+りょうしん|両親||5|0
+きょうだい|兄弟||5|0
+あに|兄||5|0
+おにいさん|お兄さん||5|0
+あね|姉||5|0
+おねえさん|お姉さん||5|0
+おとうと|弟||5|0
+おとうとさん|弟さん||5|0
+いもうと|妹||5|0
+いもうとさん|妹さん||5|0
+がいこく|外国||5|0
+～じかん|～時間||5|0
+～しゅうかん|～週間||5|0
+～かげつ|～か月||5|0
+～ねん|～年||5|0
+ぜんぶで|全部で||5|0
+かんたん|einfach, leicht||5|0
+ちかい|nah||5|0
+とおい|fern, weit||5|0
+はやい|früh, schnell||5|0
+おそい|spät, langsam||5|0
+おおい|viel, viele||5|0
+すくない|wenig, wenige||5|0
+あたたかい|warm||5|0
+すずしい|kühl||5|0
+あまい|süß||5|0
+からい|scharf||9|1
+おもい|schwer||5|0
+かるい|leicht||5|0
+いい|bevorzugen|von 2 Möglichkeiten[コーヒーが...:Kaffee ist mir lieber]|5|0
+きせつ|Jahreszeit||5|0
+はる|Frühling||5|0
+なつ|Sommer||5|0
+あき|Herbst||5|0
+ふゆ|Winter||5|0
+てんき|Wetter||5|0
+あめ|Regen||5|0
+ゆき|Schnee||5|0
+くもり|bewölktes Wetter||5|0
+ホテル|Hotel||5|0
+くうこう|Flughafen||5|0
+うみ|Meer||5|0
+せかい|Welt||5|0
+パーティー|Party|...をします:eine Party Geben|5|0
+まつり|Fest, Festival||5|0
+しけん|Prüfung||5|0
+すきやき|Sukiyaki||5|0
+さしみ|Sashimi||5|0
+すし|Sushi||5|0
+てんぷら|frittiertes Gemüse oder Fisch||5|0
+いけばな|Ikebana|Blumensteckkunst|5|0
+もみじ|Ahorn, rote Ahornblätter im Herbst||5|0
+どちら|welche/r/svon zwei Möglichkeiten||5|0
+どちらも|beide/s||5|0
+ずっと|bei weitem||5|0
+はじめて|zum ersten Mal||5|0
+でも|aber||5|0
+かんたん|簡単||5|0
+ちかい|近い||5|0
+とおい|遠い||9|1
+はやい|速い||12|2
+おそい|遅い||5|0
+おおい|多い||9|1
+すくない|少ない||5|0
+あたたかい|暖かい||5|0
+すずしい|涼しい||5|0
+あまい|甘い||5|0
+からい|辛い||5|0
+おもい|重い||5|0
+かるい|軽い||5|0
+きせつ|季節||5|0
+はる|春||5|0
+なつ|夏||5|0
+あき|秋||5|0
+ふゆ|冬||5|0
+てんき|天気||5|0
+あめ|雨||5|0
+ゆき|雪||5|0
+くもり|曇り||5|0
+くうこう|空港||9|1
+うみ|海||5|0
+せかい|世界||5|0
+まつり|祭り||9|1
+しけん|試験||11|3
+すきやき|すき焼き||5|0
+さしみ|刺身||5|0
+いけばな|生け花||5|0
+もみじ|紅葉||9|1
+はじめて|初めて||5|0
+あたたかい|温かい||5|0
+はやい|早い||5|0
+あそびます|sich amüsieren, spielen|I|5|0
+およぎます|schwimmen|I|5|0
+むかえます|abholen, begrüßen, willkommen heißen|II|5|0
+つかれます|müde werden|II|5|0
+だします|[einen Brief] abschicken|I - 手紙を～|9|1
+はいります|hineingehen, [ein Cafe] betreten|I - 喫茶店に～|5|0
+でます|herausgehen, [ein Cafe] verlassen|II - 喫茶店に～|5|0
+けっこんします|heiraten|III|5|0
+かいものします|einkaufen, Einkäufe machen|III|5|0
+しょくじします|essen, Mahlzeit halten|III|5|0
+さんぽします|[im Park] spazieren (gehen)|III - 公園を～|5|0
+たいへん|hart, anstrengend, schrecklich||5|0
+ほしい|wollen, gern haben, sich wünschen||5|0
+さびしい|einsam||5|0
+ひろい|weit, groß, breit, geräumig||5|0
+せまい|eng, klein, schmal||5|0
+しやくしょ|Rathaus||5|0
+プール|Schwimmbad||5|0
+かわ|Fluss||5|0
+けいざい|Wirtschaft||5|0
+びじゅつ|Kunst, schöne Künste||5|0
+つり|Angeln||5|0
+スキー|Ski||5|0
+かいぎ|Konferenz||5|0
+とうろく|Anmeldung, Registrierung||5|0
+しゅうまつ|Wochenende||5|0
+～ごろ|gegen~, ungefähr~|die Zeit betreffend|5|0
+なにか|etwas||5|0
+どこか|irgendwo||5|0
+おなかがすきました|Ich habe Hunger||5|0
+おなかがいっぱいです|Ich bin satt||5|0
+のどがかわきました|Ich habe Durst||9|1
+そうですね|Da stimme ich Ihnen zu||5|0
+そうしましょう|Machen wir das so||5|0
+ていしょく|Menü||8|3
+べつべつに|getrennt||8|2
+あそびます|遊びます||5|0
+およぎます|泳ぎます||5|0
+むかえます|迎えます||5|0
+つかれます|疲れます||9|1
+だします|出します||5|0
+はいります|入ります||5|0
+でます|出ます||5|0
+けっこんします|結婚します||9|1
+かいものします|買い物します||5|0
+しょくじします|食事します||5|0
+さんぽします|散歩します||5|0
+たいへん|大変||5|0
+ほしい|欲しい||5|0
+さびしい|寂しい||5|0
+ひろい|広い||5|0
+せまい|狭い||9|1
+しやくしょ|市役所||5|0
+かわ|川||5|0
+けいざい|経済||9|1
+びじゅつ|美術||5|0
+つり|釣り||5|0
+かいぎ|会議||5|0
+とうろく|登録||5|0
+しゅうまつ|週末||5|0
+なにか|何か||5|0
+ていしょく|定食||8|1
+べつべつに|別々に||5|0
+つけます|einschalten|II|9|1
+けします|ausschalten|I|9|1
+あけます|öffnen|II|8|1
+しめます|schließen|II|5|0
+いそぎます|sich beeilen|I|5|0
+まちます|warten|I|5|0
+とめます|anhalten, parken, stoppen|II|5|0
+まがります|abbiegen|I - [nach rechts] abbiegen - 右へ～|9|1
+もちます|(fest-)halten, tragen, haben, besitzen|I|5|0
+とります|nehmen, (jm. etwas) reichen|I|5|0
+てつだいます|helfen|I|5|0
+よびます|rufen|I|5|0
+はなします|sprechen, reden, erzählen|I|5|0
+みせます|zeigen|II|5|0
+おしえます|erklären, mitteilen|II - [die Addresse] mitteilen - [住所を～]|5|0
+はじめます|anfangen, beginen|II|5|0
+ふります|fallen|I - [es regnet] - [雨が～]|5|0
+コピーします|kopieren (mit Kopierer)|III|5|0
+エアコン|Klimaanlage||5|0
+パスポート|Reisepass||9|1
+なまえ|Name||5|0
+じゅうしょ|Addresse||8|3
+ちず|Landkarte, Stadtplan||5|0
+しお|Salz||5|0
+さとう|Zucker||5|0
+よみかた|Lesung|wie man etwas liest|5|0
+～かた|Art und weise ~zu tun||5|0
+ゆっくり|langsam, gemütlich||5|0
+すぐ|sofort||5|0
+また|noch einmal, wieder||8|3
+あとで|später||5|0
+もうすこし|ein bisschen mehr||5|0
+もう～|noch ein/e weitere/r/s ~||5|0
+いいですよ|Sicher, Geht in Ordnung||5|0
+さあ|nun|wird verwendet, um zu einer Handlung anzuregen|5|0
+あれ|Nanu|Ausdruck der Überraschung oder des Erstaunens)|5|0
+まっすぐ|geradeaus||5|0
+おつり|Wechselgeld||9|3
+けします|消します||5|0
+あけます|開けます||9|1
+しめます|閉めます||5|0
+いそぎます|急ぎます||9|1
+まちます|待ちます||9|1
+とめます|止めます||9|1
+まがります|曲がります||5|0
+もちます|持ちます||5|0
+とります|取ります||5|0
+てつだいます|手伝います||5|0
+よびます|呼びます||5|0
+はなします|話します||5|0
+みせます|見せます||5|0
+おしえます|教えます||5|0
+はじめます|始めます||5|0
+ふります|降ります||5|0
+なまえ|名前||5|0
+じゅうしょ|住所||10|3
+ちず|地図||5|0
+しお|塩||5|0
+さとう|砂糖||5|0
+よみかた|読み方||5|0
+～かた|～方||5|0
+もうすこし|もう少し||5|0
+おつり|お釣り||5|0
+たちます|sich hinstellen, aufstehen|I|5|0
+すわります|sich hinsetzen|I|9|3
+つかいます|benutzen, verwenden|I|5|0
+おきます|stellen, legen|I|8|4
+つくります|produzieren, herstellen, machen, bauen|I|5|0
+うります|verkaufen|I|5|0
+しります|kennen lernen, erfahren|I|5|0
+すみます|wohnen|I - nur auf zukünftige Wohnsitze bezogen|5|0
+けんきゅうします|forschen|III|5|0
+しっています|wissen, kennen||9|1
+すんでいます|wohnen|auf den jetzigen Wohnsitz bezogen|5|0
+しりょう|Material, Daten||5|0
+カタログ|Katalog||5|0
+じこくひょう|Fahrplan||7|4
+ふく|Kleidung||5|0
+せいひん|Produkt||5|0
+ソフト|Software||5|0
+せんもん|Fachgebiet, Hauptfach||5|0
+はいしゃ|Zahnarzt||5|0
+とこや|Frisör|für Männer|5|0
+プレイガイド|Kartenverkauf|(Konzert-)|5|0
+どくしん|ledig||5|0
+とくに|besonders, vor allem||5|0
+おもいだします|sich erinnern||5|0
+こうこう|Oberschule||5|0
+たちます|立ちます||5|0
+すわります|座ります||5|0
+つかいます|使います||5|0
+おきます|置きます||5|0
+つくります|作ります||5|0
+つくります|造ります||5|0
+うります|売ります||5|0
+しります|知ります||5|0
+すみます|住みます||5|0
+けんきゅうします|研究します||5|0
+しっています|知っています||5|0
+すんでいます|住んでいます||5|0
+しりょう|資料||5|0
+じこくひょう|時刻表||8|8
+ふく|服||8|2
+せいひん|製品||5|0
+せんもん|専門||5|0
+はいしゃ|歯医者||5|0
+とこや|床屋||5|0
+どくしん|独身||5|0
+とくに|特に||8|1
+おもいだします|思い出します||5|0
+こうこう|高校||5|0
+のります|fahren, nehmen, einsteigen|I - [電車に～]|5|0
+おります|herabsteigen, aussteigen|I - [電車に～]|5|0
+のりかえます|umsteigen|II|5|0
+あびます|nehmen, sich duschen|II - [シャワーを～]|11|4
+いれます|hineintun|II|5|0
+だします|herausnehmen, abheben|I|5|0
+はいります|eintreten, sich einschreiben|I - [大学に～]|5|0
+でます|absolvieren, abschliesen|II - [大学に～]|5|0
+やめます|aufhören, kündigen|II|5|0
+おします|schieben, drücken||5|0
+わかい|jung||5|0
+ながい|lang||5|0
+みじかい|kurz||5|0
+あかるい|hell||5|0
+くらい|dunkel||5|0
+せがたかい|groß sein|für Personen|5|0
+あたまがいい|schlau, clever||5|0
+からだ|Körper||5|0
+あたま|Kopf||5|0
+かみ|Haare||5|0
+かお|Gesicht||5|0
+め|Auge||5|0
+みみ|Ohr||5|0
+くち|Mund||5|0
+は|Zahn||5|0
+おなか|Bauch||5|0
+あし|Bein, Fuß||5|0
+サービス|Service||5|0
+ジョギング|Jogging||5|0
+シャワー|Dusche||5|0
+みどり|das Grün|der Bäume|5|0
+てら|buddhistischer Tempel||5|0
+じんじゃ|Shinto-Schrein||5|0
+りゅうがくせい|ausländische/r Student/in||5|0
+どうやって|wie, auf welche Art und Weise||5|0
+どの～|welche/r/s~|bei drei oder mehr Möglichkeiten|5|0
+まだまだです|noch lange nicht|bescheidene Antwort auf ein Lob|9|1
+まず|zuerst||9|2
+つぎに|als nächstes||5|0
+きんがく|Geldbetrag||11|2
+かくにん|Bestätigung||5|0
+ボタン|Taste, Knopf||5|0
+のります|乗ります||5|0
+おります|降ります|herabsteigen, aussteigen|5|0
+のりかえます|乗り換えます||5|0
+あびます|浴びます||11|2
+いれます|入れます||5|0
+だします|出します||5|0
+はいります|入ります||5|0
+でます|出ます||5|0
+おします|押します||9|1
+わかい|若い||5|0
+ながい|長い||5|0
+みじかい|短い||5|0
+あかるい|明るい||5|0
+くらい|暗い||9|1
+せがたかい|背が高い||5|0
+あたまがいい|頭がいい||5|0
+からだ|体||5|0
+あたま|頭||5|0
+かみ|髪||5|0
+かお|顔||5|0
+め|目||5|0
+みみ|耳||5|0
+くち|口||5|0
+は|歯||5|0
+あし|足||5|0
+みどり|緑||5|0
+てら|寺||5|0
+じんじゃ|神社||5|0
+りゅうがくせい|留学生||5|0
+つぎに|次に||5|0
+きんがく|金額||9|1
+かくにん|確認||5|0
+おぼえます|sich merken, (auswendig) lernen, erlernen|II|9|1
+わすれます|vergessen, liegen lassen|II|5|0
+なくします|verlieren|I|11|3
+だします|einreichen, abgeben|I - [レポートを～　eine Hausarbeit abgeben] |11|2
+はらいます|bezahlen|I|9|1
+かえします|zurückgeben|I|10|2
+でかけます|weggehen, das Haus verlassen, ausgehen|II|5|0
+ぬぎます|(sich) ausziehen|I|9|1
+もっていきます|(et.) mitnehmen|I|5|0
+もってきます|(et.) mitbringen|III|5|0
+しんぱいします|sich sorgen|III|5|0
+ざんぎょうします|Überstunden machen|III|5|0
+しゅっちょうします|eine Dienstreise machen|III|9|1
+のみます|einnehmen|I - [薬を～ - Medizin einnehmen]|5|0
+はいります|nehmen, baden|I - [おふろに～ - ein Bad nehmen]|5|0
+たいせつ|wichtig, wertvoll||5|0
+だいじょうぶ|in Ordnung, kein Problem||9|3
+あぶない|gefährlich||5|0
+もんだい|Frage, Problem||5|0
+こたえ|Antwort||5|0
+きんえん|Rauchverbot||5|0
+ほけんしょう|Versicherungskarte|[健康～ - Krankenversicherungskarte]|5|0
+かぜ|Erkältung||5|0
+ねつ|Fieber||5|0
+びょうき|Krankheit||5|0
+くすり|Medikament||5|0
+ふろ|Bad|heißes japanisches Bad|5|0
+うわぎ|Jacke||5|0
+したぎ|Unterwäsche||5|0
+せんせい|Herr/Frau Doktor|Anrede für Ärzte |5|0
+２，３にち|ein paar Tage||5|0
+２，３～|ein paar ~|~ ist Zähleinheitssuffix|5|0
+～までに|bis ~, innerhalb|innerhalb der zeit, drückt eine Frist aus|5|0
+ですから|deshalb||5|0
+どうしましたか|Was fehlt Ihnen|beim Arzt|5|0
+いたいです|tut weh, schmerzen haben|[...が～ - ...tut mir weh]|5|0
+のど|Hals||5|0
+おだいじに|Gute Besserung||5|0
+おぼえます|覚えます||5|0
+わすれます|忘れます||5|0
+だします|出します||5|0
+はらいます|払います||5|0
+かえします|返します||9|6
+でかけます|出かけます||5|0
+ぬぎます|脱ぎます||5|0
+もっていきます|持って行きます||5|0
+もってきます|持って来ます||5|0
+しんぱいします|心配します||5|0
+ざんぎょうします|残業します||9|3
+しゅっちょうします|出張します||9|2
+のみます|飲みます||5|0
+はいります|入ります||5|0
+たいせつ|大切||5|0
+だいじょうぶ|大丈夫||9|1
+あぶない|危ない||5|0
+もんだい|問題||9|1
+こたえ|答え||5|0
+きんえん|禁煙||5|0
+ほけんしょう|保険証||11|2
+ねつ|熱||5|0
+びょうき|病気||5|0
+くすり|薬||5|0
+うわぎ|上着||5|0
+したぎ|下着||5|0
+せんせい|先生||5|0
+２，３にち|２，３日||5|0
+いたいです|痛いです||5|0
+おだいじに|お大事に||5|0
+できます|können, fähig sein, möglich sein|II|5|0
+あらいます|waschen, spülen|I|5|0
+ひきます|spielen|I -ein Seiteninstrument|5|0
+うたいます|singen|I|5|0
+あつめます|sammeln|II|5|0
+すてます|wegwerfen|II|9|1
+かえます|(aus-)tauschen, wechseln|II|5|0
+うんてんします|fahren||5|0
+よやくします|reservieren, buchen|III|5|0
+けんがくします|besichtigen|III - auch für Praktika, zum Lernen|5|0
+ピアノ|Klavier||5|0
+メートル|Meter||5|0
+こくさい～|internationale/r/s~||5|0
+げんきん|Bargeld||9|1
+しゅみ|Hobby||5|0
+にっき|Tagebuch||5|0
+いのり|Gebet|～をします - beten|5|0
+かちょう|Sektionsleiter||5|0
+ぶちょう|Abteilungsleiter||5|0
+しゃちょう|Firmenchef||5|0
+どうぶつ|Tier||5|0
+うま|Pferd||9|1
+へえ|Ach ja?||5|0
+なかなか|nicht einfach, kaum, selten|in Verbindung mit Negationen|10|2
+ぼくじょう|Viehfarm, Weide||5|0
+ぜひ|unbedingt|betont den Wunsch|5|0
+あらいます|洗います||9|1
+ひきます|弾きます||5|0
+うたいます|歌います||5|0
+あつめます|集めます||9|2
+すてます|捨てます||5|0
+かえます|換えます||9|2
+うんてんします|運転します||5|0
+よやくします|予約します||5|0
+けんがくします|見学します||5|0
+こくさい～|国際||5|0
+げんきん|現金||9|1
+しゅみ|趣味||9|1
+にっき|日記||5|0
+いのり|祈り||5|0
+かちょう|課長||9|1
+ぶちょう|部長||5|0
+しゃちょう|社長||5|0
+どうぶつ|動物||9|2
+うま|馬||5|0
+ぼくじょう|牧場||13|2
+のぼります|klettern, steigen|I - 山に～ - auf einen Berg steigen|7|1
+とまります|übernachten|I - ホテルに～ - in einem Hotel übernachten|5|0
+そうじします|sauber machen, putzen|III - ein Zimmer|5|0
+せんたくします|Wäsche waschen|III|5|0
+れんしゅうします|üben|III|5|0
+なります|werden|I|5|0
+ねむい|müde||5|0
+つよい|stark||5|0
+よわい|schwach||5|0
+ちょうしがいい|in guter Form sein, fit sein||8|1
+ちょうしがわるい|schlecht in Form sein, auser Form sein||7|1
+ちょうし|körperliche Verfassung||7|2
+ゴルフ|Golf||5|0
+すもう|Sumo||5|0
+パチンコ|Pachinko||5|0
+おちゃ|Teezeremonie||5|0
+ひ|Tag, Datum||5|0
+いちど|einmal||5|0
+いちども|kein einziges mal|mit Verneinung|5|0
+だんだん|allmählich, langsam|für Veränderungen|7|1
+もうすぐ|bald||5|0
+おかげさまで|Danke|Wörtl. Dank Ihnen. Redewendung um Dank für erhaltene Hilfe od. eigene positive Situation auszudrücken|5|0
+かんぱい|Zum Wohl, Prost||5|0
+じつは|in Wirklichkeit, offen gesagt, um ehrlich zu sein||5|0
+ダイエット|Diät||5|0
+なんかいも|mehrmals||5|0
+しかし|aber||5|0
+むり|unmöglich, übertrieben, unvernünftig||5|0
+からだにいい|gut für die Gesundheit||5|0
+ケーキ|Kuchen, Torte||5|0
+のぼります|登ります||7|1
+とまります|泊まります||5|0
+そうじします|掃除します||9|2
+せんたくします|洗濯します||5|0
+れんしゅうします|練習します||5|0
+ねむい|眠い||5|0
+つよい|強い||5|0
+よわい|弱い||5|0
+ちょうしがいい|調子がいい||5|0
+ちょうしがわるい|調子が悪い||8|1
+ちょうし|調子||5|0
+すもう|相撲||5|0
+おちゃ|お茶||5|0
+ひ|日||5|0
+いちど|一度||5|0
+いちども|一度も||5|0
+かんぱい|乾杯||5|0
+じつは|実は||5|0
+なんかいも|何回も||5|0
+むり|無理||7|5
+からだにいい|体にいい||5|0
+いります|benötigen|I|5|0
+しらべます|untersuchen, überprüfen |II|5|0
+なおします|reparieren, korrigieren|I|6|1
+しゅうりします|reparieren|III|7|2
+でんわします|telefonieren|III|5|0
+ぼく|ich|informell, von männern benutzt|5|0
+きみ|du|informell, vorwiegend von männern benutzt|5|0
+うん|ja|informell für はい|5|0
+ううん|nein|informell für いいえ|5|0
+サラリーマン|Firmenangestellte/r||5|0
+ことば|Wort, Sprache||5|0
+ぶっか|(Waren-)Preise||5|0
+きもの|Kimono||5|0
+ビザ|Visum||5|0
+はじめ|Anfang||5|0
+おわり|Ende||5|0
+こっち|hierhin, hier|informell für こちら|5|0
+そっち|dahin, da|informell fürそちら|5|0
+あっち|dorthin, dort drüben|informell für　あちら|5|0
+どっち|welche/r/s, in welche Richtung|informell für どちら|5|0
+このあいだ|neulich, vor kurzem||5|0
+みんなで|alle zusammen|nur für Personen|8|1
+～けど|~, aber|informell für が|5|0
+いろいろ|allerlei||5|0
+いります|要ります||7|1
+しらべます|調べます||5|0
+なおします|直します||5|0
+しゅうりします|修理します||8|1
+でんわします|電話します||5|0
+ぼく|僕||5|0
+きみ|君|du - informell, vorwiegend von männern benutzt|5|0
+ぶっか|物価||8|1
+きもの|着物||5|0
+はじめ|初め||5|0
+おわり|終わり||5|0
+このあいだ|この間||5|0
+おもいます|denken, glauben, der Meinung sein|I|5|0
+いいます|sagen|I|7|3
+たります|(aus-)reichen|II|9|2
+かちます|gewinnen, siegen|I|5|0
+まけます|verlieren|II - beim Spiel, Wettkampf|5|0
+あります|stattfinden, findet statt|I|5|0
+やくにたちます|nützlich sein|I|7|1
+むだ|unnütz, sinnlos, verschwenderisch||8|3
+ふべん|unpraktisch||5|0
+おなじ|gleiche/r/s||5|0
+すごい|toll, großartig, schrecklich, furchtbar|Erstaunen, Bewunderung|5|0
+しゅしょう|Premierminister/in||8|1
+だいとうりょう|Präsident/in||8|1
+せいじ|Politik||5|0
+ニュース|Nachrichten||5|0
+スピーチ|Rede||5|0
+しあい|Spiel, Wettkampf||5|0
+アルバイト|Nebenjob||5|0
+いけん|Meinung||5|0
+はなし|Geschichte, Rede, Gespräch||5|0
+ユーモア|Humor||5|0
+むだ|Verschwendung||9|3
+デザイン|Design||5|0
+こうつう|Verkehr||5|0
+ラッシュ|Stoßzeit||5|0
+さいきん|in letzter Zeit||7|2
+たぶん|vielleicht, wahrscheinlich||8|1
+きっと|sicherlich||7|2
+ほんとうに|wirklich||5|0
+そんなに|nicht so viel|in Verbindung mit Verneinung|8|1
+～について|über~, bezüglich~||5|0
+しかたがありません|Da kann man nichts machen||5|0
+もちろん|natürlich||5|0
+おもいます|思います||5|0
+いいます|言います||5|0
+たります|足ります||5|0
+かちます|勝ちます||5|0
+まけます|負けます||5|0
+やくにたちます|役に立ちます||9|1
+ふべん|不便||5|0
+おなじ|同じ||5|0
+しゅしょう|首相||6|4
+だいとうりょう|大統領||10|2
+せいじ|政治||7|2
+しあい|試合||5|0
+いけん|意見||5|0
+はなし|話||5|0
+こうつう|交通||5|0
+さいきん|最近||7|1
+きます|tragen|II - für Kleidung, die man sich von oben anzieht|5|0
+はきます|tragen|I - für kleidung die man sich von unten anzieht|5|0
+かぶります|aufsetzen|I|10|3
+かけます|tragen|II|7|4
+うまれます|geboren werden|II|5|0
+コート|Mantel||5|0
+スーツ|Anzug||5|0
+セーター|Pullover||9|1
+ぼうし|Hut, Mütze||5|0
+めがね|Brille||5|0
+よく|oft||5|0
+おめでとうございます|Herzlichen Glückwunsch|bei Geburtstag, Hochzeiten, Neujahr usw.|5|0
+やちん|Miete||5|0
+わしつ|Zimmer im japanischen Stil||5|0
+おしいれ|japanischer (Einbau-)Schrank||5|0
+ふとん|Japanische Schlafmatraze und Decke||5|0
+アパート|Wohnung||5|0
+きます|着ます||5|0
+うまれます|生まれます||5|0
+ぼうし|帽子||5|0
+めがね|眼鏡||9|1
+やちん|家賃||5|0
+わしつ|和室||5|0
+おしいれ|押入れ||5|0
+ふとん|布団||5|0
+ききます|fragen|I|9|1
+まわします|drehen|I|9|1
+ひきます|ziehen|I|5|0
+かえます|ändern|II|9|1
+さわります|berühren|I|11|3
+でます|herauskommen, kommt heraus|II - お釣りが～ -　Wechselgeld kommt heraus|9|1
+うごきます|sich bewegen, funktioniert|I|11|2
+あるきます|zu Fuß gehen|I|9|1
+わたります|überqueren|I|5|0
+きをつけます|aufpassen, achten|II|9|1
+ひっこしします|umziehen|III|13|2
+でんきや|Elektiker/in||5|0
+～や|~er/in|Person, die in dem jeweiligen Geschäft arbeitet, od. Berufsbezeichnung|5|0
+サイズ|Größe|Katakana|5|0
+おと|Ton, Laut||5|0
+きかい|Maschine||11|3
+つまみ|Drehknopf||5|0
+こしょう|Defekt, Panne||13|2
+みち|Weg||10|3
+こうさてん|Kreuzung||11|3
+しんごう|Ampel||5|0
+かど|Ecke||5|0
+はし|Brücke||5|0
+ちゅうしゃじょう|Parkplatz||11|6
+～め|der/die/das ~te|Reihnfolge|5|0
+しょうがつ|Neujahr||12|2
+ごちそうさま|Es hat sehr gut geschmeckt!|Nach dem Essen|5|0
+たてもの|Gebäude|Hiragana|5|0
+がいこくじんとうろくしょう|Ausweis für Ausländer die in Japan leben||10|3
+ききます|聞きます||5|0
+まわします|回します||9|1
+ひきます|引きます||5|0
+かえます|変えます||12|3
+さわります|触ります||10|4
+でます|出ます||5|0
+うごきます|動きます||9|1
+あるきます|歩きます||5|0
+わたります|渡ります||11|6
+きをつけます|気をつけます||5|0
+ひっこしします|引越しします||13|5
+でんきや|電気屋||5|0
+～や|～屋||5|0
+おと|音||5|0
+きかい|機械||10|6
+こしょう|故障||10|4
+みち|道||12|2
+こうさてん|交差点||11|2
+しんごう|信号||5|0
+かど|角||5|0
+はし|橋||11|2
+ちゅうしゃじょう|駐車場||10|4
+～め|～目||5|0
+しょうがつ|正月||10|1
+たてもの|建物||10|3
+がいこくじんとうろくしょう|外国人登録証||9|1
+くれます|(mir)geben|II|5|0
+つれていきます|(jn.) mitnehmen|I|9|1
+つれてきます|(jn.) mitbringen|III|9|1
+おくります|bringen|I|9|2
+しょうかいします|(jn.)vorstellen, bekannt machen|III|9|1
+あんないします|führen, den Weg zeigen|III|8|3
+せつめいします|erklären|III|7|2
+いれます|machen|II　コーヒーを～ - kaffee machen|9|2
+おじいちゃん、おじいさん|Großvater, alter Mann||5|0
+おばあちゃん、おばあさん|Großmutter, alte Frau||5|0
+じゅんび|Vorbereitung|（～します） - （sich） vorbereiten|8|5
+いみ|Bedeutung||8|1
+かし|Süßigkeiten, Snacks||5|0
+ぜんぶ|alle/s|nur für Dinge|9|1
+じぶんで|selbst(-ständig), selber||10|2
+ほかに|außerdem||9|3
+ワゴンしゃ|Kombiwagen||5|0
+べんとう|Bento||5|0
+つれていきます|連れて行きます||5|0
+つれてきます|連れて来ます||5|0
+おくります|送ります||5|0
+しょうかいします|紹介します||9|3
+あんないします|案内します||9|2
+せつめいします|説明します||9|3
+じゅんび|準備||9|4
+いみ|意味||9|1
+かし|菓子||9|1
+ぜんぶ|全部||5|0
+じぶんで|自分で||5|0
+ワゴンしゃ|ワゴン車||5|0
+べんとう|弁当||5|0
+佐藤さん　は　私　に　クリスマスカード　を　くれました。|2,4,6|Satou-san hat mir eine Weinachtskarte geschenkt.
+私　は　木村さん　に　本　を　貸して　あげました。|2,4,6|Ich habe Frau Kimura ein Buch geliehen.
+私　は　山田さん　に　病院　の　電話番号　を　教えて　もらいました。|2,4,6,8|Yamada-san hat mir die Telefonnummer des Krankenhauses gegeben.
+母　は　私　に　セーター　を　送って　くれました。|2,4,6|Meine Mutter hat mir einen Pullover geschickt.
+太郎君　は　おばあちゃん　が　好き　ですか。　はい、　好き　です。　おばあちゃん　は　いつも　お菓子　を　くれます。|2,4,11,14|
+おいしい　ワイン　ですね。　ええ、　佐藤さん　が　くれました。　フランス　の　ワイン　です。|6,9|
+太郎君　は　母　の　日　に　お母さん　に　何　を　して　あげますか。　ピアノ　を　弾いて　あげます。|2,4,6,8,10,14|
+ミラーさん、　きのう　の　パーティー　の　料理　は　全部　は　自分　で　作りましたか。　いいえ、　ワンさん　に　手伝って　もらいました。|3,5,7,9,11,15|
+電車　で　行きましたか。　いいえ。　山田さん　が　車　で　送って　くれました。|2,6,8|

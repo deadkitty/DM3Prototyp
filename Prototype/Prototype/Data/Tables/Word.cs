@@ -29,17 +29,17 @@ namespace Prototype.DataModel.Tables
 
         }
 
-        //public Word(String text, int setID)
-        //{
-        //    String[] wordLineFragments = text.Split('|');
+        public Word(String text, int setID)
+        {
+            String[] wordLineFragments = text.Split('|');
 
-        //    JWord = wordLineFragments[0];
-        //    Translation = wordLineFragments[1];
+            JWord = wordLineFragments[0];
+            Translation = wordLineFragments[1];
 
-        //    IsImagePath = false;
+            IsImagePath = false;
 
-        //    this.SetID = setID;
-        //}
+            this.SetID = setID;
+        }
 
         public override string ToString()
         {

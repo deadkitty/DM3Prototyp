@@ -21,9 +21,23 @@ namespace Prototype.DataModel.Tables
         [Column(CanBeNull = false)]
         public String InsertPositions;
 
+        [Column(CanBeNull = false)]
+        public String Translation;
+
         public Sentence()
         {
 
+        }
+
+        public Sentence(String text, int setID)
+        {
+            String[] sentenceLineFragments = text.Split('|');
+
+            this.Text = sentenceLineFragments[0];
+            this.InsertPositions = sentenceLineFragments[1];
+            this.Translation = sentenceLineFragments[2];
+
+            this.SetID = setID;
         }
 
         public override string ToString()

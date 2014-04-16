@@ -8,8 +8,8 @@ namespace Prototype.Speech
     public enum EVerbs
     {
         close = 3,
-        goTo = 5,
-        open = 9,
+        goTo = 7,
+        open = 11,
         undefined = -1,
     }
 
@@ -28,8 +28,8 @@ namespace Prototype.Speech
 
     struct ResourceStrings
     {
-        public static String[] verbs = new String[10];
-        public static String[] particle = new String[2]; 
+        public static String[] verbs = new String[12];
+        public static String[] particle = new String[3]; 
         public static String[] nouns = new String[8];       
 
 #if japaneseVersion
@@ -41,6 +41,8 @@ namespace Prototype.Speech
         public const String closeTekudasai = "閉めてください";
         public const String goRu = "行く";
         public const String goMasu = "行きます";
+        public const String goTe = "行って";
+        public const String goTekudasai = "行ってください";
         public const String openMasu = "開けます";
         public const String openRu = "開ける";
         public const String openTe = "開けて";
@@ -49,6 +51,7 @@ namespace Prototype.Speech
         //particle
         public const String he = "へ";
         public const String wo = "を";
+        public const String mo = "も";
 
         //nouns
         public const String back = "バック";
@@ -68,17 +71,20 @@ namespace Prototype.Speech
         public const String closeMasu = "schliessen";
         public const String closeRu = "schliessen";
         public const String closeTe = "beenden";
-        public const String closeTekudasai = "schliessen bitte";
+        public const String closeTekudasai = "schliessenbitte";
         public const String goRu = "gehen";
         public const String goMasu = "gehen";
+        public const String goTe = "gehen";
+        public const String goTekudasai = "gehen";
         public const String openMasu = "öffnen";
         public const String openRu = "anzeigen";
         public const String openTe = "starten";
-        public const String openTekudasai = "öffnen bitte";
+        public const String openTekudasai = "öffnenbitte";
         
         //particle
         public const String he = "";
         public const String wo = "";
+        public const String mo = "";
         
         //nouns
         public const String back = "zurück";
@@ -87,8 +93,8 @@ namespace Prototype.Speech
         public const String menu = "Menü";
         public const String options = "Optionen";
         public const String program = "Programm";
-        public const String thisWindow = "dieses Fenster";
-        public const String wordsExercise = "Vokabel Übungen";
+        public const String thisWindow = "diesesfenster";
+        public const String wordsExercise = "Vokabelübungen";
 
         public const String cultureIdentifier = "de-DE";
 
@@ -102,13 +108,16 @@ namespace Prototype.Speech
             verbs[3] = closeTekudasai;
             verbs[4] = goMasu;
             verbs[5] = goRu;
-            verbs[6] = openMasu;
-            verbs[7] = openRu;
-            verbs[8] = openTe;
-            verbs[9] = openTekudasai;
+            verbs[6] = goTe;
+            verbs[7] = goTekudasai;
+            verbs[8] = openMasu;
+            verbs[9] = openRu;
+            verbs[10] = openTe;
+            verbs[11] = openTekudasai;
 
             particle[0] = he;
             particle[1] = wo;
+            particle[2] = mo;
 
             nouns[0] = back;
             nouns[1] = grammarExercise;

@@ -5,12 +5,18 @@ using System.Data;
 using System.Linq;
 using System.Windows;
 using Prototype.Speech;
+using Prototype.DataModel;
 
 namespace Prototype
 {
     public partial class App : Application
     {
         #region Fields
+
+        Settings.Settings settings;
+        Settings.SettingsCtrl settingsCtrl;
+        
+        DataCtrl dataCtrl;
 
         #endregion
 
@@ -31,10 +37,25 @@ namespace Prototype
         {
             base.OnStartup(e);
             sInstance = this;
+            ShutdownMode = System.Windows.ShutdownMode.OnMainWindowClose;
 
             ResourceStrings.Initialize();
 
-            ShutdownMode = System.Windows.ShutdownMode.OnMainWindowClose;
+            settings     = Settings.Settings.GetInstance();
+            settingsCtrl = Settings.SettingsCtrl.GetInstance();
+            settingsCtrl.LoadSettings();
+
+            dataCtrl = DataCtrl.GetInstance();
+
+            if (settings.FirstStart)
+            {
+                dataCtrl.InitializeDatabase();
+                
+                settingsCtrl.FirstStart = false;
+                settingsCtrl.SaveSettings();
+            }
+
+            dataCtrl.Initialize();
         }
 
         protected override void OnExit(ExitEventArgs e)

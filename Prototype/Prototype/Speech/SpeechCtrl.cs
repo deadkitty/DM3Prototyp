@@ -65,7 +65,7 @@ namespace Prototype.Speech
 
         #endregion
 
-        #region Public Methods
+        #region Methods
         
         #region Initialize/Deinitialize
 
@@ -75,7 +75,7 @@ namespace Prototype.Speech
             windowCtrl = WindowCtrl.GetInstance();
             
 #if japaneseVersion
-			try
+			try //TODO: try catch entfernen wenn ich das problem aufm laptop gelöst hab
 			{
 				recognitionEngine = new SpeechRecognitionEngine(CultureInfo.GetCultureInfo(ResourceStrings.cultureIdentifier));
 			}
@@ -126,6 +126,7 @@ namespace Prototype.Speech
             {
                 ResourceStrings.wo,    //を
                 ResourceStrings.he,    //へ
+                ResourceStrings.mo,    //も
             };
             Choices particleChoices = new Choices(particle);
             gb.Append(particleChoices, 0, 1);
@@ -139,6 +140,8 @@ namespace Prototype.Speech
                 ResourceStrings.closeTe,       //閉めて
                 ResourceStrings.goRu,          //行く
                 ResourceStrings.goMasu,        //行きます
+                ResourceStrings.goTe,
+                ResourceStrings.goTekudasai,
                 ResourceStrings.openRu,        //開ける
                 ResourceStrings.openMasu,      //開けます
                 ResourceStrings.openTekudasai, //開けてください

@@ -51,7 +51,7 @@ namespace Prototype.Settings
 
         private SettingsCtrl()
         {
-
+            settings = Settings.GetInstance();
         }
 
         #endregion
