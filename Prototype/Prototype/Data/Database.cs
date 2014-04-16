@@ -4,14 +4,14 @@ using System.Linq;
 using System.Text;
 using System.Data.Linq;
 
-namespace Prototype.Data
+namespace Prototype.DataModel
 {
     using Tables;
 
     public class Database : DataContext
     {
         #region Fields
-        
+
         public static String connectionString = "Data Source = 'Resources/db.sdf';";
 
         public Table<Lesson> Lessons;

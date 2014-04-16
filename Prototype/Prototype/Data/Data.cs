@@ -2,9 +2,9 @@
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
-using Prototype.Data.Tables;
+using Prototype.DataModel.Tables;
 
-namespace Prototype.Data
+namespace Prototype.DataModel
 {
     class Data
     {        
@@ -17,6 +17,8 @@ namespace Prototype.Data
         Sentence[] sentences;
 
         Database db;
+
+        String currentComand;
 
         #endregion
 
@@ -52,6 +54,12 @@ namespace Prototype.Data
             set { db = value; }
         }
 
+        public String CurrentComand
+        {
+            get { return currentComand; }
+            set { currentComand = value; }
+        }
+
         #endregion
 
         #region Singleton
@@ -73,16 +81,16 @@ namespace Prototype.Data
 
         private Data()
         {
-            using (db = new Database(Database.connectionString))
-            {
-                if (!db.DatabaseExists())
-                {
-                    db.CreateDatabase();
-                }
+			//using (db = new Database(Database.connectionString))
+			//{
+			//    if (!db.DatabaseExists())
+			//    {
+			//        db.CreateDatabase();
+			//    }
 
-                wordLessons = GetLessons(Lesson.EType.wordsPractice);
-                sentenceLessons = GetLessons(Lesson.EType.grammarPractice);
-            }
+			//    wordLessons = GetLessons(Lesson.EType.wordsPractice);
+			//    sentenceLessons = GetLessons(Lesson.EType.grammarPractice);
+			//}
         }
 
         #endregion

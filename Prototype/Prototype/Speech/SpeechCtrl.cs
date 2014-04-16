@@ -75,7 +75,14 @@ namespace Prototype.Speech
             windowCtrl = WindowCtrl.GetInstance();
             
 #if japaneseVersion
-            recognitionEngine = new SpeechRecognitionEngine(CultureInfo.GetCultureInfo(ResourceStrings.cultureIdentifier));
+			try
+			{
+				recognitionEngine = new SpeechRecognitionEngine(CultureInfo.GetCultureInfo(ResourceStrings.cultureIdentifier));
+			}
+			catch (Exception ex)
+			{
+
+			}
 #else
             recognitionEngine = new SpeechRecognizer();    
 #endif

@@ -4,7 +4,7 @@ using System.Linq;
 using System.Text;
 using System.Data.Linq.Mapping;
 
-namespace Prototype.Data.Tables
+namespace Prototype.DataModel.Tables
 {
     [Table]
     public class Sentence
