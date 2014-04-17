@@ -9,10 +9,27 @@ namespace Prototype.DataModel
 {
     public class DataCtrl
     {
+        #region Delegates
+
+        public delegate void RandomizeLessonDel();
+        public delegate void LoadNextDel();
+        public delegate void SkipThisDel();
+        public delegate bool CheckCurrrentDel(String text);
+
+        #endregion
+
         #region Fields
 
         Data data;
-        
+
+        int indexOfCurrent;
+        int skipIndex;
+
+        public RandomizeLessonDel RandomizeLesson;
+        public LoadNextDel LoadNext;
+        public SkipThisDel SkipThis;
+        public CheckCurrrentDel CheckCurrent;
+
         #endregion
 
         #region Properties
@@ -49,7 +66,9 @@ namespace Prototype.DataModel
 
         #endregion
 
-        #region Public Methods
+        #region Methods
+
+        #region Initialize/Deinitialize
 
         /// <summary>
         /// Creates database and Loads data in it
@@ -84,7 +103,7 @@ namespace Prototype.DataModel
                         lessons = Lessons.ToArray();
 
                         #endregion
-                
+
                         #region Insert Words, Sentences
 
                         Word[] words = null;
@@ -105,7 +124,7 @@ namespace Prototype.DataModel
                                     case 0: words[i] = new Word(sr.ReadLine(), l.ID); break;
                                     case 1: sentences[i] = new Sentence(sr.ReadLine(), l.ID); break;
                                 }
-                            }    
+                            }
 
                             switch (l.type)
                             {
@@ -134,48 +153,160 @@ namespace Prototype.DataModel
             }
         }
 
+        public void Deinitialize()
+        {
+            data.Words = null;
+            data.Sentences = null;
+
+            data.ItemsWrongList.Clear();
+        }
+
         /// <summary>
         /// loads all words/Sentences in data by the given lessons
         /// </summary>
-        /// <param name="lessons"></param>
         public void Load(Lesson[] lessons)
         {
-            int[] setIDs = new int[lessons.Length];
+            //unload previous content
+            Deinitialize();
 
+            //extract id´s from lessons
+            int[] setIDs = new int[lessons.Length];
             for (int i = 0; i < setIDs.Length; ++i)
             {
                 setIDs[i] = lessons[i].ID;
             }
 
+            //connect to database and load words/sentences
             using (data.DB = new Database(Database.connectionString))
             {
                 if (lessons[0].type == (int)Lesson.EType.grammarPractice)
                 {
                     data.Sentences = data.GetSentences(setIDs);
+
+                    data.ItemsLeft = data.Sentences.Length;
+
+                    //set delegates
+                    RandomizeLesson = RandomizeSentences;
+                    LoadNext = LoadNextSentence;
+                    SkipThis = SkipSentence;
+                    CheckCurrent = CheckSentence;
                 }
                 else
                 {
                     data.Words = data.GetWords(setIDs);
+
+                    data.ItemsLeft = data.Words.Length;
+        
+                    RandomizeLesson = RandomizeWords;
+                    LoadNext = LoadNextWord;
+                    SkipThis = SkipWord;
+                    CheckCurrent = CheckWord;
                 }
+            }
+
+            //set some over stuff
+            data.ItemsCorrect = 0;
+            data.ItemsWrong = 0;
+
+            indexOfCurrent = 0;
+            skipIndex = 0;
+
+            //randomize loaded items and set first item
+            RandomizeLesson();
+            LoadNext();
+        }
+        
+        #endregion
+
+        #region Randomize Lessons
+
+        private void RandomizeWords()
+        {
+            object[] items = null;
+            items = data.Words;
+            Randomize(items);
+        }
+
+        private void RandomizeSentences()
+        {
+            object[] items = null;
+            items = data.Sentences;
+            Randomize(items);
+        }
+
+        private void Randomize(object[] items)
+        {
+            Random r = new Random();
+            for (int i = 0; i < items.Length; ++i)
+            {
+                int randomIndex = r.Next(items.Length);
+                object hv = items[i];
+                items[i] = items[randomIndex];
+                items[randomIndex] = hv;
             }
         }
 
+        #endregion
 
-        /// <summary>
-        /// loads next active word in data
-        /// </summary>
-        public void LoadNextWord()
+        #region Load Next Word
+
+        private void LoadNextWord()
         {
-
+            data.ActiveWord = data.Words[indexOfCurrent++ % data.Words.Length];
         }
 
-        /// <summary>
-        /// skips active word and asks again for the word at the end of the lesson
-        /// </summary>
+        private void LoadNextSentence()
+        {
+            data.ActiveSentence = data.Sentences[indexOfCurrent++ % data.Sentences.Length];
+        }
+
+        #endregion
+
+        #region Skip Words
+
         public void SkipWord()
         {
+            skipIndex++;
 
+            if (indexOfCurrent == skipIndex)
+            {
+                skipIndex = 1;
+            }
+
+            Word hv = data.Words[indexOfCurrent];
+            data.Words[indexOfCurrent] = data.Words[data.Words.Length - skipIndex];
+            data.Words[data.Words.Length - skipIndex] = hv;
         }
+
+        public void SkipSentence()
+        {
+            skipIndex++;
+
+            if (indexOfCurrent == skipIndex)
+            {
+                skipIndex = 1;
+            }
+
+            Sentence hv = data.Sentences[indexOfCurrent];
+            data.Sentences[indexOfCurrent] = data.Sentences[data.Sentences.Length - skipIndex];
+            data.Sentences[data.Sentences.Length - skipIndex] = hv;
+        }
+        
+        #endregion
+
+        #region Check Against Userinput
+
+        private bool CheckWord(String text)
+        {
+            return text == data.ActiveWord.JWord;
+        }
+
+        private bool CheckSentence(String text)
+        {
+            return text == data.ActiveSentence.Text.Replace("　","");
+        }
+
+        #endregion
 
         #endregion
     }

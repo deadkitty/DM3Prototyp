@@ -48,6 +48,15 @@ namespace Prototype.View
         
         #endregion
 
+        #region Events
+
+        private void Window_Loaded(object sender, RoutedEventArgs e)
+        {
+
+        }
+
+        #endregion
+
         #region IView
 
         public void ChangeWindowContent(EContentType newContentType)

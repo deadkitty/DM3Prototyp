@@ -23,6 +23,12 @@ namespace Prototype.DataModel
 
         String currentComand;
 
+        int itemsLeft;
+        int itemsCorrect;
+        int itemsWrong;
+
+        List<object> itemsWrongList;
+
         #endregion
 
         #region Properties
@@ -75,6 +81,30 @@ namespace Prototype.DataModel
             set { currentComand = value; }
         }
 
+        public int ItemsLeft
+        {
+            get { return itemsLeft; }
+            set { itemsLeft = value; }
+        }
+
+        public int ItemsCorrect
+        {
+            get { return itemsCorrect; }
+            set { itemsCorrect = value; }
+        }
+ 
+        public int ItemsWrong
+        {
+            get { return itemsWrong; }
+            set { itemsWrong = value; }
+        }
+
+        public List<object> ItemsWrongList
+        {
+            get { return itemsWrongList; }
+            set { itemsWrongList = value; }
+        }
+
         #endregion
 
         #region Singleton
@@ -96,7 +126,7 @@ namespace Prototype.DataModel
 
         private Data()
         {
-
+            itemsWrongList = new List<object>();
         }
 
         #endregion
