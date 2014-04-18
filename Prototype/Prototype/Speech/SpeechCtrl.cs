@@ -75,14 +75,7 @@ namespace Prototype.Speech
             windowCtrl = WindowCtrl.GetInstance();
             
 #if japaneseVersion
-			try //TODO: try catch entfernen wenn ich das problem aufm laptop gelöst hab
-			{
-				recognitionEngine = new SpeechRecognitionEngine(CultureInfo.GetCultureInfo(ResourceStrings.cultureIdentifier));
-			}
-			catch (Exception ex)
-			{
-
-			}
+    		recognitionEngine = new SpeechRecognitionEngine(CultureInfo.GetCultureInfo(ResourceStrings.cultureIdentifier));
 #else
             recognitionEngine = new SpeechRecognizer();    
 #endif
