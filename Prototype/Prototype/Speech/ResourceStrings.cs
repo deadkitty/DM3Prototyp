@@ -102,9 +102,11 @@ namespace Prototype.Speech
         public const String selectTekudasai = "auswählen bitte";
         
         //particle
-        public const String he = "";
-        public const String wo = "";
+        public const String he = " ";
+        public const String wo = " ";
         public const String mo = "auch";
+        public const String kara = "von";
+        public const String made = "bis";
         
         //nouns
         public const String back = "zurück";
@@ -118,6 +120,7 @@ namespace Prototype.Speech
         public const String lesson1 = "Lektion";
         public const String lesson2 = "";
         public const String all = "alles";
+        public const String nothing = "nichts";
 
         public const String cultureIdentifier = "de-DE";
 

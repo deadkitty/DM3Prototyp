@@ -189,10 +189,18 @@ namespace Prototype.Speech
         private GrammarBuilder GetFromToBuilder(GrammarBuilder lessonBuilder)
         {
             GrammarBuilder fromToBuilder = new GrammarBuilder();
+#if japaneseVersion
             fromToBuilder.Append(lessonBuilder);
             fromToBuilder.Append(ResourceStrings.kara);
             fromToBuilder.Append(lessonBuilder);
             fromToBuilder.Append(ResourceStrings.made);
+#else
+            fromToBuilder.Append(ResourceStrings.kara);
+            fromToBuilder.Append(lessonBuilder);
+            fromToBuilder.Append(ResourceStrings.made);
+            fromToBuilder.Append(lessonBuilder);
+
+#endif
             fromToBuilder.Culture = culture;
             return fromToBuilder;
         }
@@ -305,9 +313,13 @@ namespace Prototype.Speech
 
             if (noun == ENouns.lessonFromTo)
             {
+#if japaneseVersion
                 int from = extractNumber(result.Words[0].Text) - 1;
                 int to = extractNumber(result.Words[2].Text) - 1;
-
+#else
+                int from = extractNumber(result.Words[1].Text) - 1;
+                int to = extractNumber(result.Words[3].Text) - 1;
+#endif
                 if (from > to)
                 {
                     int hv = from;
@@ -327,9 +339,14 @@ namespace Prototype.Speech
 
         private int extractNumber(String text)
         {
+#if japaneseVersion
             char[] lesson = text.ToCharArray();
             String number = new String(lesson, 1, lesson.Length - 2);
+#else
+            String number = text.Substring(7, text.Length - 7);
+#endif
             return Convert.ToInt32(number);
+
         }
 
         #endregion
