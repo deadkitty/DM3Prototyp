@@ -10,8 +10,8 @@ namespace Prototype.DataModel
     {        
         #region Fields
 
-        Lesson[] wordLessons;
-        Lesson[] sentenceLessons;
+        Lesson[] lessons;
+        Lesson[] selectedLessons;
 
         Word[] words;
         Sentence[] sentences;
@@ -33,16 +33,16 @@ namespace Prototype.DataModel
 
         #region Properties
 
-        public Lesson[] WordSets
+        public Lesson[] Lessons
         {
-            get { return wordLessons; }
-            set { wordLessons = value; }
+            get { return lessons; }
+            set { lessons = value; }
         }
 
-        public Lesson[] SentenceSets
+        public Lesson[] SelectedLessons
         {
-            get { return sentenceLessons; }
-            set { sentenceLessons = value; }
+            get { return selectedLessons; }
+            set { selectedLessons = value; }
         }
 
         public Word[] Words

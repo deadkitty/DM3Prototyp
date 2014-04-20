@@ -26,6 +26,8 @@ namespace Prototype.DataModel.Tables
 
         public int itemCount;
 
+        public int listIndex = -1;
+
         public Lesson()
         {
 
@@ -42,7 +44,7 @@ namespace Prototype.DataModel.Tables
 
         public override string ToString()
         {
-            return Name;
+            return "Lektion" + listIndex + ": " + Name;
         }
     }
 }

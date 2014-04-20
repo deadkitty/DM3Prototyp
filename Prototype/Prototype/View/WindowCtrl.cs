@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
+using Prototype.DataModel;
 
 namespace Prototype.View
 {
@@ -16,7 +17,9 @@ namespace Prototype.View
         List<EContentType> contentTrace;
 
         EContentType currentContentType;
-        
+
+        DataCtrl dataCtrl;
+
         #endregion
 
         #region Properties
@@ -62,7 +65,8 @@ namespace Prototype.View
         {
             application = App.GetInstance();
             contentTrace = new List<EContentType>();
-            currentContentType = EContentType.mainMenuContent;
+            currentContentType = EContentType.undefined;
+            dataCtrl = DataCtrl.GetInstance();
         }
 
         #endregion
@@ -74,6 +78,12 @@ namespace Prototype.View
             if (newContentType == currentContentType)
                 return;
 
+            switch (newContentType)
+            {
+                case EContentType.mainMenuContent: dataCtrl.Initialize(EContentType.chooseWordSetsContent); break;      //TODO: zeile wieder entfernen
+                case EContentType.chooseWordSetsContent: dataCtrl.Initialize(newContentType); break;
+                case EContentType.chooseSentenceSetsContent: dataCtrl.Initialize(newContentType); break;
+            }
             view.ChangeWindowContent(newContentType);
 
             contentTrace.Add(currentContentType);

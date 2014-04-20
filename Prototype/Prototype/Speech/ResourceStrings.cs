@@ -7,9 +7,10 @@ namespace Prototype.Speech
 {
     public enum EVerbs
     {
-        close = 3,
-        goTo = 7,
-        open = 11,
+        close = 0,
+        goTo = 1,
+        open = 2,
+        select = 3,
         undefined = -1,
     }
 
@@ -23,14 +24,18 @@ namespace Prototype.Speech
         program = 5,
         thisWindow = 6,
         wordsExercise = 7,
+        lesson = 8,
+        lessonFromTo = 9,
+        all = 10,
+        nothing = 11,
         undefined = -1,
     }
 
     struct ResourceStrings
     {
-        public static String[] verbs = new String[12];
-        public static String[] particle = new String[3]; 
-        public static String[] nouns = new String[8];       
+        public const String actionKey = "action";
+        public const String targetKey = "target";
+        public const String targetLessonKey = "targetLesson";
 
 #if japaneseVersion
         
@@ -47,11 +52,18 @@ namespace Prototype.Speech
         public const String openRu = "開ける";
         public const String openTe = "開けて";
         public const String openTekudasai = "開けてください";
+        public const String selectRu = "選ぶ";
+        public const String selectMasu = "選びます";
+        public const String selectTe = "選んで";
+        public const String selectTekudasai = "選んでください";
 
         //particle
         public const String he = "へ";
         public const String wo = "を";
         public const String mo = "も";
+        public const String to = "と";
+        public const String kara = "から";
+        public const String made = "まで";
 
         //nouns
         public const String back = "バック";
@@ -62,6 +74,10 @@ namespace Prototype.Speech
         public const String program = "プログラム";
         public const String thisWindow = "この窓";
         public const String wordsExercise = "ことばの練習";
+        public const String lesson1 = "第";
+        public const String lesson2 = "課";
+        public const String all = "全部";
+        public const String nothing = "何も";
 
         public const String cultureIdentifier = "ja-JP";
         
@@ -69,64 +85,42 @@ namespace Prototype.Speech
         
         //verbs
         public const String closeMasu = "schliessen";
-        public const String closeRu = "schliessen";
+        public const String closeRu = "zumachen";
         public const String closeTe = "beenden";
-        public const String closeTekudasai = "schliessenbitte";
+        public const String closeTekudasai = "schliessen bitte";
         public const String goRu = "gehen";
         public const String goMasu = "gehen";
         public const String goTe = "gehen";
-        public const String goTekudasai = "gehen";
+        public const String goTekudasai = "gehen bitte";
         public const String openMasu = "öffnen";
         public const String openRu = "anzeigen";
         public const String openTe = "starten";
-        public const String openTekudasai = "öffnenbitte";
+        public const String openTekudasai = "öffnen bitte";
+        public const String selectRu = "auswählen";
+        public const String selectMasu = "selektieren";
+        public const String selectTe = "markieren";
+        public const String selectTekudasai = "auswählen bitte";
         
         //particle
         public const String he = "";
         public const String wo = "";
-        public const String mo = "";
+        public const String mo = "auch";
         
         //nouns
         public const String back = "zurück";
-        public const String grammarExercise = "Grammatikübungen";
-        public const String grammarExplanation = "Grammatikerklärungen";
+        public const String grammarExercise = "Grammatik Übungen";
+        public const String grammarExplanation = "Grammatik Erklärungen";
         public const String menu = "Menü";
         public const String options = "Optionen";
         public const String program = "Programm";
-        public const String thisWindow = "diesesfenster";
+        public const String thisWindow = "dieses fenster";
         public const String wordsExercise = "Vokabelübungen";
+        public const String lesson1 = "Lektion";
+        public const String lesson2 = "";
+        public const String all = "alles";
 
         public const String cultureIdentifier = "de-DE";
 
 #endif
-
-        public static void Initialize()
-        {
-            verbs[0] = closeMasu;
-            verbs[1] = closeRu;
-            verbs[2] = closeTe;
-            verbs[3] = closeTekudasai;
-            verbs[4] = goMasu;
-            verbs[5] = goRu;
-            verbs[6] = goTe;
-            verbs[7] = goTekudasai;
-            verbs[8] = openMasu;
-            verbs[9] = openRu;
-            verbs[10] = openTe;
-            verbs[11] = openTekudasai;
-
-            particle[0] = he;
-            particle[1] = wo;
-            particle[2] = mo;
-
-            nouns[0] = back;
-            nouns[1] = grammarExercise;
-            nouns[2] = grammarExplanation;
-            nouns[3] = menu;
-            nouns[4] = options;
-            nouns[5] = program;
-            nouns[6] = thisWindow;
-            nouns[7] = wordsExercise;
-        }
     }
 }

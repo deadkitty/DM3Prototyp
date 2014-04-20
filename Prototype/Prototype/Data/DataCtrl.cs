@@ -4,6 +4,7 @@ using System.Linq;
 using System.Text;
 using Prototype.DataModel.Tables;
 using System.IO;
+using Prototype.View;
 
 namespace Prototype.DataModel
 {
@@ -144,12 +145,15 @@ namespace Prototype.DataModel
         /// <summary>
         /// Loads lessons on startup 
         /// </summary>
-        public void Initialize()
+        public void Initialize(EContentType content)
         {
             using (data.DB = new Database(Database.connectionString))
             {
-                data.WordSets = data.GetLessons(Lesson.EType.wordsPractice);
-                data.SentenceSets = data.GetLessons(Lesson.EType.grammarPractice);
+                switch (content)
+                {
+                    case EContentType.chooseWordSetsContent: data.Lessons = data.GetLessons(Lesson.EType.wordsPractice); break;
+                    case EContentType.chooseSentenceSetsContent: data.Lessons = data.GetLessons(Lesson.EType.grammarPractice); break;
+                }
             }
         }
 

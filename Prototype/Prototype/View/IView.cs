@@ -9,7 +9,8 @@ namespace Prototype.View
     {
         firstStartContent,
         mainMenuContent,
-        chooseLearnsetsContent,
+        chooseWordSetsContent,
+        chooseSentenceSetsContent,
         wordsExerciseContent,
         grammarExerciseContent,
         grammarExplanationContent,

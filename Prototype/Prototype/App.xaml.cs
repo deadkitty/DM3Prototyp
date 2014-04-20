@@ -38,13 +38,11 @@ namespace Prototype
             base.OnStartup(e);
             sInstance = this;
             ShutdownMode = System.Windows.ShutdownMode.OnMainWindowClose;
-
-            ResourceStrings.Initialize();
-
+            
             settings     = Settings.Settings.GetInstance();
             settingsCtrl = Settings.SettingsCtrl.GetInstance();
             settingsCtrl.LoadSettings();
-
+            
             dataCtrl = DataCtrl.GetInstance();
 
             if (settings.FirstStart)
@@ -54,8 +52,6 @@ namespace Prototype
                 settingsCtrl.FirstStart = false;
                 settingsCtrl.SaveSettings();
             }
-
-            dataCtrl.Initialize();
         }
 
         protected override void OnExit(ExitEventArgs e)

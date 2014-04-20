@@ -35,15 +35,15 @@ namespace Prototype.View
         {
             InitializeComponent();
 
+            data = Data.GetInstance();
+
             windowCtrl = WindowCtrl.GetInstance();
             windowCtrl.View = this;
+            windowCtrl.ChangeWindowContent(EContentType.mainMenuContent);
 
             speechCtrl = SpeechCtrl.GetInstance();
             speechCtrl.Initialize();
-
-            data = Data.GetInstance();
-
-            ChangeWindowContent(EContentType.mainMenuContent);
+            speechCtrl.View = this;
         }
         
         #endregion
@@ -72,6 +72,8 @@ namespace Prototype.View
         public void UpdateView()
         {
             Title = (++commandCounter) + data.CurrentComand;
+            if (windowCtrl.CurrentContentType == EContentType.mainMenuContent)
+                (contentControl.Content as MainControl).SelectEntries();
         }
         
         #endregion

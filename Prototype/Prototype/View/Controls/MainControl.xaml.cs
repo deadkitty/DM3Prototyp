@@ -11,6 +11,8 @@ using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
+using Prototype.DataModel;
+using Prototype.DataModel.Tables;
 
 namespace Prototype.View.Controls
 {
@@ -21,10 +23,21 @@ namespace Prototype.View.Controls
     {
         WindowCtrl ctrl;
 
+        Data data;
+
         public MainControl()
         {
             InitializeComponent();
             ctrl = WindowCtrl.GetInstance();
+            data = Data.GetInstance();
+
+            for (int i = 0; i < data.Lessons.Length; ++i)
+            {
+                data.Lessons[i].listIndex = i + 1;
+                lessonsListbox.Items.Add(data.Lessons[i]);
+            }
+            lessonsListbox.SelectedItems.Clear();
+
         }
 
         private void grammarExplanationButton_Click(object sender, RoutedEventArgs e)
@@ -40,6 +53,27 @@ namespace Prototype.View.Controls
         private void closeAppButton_Click(object sender, RoutedEventArgs e)
         {
             ctrl.CloseApp();
+        }
+
+        public void SelectEntries()
+        {
+            if (data.SelectedLessons == null)
+            {
+                lessonsListbox.SelectedItems.Clear();
+                return;
+            }
+
+            if (data.SelectedLessons == data.Lessons)
+            {
+                lessonsListbox.SelectAll();
+                return;
+            }
+
+            lessonsListbox.SelectedItems.Clear();
+            foreach (object o in data.SelectedLessons)
+            {
+                lessonsListbox.SelectedItems.Add(o);
+            }
         }
     }
 }

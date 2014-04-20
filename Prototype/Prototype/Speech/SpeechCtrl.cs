@@ -6,6 +6,7 @@ using System.Speech.Recognition;
 using Prototype.View;
 using System.Globalization;
 using Prototype.DataModel;
+using Prototype.DataModel.Tables;
 
 namespace Prototype.Speech
 {
@@ -14,29 +15,32 @@ namespace Prototype.Speech
         #region Fields
         
         private const String windowOperationsGrammar = "windowOperationsGrammar";
-        
+        private const String chooseLessonsGrammar = "chooseLessonsGrammar";
+
         WindowCtrl windowCtrl;
 
         Data data;
 
-#if japaneseVersion
         SpeechRecognitionEngine recognitionEngine;
-#else
-        SpeechRecognizer recognitionEngine;
-#endif
+
+        CultureInfo culture;
+
+        IView view;
 
         #endregion
 
         #region Properties
 
-#if japaneseVersion
         public SpeechRecognitionEngine RecognitionEngine 
-#else
-        public SpeechRecognizer RecognitionEngine
-#endif
         {
             get { return recognitionEngine; }
             set { recognitionEngine = value; }
+        }
+        
+        public IView View
+        {
+            get { return view; }
+            set { view = value; }
         }
 
         #endregion
@@ -60,7 +64,7 @@ namespace Prototype.Speech
 
         private SpeechCtrl()
         {
-            
+            culture = CultureInfo.GetCultureInfo(ResourceStrings.cultureIdentifier);
         }
 
         #endregion
@@ -73,21 +77,16 @@ namespace Prototype.Speech
         {
             data = Data.GetInstance();
             windowCtrl = WindowCtrl.GetInstance();
-            
-#if japaneseVersion
-    		recognitionEngine = new SpeechRecognitionEngine(CultureInfo.GetCultureInfo(ResourceStrings.cultureIdentifier));
-#else
-            recognitionEngine = new SpeechRecognizer();    
-#endif
+
+    		recognitionEngine = new SpeechRecognitionEngine(culture);
 
             recognitionEngine.SpeechRecognized += new EventHandler<SpeechRecognizedEventArgs>(recognitionEngine_SpeechRecognized);
 
             LoadWindowOperationsGrammar();
+            LoadChooseLessonGrammar();
 
-#if japaneseVersion
             recognitionEngine.SetInputToDefaultAudioDevice();
             recognitionEngine.RecognizeAsync(RecognizeMode.Multiple);
-#endif
         }
 
         public void DeInitialize()
@@ -98,21 +97,18 @@ namespace Prototype.Speech
         private void LoadWindowOperationsGrammar()
         {
             GrammarBuilder gb = new GrammarBuilder();
-            gb.Culture = CultureInfo.GetCultureInfo(ResourceStrings.cultureIdentifier);
+            gb.Culture = culture;
 
-            String[] nouns =
-            {
-                ResourceStrings.back,              //バック
-                ResourceStrings.grammarExplanation,//ぶんぽうの説明
-                ResourceStrings.grammarExercise,   //ぶんぽうの練習
-                ResourceStrings.wordsExercise,     //ことばの練習
-                ResourceStrings.options,           //オプション
-                ResourceStrings.program,           //プログラム
-                ResourceStrings.thisWindow,        //この窓
-                ResourceStrings.menu,              //メニュー
-            };
-            Choices nounChoices = new Choices(nouns);
-            gb.Append(nounChoices);
+            Choices nounChoices = new Choices();
+            nounChoices.Add(new SemanticResultValue(ResourceStrings.back              , ENouns.back.ToString()));               //
+            nounChoices.Add(new SemanticResultValue(ResourceStrings.grammarExercise   , ENouns.grammarExercise.ToString()));    //
+            nounChoices.Add(new SemanticResultValue(ResourceStrings.grammarExplanation, ENouns.grammarExplanation.ToString())); //
+            nounChoices.Add(new SemanticResultValue(ResourceStrings.menu              , ENouns.menu.ToString()));               //
+            nounChoices.Add(new SemanticResultValue(ResourceStrings.options           , ENouns.options.ToString()));            //
+            nounChoices.Add(new SemanticResultValue(ResourceStrings.program           , ENouns.program.ToString()));            //
+            nounChoices.Add(new SemanticResultValue(ResourceStrings.thisWindow        , ENouns.thisWindow.ToString()));         //
+            nounChoices.Add(new SemanticResultValue(ResourceStrings.wordsExercise     , ENouns.wordsExercise.ToString()));      //
+            gb.Append(new SemanticResultKey("target", nounChoices));
 
 #if japaneseVersion
             String[] particle = 
@@ -125,27 +121,80 @@ namespace Prototype.Speech
             gb.Append(particleChoices, 0, 1);
 #endif
 
-            String[] verbs =
-            {
-                ResourceStrings.closeRu,       //閉める
-                ResourceStrings.closeMasu,     //閉めます
-                ResourceStrings.closeTekudasai,//閉めてください
-                ResourceStrings.closeTe,       //閉めて
-                ResourceStrings.goRu,          //行く
-                ResourceStrings.goMasu,        //行きます
-                ResourceStrings.goTe,
-                ResourceStrings.goTekudasai,
-                ResourceStrings.openRu,        //開ける
-                ResourceStrings.openMasu,      //開けます
-                ResourceStrings.openTekudasai, //開けてください
-                ResourceStrings.openTe,        //開けて
-            };
-            Choices verbChoices = new Choices(verbs);
-            gb.Append(verbChoices);
+            Choices verbChoices = new Choices();
+            verbChoices.Add(new SemanticResultValue(ResourceStrings.closeRu       , EVerbs.close.ToString())); //閉める
+            verbChoices.Add(new SemanticResultValue(ResourceStrings.closeMasu     , EVerbs.close.ToString())); //閉めます
+            verbChoices.Add(new SemanticResultValue(ResourceStrings.closeTe       , EVerbs.close.ToString())); //閉めてください
+            verbChoices.Add(new SemanticResultValue(ResourceStrings.closeTekudasai, EVerbs.close.ToString())); //閉めて
+            verbChoices.Add(new SemanticResultValue(ResourceStrings.goRu          , EVerbs.goTo.ToString()));  //行く
+            verbChoices.Add(new SemanticResultValue(ResourceStrings.goMasu        , EVerbs.goTo.ToString()));  //行きます
+            verbChoices.Add(new SemanticResultValue(ResourceStrings.goTe          , EVerbs.goTo.ToString()));  //行って
+            verbChoices.Add(new SemanticResultValue(ResourceStrings.goTekudasai   , EVerbs.goTo.ToString()));  //行ってください
+            verbChoices.Add(new SemanticResultValue(ResourceStrings.openRu        , EVerbs.open.ToString()));  //開ける
+            verbChoices.Add(new SemanticResultValue(ResourceStrings.openMasu      , EVerbs.open.ToString()));  //開けます
+            verbChoices.Add(new SemanticResultValue(ResourceStrings.openTe        , EVerbs.open.ToString()));  //開けてください
+            verbChoices.Add(new SemanticResultValue(ResourceStrings.openTekudasai , EVerbs.open.ToString()));  //開けて
+            gb.Append(new SemanticResultKey("action", verbChoices));
 
             Grammar grammar = new Grammar(gb);
             grammar.Name = windowOperationsGrammar;
             recognitionEngine.LoadGrammar(grammar);
+        }
+
+        private void LoadChooseLessonGrammar()
+        {
+            GrammarBuilder gb = new GrammarBuilder();
+            gb.Culture = culture;
+            GrammarBuilder lessonBuilder = GetLessonBuilder();
+            GrammarBuilder fromToBuilder = GetFromToBuilder(lessonBuilder);
+
+            Choices selectChoices = new Choices();
+            selectChoices.Add(new SemanticResultValue(ResourceStrings.all, ENouns.all.ToString()));
+            selectChoices.Add(new SemanticResultValue(ResourceStrings.nothing, ENouns.nothing.ToString()));
+            selectChoices.Add(new SemanticResultValue(lessonBuilder, ENouns.lesson.ToString()));
+            selectChoices.Add(new SemanticResultValue(fromToBuilder, ENouns.lessonFromTo.ToString()));
+
+            String[] selectActions = 
+            {
+                ResourceStrings.selectRu,
+                ResourceStrings.selectMasu,
+                ResourceStrings.selectTe,
+                ResourceStrings.selectTekudasai,
+            };
+            Choices selectActionChoices = new Choices(selectActions);
+
+            gb.Append(new SemanticResultKey(ResourceStrings.targetKey, selectChoices));
+            gb.Append(ResourceStrings.wo, 0, 1);
+            gb.Append(selectActionChoices);
+
+            Grammar grammar = new Grammar(gb);
+            grammar.Name = chooseLessonsGrammar;
+            recognitionEngine.LoadGrammar(grammar);
+        }
+
+        private GrammarBuilder GetLessonBuilder()
+        {
+            String[] lessons = new String[data.Lessons.Length];
+            for (int i = 0; i < data.Lessons.Length; ++i)
+            {
+                lessons[i] = ResourceStrings.lesson1 + (i + 1) + ResourceStrings.lesson2;
+            }
+            Choices lessonChoices = new Choices(lessons);
+
+            GrammarBuilder lessonBuilder = new GrammarBuilder(lessonChoices);
+            lessonBuilder.Culture = culture;
+            return lessonBuilder;
+        }
+
+        private GrammarBuilder GetFromToBuilder(GrammarBuilder lessonBuilder)
+        {
+            GrammarBuilder fromToBuilder = new GrammarBuilder();
+            fromToBuilder.Append(lessonBuilder);
+            fromToBuilder.Append(ResourceStrings.kara);
+            fromToBuilder.Append(lessonBuilder);
+            fromToBuilder.Append(ResourceStrings.made);
+            fromToBuilder.Culture = culture;
+            return fromToBuilder;
         }
 
         #endregion
@@ -154,105 +203,26 @@ namespace Prototype.Speech
 
         void recognitionEngine_SpeechRecognized(object sender, SpeechRecognizedEventArgs e)
         {
-            data.CurrentComand = e.Result.Text;
+            data.CurrentComand = ": " + e.Result.Text;
 
             switch (e.Result.Grammar.Name)
             {
-                case windowOperationsGrammar: ComputeCloseWindowResult(e.Result); break;
+                case windowOperationsGrammar: ComputeWindowResult(e.Result); break;
+                case chooseLessonsGrammar: ComputeChooseLessonResult(e.Result); break;
             }
 
-            windowCtrl.View.UpdateView();
+            view.UpdateView();
         }
 
-        private void ComputeCloseWindowResult(RecognitionResult result)
+        private void ComputeWindowResult(RecognitionResult result)
         {
-            EVerbs action = EVerbs.undefined;
-            ENouns noun = ENouns.undefined;
-            //traverse recognized words
-            for (int i = result.Words.Count - 1; i >= 0; --i)
-            {
-                if (action == EVerbs.undefined)
-                {
-                    //traverse resource strings
-                    for (int j = 0; j < ResourceStrings.verbs.Length; ++j)
-                    {
-                        //compare recognized and resource words
-                        if (result.Words[i].Text == ResourceStrings.verbs[j])
-                        {
-                            //if they match check for the matching action and break loops
-                            if (j <= (int)EVerbs.close)
-                            {
-                                action = EVerbs.close;
-                                break;
-                            }
-                            if (j <= (int)EVerbs.goTo)
-                            {
-                                action = EVerbs.goTo;
-                                break;
-                            }
-                            if (j <= (int)EVerbs.open)
-                            {
-                                action = EVerbs.open;
-                                break;
-                            }
-                        }
-                    }
-                }
-                else if (noun == ENouns.undefined)
-                {
-                    for (int j = 0; j < ResourceStrings.nouns.Length; ++j)
-                    {
-                        if (result.Words[i].Text == ResourceStrings.nouns[j])
-                        {
-                            if (j <= (int)ENouns.back)
-                            {
-                                noun = ENouns.back;
-                                break;
-                            }
-                            if (j <= (int)ENouns.grammarExercise)
-                            {
-                                noun = ENouns.grammarExercise;
-                                break;
-                            }
-                            if (j <= (int)ENouns.grammarExplanation)
-                            {
-                                noun = ENouns.grammarExplanation;
-                                break;
-                            }
-                            if (j <= (int)ENouns.menu)
-                            {
-                                noun = ENouns.menu;
-                                break;
-                            }
-                            if (j <= (int)ENouns.options)
-                            {
-                                noun = ENouns.options;
-                                break;
-                            }
-                            if (j <= (int)ENouns.program)
-                            {
-                                noun = ENouns.program;
-                                break;
-                            }
-                            if (j <= (int)ENouns.thisWindow)
-                            {
-                                noun = ENouns.thisWindow;
-                                break;
-                            }
-                            if (j <= (int)ENouns.wordsExercise)
-                            {
-                                noun = ENouns.wordsExercise;
-                                break;
-                            }
-                        }
-                    }
-                }
-            }
+            EVerbs action = (EVerbs)Enum.Parse(typeof(EVerbs), result.Semantics[ResourceStrings.actionKey].Value as String);
+            ENouns noun = (ENouns)Enum.Parse(typeof(ENouns), result.Semantics[ResourceStrings.targetKey].Value as String);
 
-            ComputeComand(noun, action);
+            ComputeWindowComand(noun, action);
         }
-
-        private void ComputeComand(ENouns noun, EVerbs action)
+        
+        private void ComputeWindowComand(ENouns noun, EVerbs action)
         {
             if (action == EVerbs.close)
             {
@@ -261,6 +231,7 @@ namespace Prototype.Speech
                     case ENouns.program: windowCtrl.CloseApp(); break;
                     case ENouns.thisWindow: CloseThisWindow(); break;
                 }
+                return;
             }
 
             if (action == EVerbs.open)
@@ -273,6 +244,7 @@ namespace Prototype.Speech
                     case ENouns.options: windowCtrl.ChangeWindowContent(EContentType.optionsContent); break;
                     case ENouns.wordsExercise: windowCtrl.ChangeWindowContent(EContentType.wordsExerciseContent); break;
                 }
+                return;
             }
 
             if (action == EVerbs.goTo)
@@ -286,10 +258,10 @@ namespace Prototype.Speech
                     case ENouns.options: windowCtrl.ChangeWindowContent(EContentType.optionsContent); break;
                     case ENouns.wordsExercise: windowCtrl.ChangeWindowContent(EContentType.wordsExerciseContent); break;
                 }
+                return;
             }
-
         }
-
+        
         private void CloseThisWindow()
         {
             if (windowCtrl.CurrentContentType == EContentType.mainMenuContent)
@@ -300,6 +272,64 @@ namespace Prototype.Speech
             {
                 windowCtrl.ChangeWindowContent(EContentType.mainMenuContent);
             }
+        }
+
+        private void ComputeChooseLessonResult(RecognitionResult result)
+        {
+            ENouns noun = (ENouns)Enum.Parse(typeof(ENouns), result.Semantics[ResourceStrings.targetKey].Value as String);
+
+            if (noun == ENouns.all)
+            {
+                data.SelectedLessons = data.Lessons;
+
+                view.UpdateView();
+                return;
+            }
+
+            if (noun == ENouns.nothing)
+            {
+                data.SelectedLessons = null;
+
+                view.UpdateView();
+                return;
+            }
+
+            if (noun == ENouns.lesson)
+            {
+                int l = extractNumber(result.Words[0].Text);
+                data.SelectedLessons = new Lesson[] { data.Lessons[l - 1] };
+
+                view.UpdateView();
+                return;
+            }
+
+            if (noun == ENouns.lessonFromTo)
+            {
+                int from = extractNumber(result.Words[0].Text) - 1;
+                int to = extractNumber(result.Words[2].Text) - 1;
+
+                if (from > to)
+                {
+                    int hv = from;
+                    from = to;
+                    to = hv;
+                }
+
+                List<Lesson> lessons = new List<Lesson>();
+                for (int i = from; i <= to ; ++i)
+                {
+                    lessons.Add(data.Lessons[i]);
+                }
+                data.SelectedLessons = lessons.ToArray();
+                view.UpdateView();
+            }
+        }
+
+        private int extractNumber(String text)
+        {
+            char[] lesson = text.ToCharArray();
+            String number = new String(lesson, 1, lesson.Length - 2);
+            return Convert.ToInt32(number);
         }
 
         #endregion

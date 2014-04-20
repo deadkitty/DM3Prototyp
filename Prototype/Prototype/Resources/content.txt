@@ -1,52 +1,28 @@
-49
-Minna No Nihongo L 1|0|29
-Minna No Nihongo L 1 Kanji - Kana|0|22
-Minna No Nihongo L 2|0|44
-Minna No Nihongo L 2 Kanji - Kana|0|15
-Minna No Nihongo L 3|0|39
-Minna No Nihongo L 3 Kanji - Kana|0|20
-Minna No Nihongo L 4|0|42
-Minna No Nihongo L 4 Kanji - Kana|0|39
-Minna No Nihongo L 5|0|40
-Minna No Nihongo L 5 Kanji - Kana|0|50
-Minna No Nihongo L 6|0|48
-Minna No Nihongo L 6 Kanji - Kana|0|32
-Minna No Nihongo L 7|0|39
-Minna No Nihongo L 7 Kanji - Kana|0|19
-Minna No Nihongo L 8|0|49
-Minna No Nihongo L 8 Kanji - Kana|0|37
-Minna No Nihongo L 9|0|45
-Minna No Nihongo L 9 Kanji - Kana|0|28
-Minna No Nihongo L10|0|45
-Minna No Nihongo L10 Kanji - Kana|0|31
-Minna No Nihongo L11|0|52
-Minna No Nihongo L11 Kanji - Kana|0|28
-Minna No Nihongo L12|0|41
-Minna No Nihongo L12 Kanji - Kana|0|34
-Minna No Nihongo L13|0|36
-Minna No Nihongo L13 Kanji - Kana|0|27
-Minna No Nihongo L14|0|38
-Minna No Nihongo L14 Kanji - Kana|0|25
-Minna No Nihongo L15|0|25
-Minna No Nihongo L15 Kanji - Kana|0|23
-Minna No Nihongo L16|0|42
-Minna No Nihongo L16 Kanji - Kana|0|32
-Minna No Nihongo L17|0|38
-Minna No Nihongo L17 Kanji - Kana|0|30
-Minna No Nihongo L18|0|26
-Minna No Nihongo L18 Kanji - Kana|0|20
-Minna No Nihongo L19|0|30
-Minna No Nihongo L19 Kanji - Kana|0|21
-Minna No Nihongo L20|0|24
-Minna No Nihongo L20 Kanji - Kana|0|12
-Minna No Nihongo L21|0|33
-Minna No Nihongo L21 Kanji - Kana|0|16
-Minna No Nihongo L22|0|17
-Minna No Nihongo L22 Kanji - Kana|0|8
-Minna No Nihongo L23|0|29
-Minna No Nihongo L23 Kanji - Kana|0|26
-Minna No Nihongo L24|0|18
-Minna No Nihongo L24 Kanji - Kana|0|13
+25
+Minna No Nihongo L 1|0|51
+Minna No Nihongo L 2|0|59
+Minna No Nihongo L 3|0|59
+Minna No Nihongo L 4|0|81
+Minna No Nihongo L 5|0|90
+Minna No Nihongo L 6|0|80
+Minna No Nihongo L 7|0|58
+Minna No Nihongo L 8|0|86
+Minna No Nihongo L 9|0|73
+Minna No Nihongo L10|0|76
+Minna No Nihongo L11|0|80
+Minna No Nihongo L12|0|75
+Minna No Nihongo L13|0|63
+Minna No Nihongo L14|0|63
+Minna No Nihongo L15|0|48
+Minna No Nihongo L16|0|74
+Minna No Nihongo L17|0|68
+Minna No Nihongo L18|0|46
+Minna No Nihongo L19|0|51
+Minna No Nihongo L20|0|36
+Minna No Nihongo L21|0|49
+Minna No Nihongo L22|0|25
+Minna No Nihongo L23|0|55
+Minna No Nihongo L24|0|31
 Minna No Nihongo L24|1|9
 わたし|ich||6|0
 わたしたち|wir||11|0
