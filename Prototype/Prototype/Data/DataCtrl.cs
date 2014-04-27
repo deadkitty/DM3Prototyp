@@ -31,6 +31,8 @@ namespace Prototype.DataModel
         public SkipThisDel SkipThis;
         public CheckCurrrentDel CheckCurrent;
 
+        IView view;
+
         #endregion
 
         #region Properties
@@ -39,6 +41,12 @@ namespace Prototype.DataModel
         {
             get { return data; }
             set { data = value; }
+        }
+        
+        public IView View
+        {
+            get { return view; }
+            set { view = value; }
         }
 
         #endregion
@@ -217,7 +225,6 @@ namespace Prototype.DataModel
 
             //randomize loaded items and set first item
             RandomizeLesson();
-            LoadNext();
         }
         
         #endregion
@@ -257,11 +264,13 @@ namespace Prototype.DataModel
         private void LoadNextWord()
         {
             data.ActiveWord = data.Words[indexOfCurrent++ % data.Words.Length];
+            view.UpdateView();
         }
 
         private void LoadNextSentence()
         {
             data.ActiveSentence = data.Sentences[indexOfCurrent++ % data.Sentences.Length];
+            view.UpdateView();
         }
 
         #endregion
@@ -280,6 +289,7 @@ namespace Prototype.DataModel
             Word hv = data.Words[indexOfCurrent];
             data.Words[indexOfCurrent] = data.Words[data.Words.Length - skipIndex];
             data.Words[data.Words.Length - skipIndex] = hv;
+            view.UpdateView();
         }
 
         public void SkipSentence()
@@ -294,6 +304,7 @@ namespace Prototype.DataModel
             Sentence hv = data.Sentences[indexOfCurrent];
             data.Sentences[indexOfCurrent] = data.Sentences[data.Sentences.Length - skipIndex];
             data.Sentences[data.Sentences.Length - skipIndex] = hv;
+            view.UpdateView();
         }
         
         #endregion

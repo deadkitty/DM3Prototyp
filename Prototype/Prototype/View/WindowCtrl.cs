@@ -7,11 +7,11 @@ using Prototype.DataModel;
 namespace Prototype.View
 {
     public class WindowCtrl
-    {        
+    {
         #region Fields
 
         App application;
-        
+
         IView view;
 
         List<EContentType> contentTrace;
@@ -23,7 +23,7 @@ namespace Prototype.View
         #endregion
 
         #region Properties
-        
+
         public App Application
         {
             get { return application; }
@@ -35,7 +35,7 @@ namespace Prototype.View
             get { return view; }
             set { view = value; }
         }
-        
+
         public EContentType CurrentContentType
         {
             get { return currentContentType; }
@@ -80,7 +80,7 @@ namespace Prototype.View
 
             switch (newContentType)
             {
-                case EContentType.mainMenuContent: dataCtrl.Initialize(EContentType.chooseWordSetsContent); break;      //TODO: zeile wieder entfernen
+                case EContentType.mainMenuContent: dataCtrl.Initialize(currentContentType); break;      //TODO: zeile wieder entfernen
                 case EContentType.chooseWordSetsContent: dataCtrl.Initialize(newContentType); break;
                 case EContentType.chooseSentenceSetsContent: dataCtrl.Initialize(newContentType); break;
             }
@@ -101,7 +101,7 @@ namespace Prototype.View
         {
             if (contentTrace.Count == 0)
                 return;
-                        
+
             ChangeWindowContent(contentTrace[contentTrace.Count - 1]);
             contentTrace.RemoveAt(contentTrace.Count - 1);
         }

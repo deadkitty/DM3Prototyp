@@ -141,7 +141,7 @@ namespace Prototype.Speech
             recognitionEngine.LoadGrammar(grammar);
         }
 
-        private void LoadChooseLessonGrammar()
+        public void LoadChooseLessonGrammar()
         {
             GrammarBuilder gb = new GrammarBuilder();
             gb.Culture = culture;
@@ -250,7 +250,7 @@ namespace Prototype.Speech
                     case ENouns.grammarExplanation: windowCtrl.ChangeWindowContent(EContentType.grammarExplanationContent); break;
                     case ENouns.menu: windowCtrl.ChangeWindowContent(EContentType.mainMenuContent); break;
                     case ENouns.options: windowCtrl.ChangeWindowContent(EContentType.optionsContent); break;
-                    case ENouns.wordsExercise: windowCtrl.ChangeWindowContent(EContentType.wordsExerciseContent); break;
+                    case ENouns.wordsExercise: windowCtrl.ChangeWindowContent(EContentType.wordsPracticeContent); break;
                 }
                 return;
             }
@@ -264,7 +264,7 @@ namespace Prototype.Speech
                     case ENouns.grammarExplanation: windowCtrl.ChangeWindowContent(EContentType.grammarExplanationContent); break;
                     case ENouns.menu: windowCtrl.ChangeWindowContent(EContentType.mainMenuContent); break;
                     case ENouns.options: windowCtrl.ChangeWindowContent(EContentType.optionsContent); break;
-                    case ENouns.wordsExercise: windowCtrl.ChangeWindowContent(EContentType.wordsExerciseContent); break;
+                    case ENouns.wordsExercise: windowCtrl.ChangeWindowContent(EContentType.wordsPracticeContent); break;
                 }
                 return;
             }

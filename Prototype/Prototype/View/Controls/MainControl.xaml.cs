@@ -11,8 +11,7 @@ using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
-using Prototype.DataModel;
-using Prototype.DataModel.Tables;
+
 
 namespace Prototype.View.Controls
 {
@@ -22,58 +21,94 @@ namespace Prototype.View.Controls
     public partial class MainControl : UserControl
     {
         WindowCtrl ctrl;
-
-        Data data;
-
+      
         public MainControl()
         {
             InitializeComponent();
             ctrl = WindowCtrl.GetInstance();
-            data = Data.GetInstance();
-
-            for (int i = 0; i < data.Lessons.Length; ++i)
-            {
-                data.Lessons[i].listIndex = i + 1;
-                lessonsListbox.Items.Add(data.Lessons[i]);
-            }
-            lessonsListbox.SelectedItems.Clear();
-
         }
 
         private void grammarExplanationButton_Click(object sender, RoutedEventArgs e)
         {
-            ctrl.ChangeWindowContent(EContentType.grammarExplanationContent);
+			ctrl.ChangeWindowContent(EContentType.grammarExplanationContent);
         }
 
         private void grammarExerciseButton_Click(object sender, RoutedEventArgs e)
-        {
-            ctrl.ChangeWindowContent(EContentType.grammarExerciseContent);
+		{
+			ctrl.ChangeWindowContent(EContentType.chooseSentenceSetsContent);
         }
 
-        private void closeAppButton_Click(object sender, RoutedEventArgs e)
+		private void wordsExercisesButton_click(object sender, RoutedEventArgs e)
+		{
+			ctrl.ChangeWindowContent(EContentType.chooseWordSetsContent);
+		}
+
+        private void wordsPracticeButton_Click(object sender, RoutedEventArgs e)
         {
-            ctrl.CloseApp();
+            ctrl.ChangeWindowContent(EContentType.wordsPracticeContent);
         }
 
-        public void SelectEntries()
+        private void GrammarExerciseStackPanelMouseEnter(object sender, MouseEventArgs e)
         {
-            if (data.SelectedLessons == null)
-            {
-                lessonsListbox.SelectedItems.Clear();
-                return;
-            }
-
-            if (data.SelectedLessons == data.Lessons)
-            {
-                lessonsListbox.SelectAll();
-                return;
-            }
-
-            lessonsListbox.SelectedItems.Clear();
-            foreach (object o in data.SelectedLessons)
-            {
-                lessonsListbox.SelectedItems.Add(o);
-            }
+            GrammarExerciseStackPanel.Background = Brushes.BlanchedAlmond;
+            GrammarExerciseTitel.Foreground = Brushes.Gray;
+            GrammarExerciseText.Foreground = Brushes.Gray;
         }
+
+        private void GrammarExerciseStackPanelMouseLeave(object sender, MouseEventArgs e)
+        {
+            GrammarExerciseStackPanel.Background = Brushes.Gray;
+            GrammarExerciseTitel.Foreground = Brushes.WhiteSmoke;
+            GrammarExerciseText.Foreground = Brushes.WhiteSmoke;
+        }
+
+        private void SpeechControlMouseEnter(object sender, MouseEventArgs e)
+        {
+            SpeechControlStackPanel.Background = Brushes.BlanchedAlmond;
+            SpeechControlTitel.Foreground = Brushes.Gray;
+            SpeechControlText.Foreground = Brushes.Gray;
+        }
+
+        private void SpeechControlMouseLeave(object sender, MouseEventArgs e)
+        {
+            SpeechControlStackPanel.Background = Brushes.Gray;
+            SpeechControlTitel.Foreground = Brushes.WhiteSmoke;
+            SpeechControlText.Foreground = Brushes.WhiteSmoke;
+        }
+
+        private void SettingMouseEnter(object sender, MouseEventArgs e)
+        {
+            SettingStackPanel.Background = Brushes.BlanchedAlmond;
+            SettingTitel.Foreground = Brushes.Gray;
+            SettingText.Foreground = Brushes.Gray;
+        }
+
+        private void SettingMouseLeave(object sender, MouseEventArgs e)
+        {
+            SettingStackPanel.Background = Brushes.Gray;
+            SettingTitel.Foreground = Brushes.WhiteSmoke;
+            SettingText.Foreground = Brushes.WhiteSmoke;
+        }
+
+		//public void SelectEntries()
+		//{
+		//    if (data.SelectedLessons == null)
+		//    {
+		//        lessonsListbox.SelectedItems.Clear();
+		//        return;
+		//    }
+
+		//    if (data.SelectedLessons == data.Lessons)
+		//    {
+		//        lessonsListbox.SelectAll();
+		//        return;
+		//    }
+
+		//    lessonsListbox.SelectedItems.Clear();
+		//    foreach (object o in data.SelectedLessons)
+		//    {
+		//        lessonsListbox.SelectedItems.Add(o);
+		//    }
+		//}
     }
 }

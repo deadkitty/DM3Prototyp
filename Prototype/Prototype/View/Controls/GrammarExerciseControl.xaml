@@ -4,10 +4,36 @@
              xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
              xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
              mc:Ignorable="d"
-             Height="350" Width="525">
+             Height="410" Width="880">
     <Grid>
-        <Button Content="zurück" Height="23" HorizontalAlignment="Left" Margin="10,39,0,0" Name="backButton" VerticalAlignment="Top" Width="75" Click="backButton_Click" />
-        <Button Content="Hauptmenü" Height="23" HorizontalAlignment="Left" Margin="10,10,0,0" Name="mainMenuButton" VerticalAlignment="Top" Width="75" Click="mainMenuButton_Click" />
-        <Label Content="文法の練習" Height="28" HorizontalAlignment="Left" IsEnabled="True" Margin="170,21,0,0" Name="label1" VerticalAlignment="Top" Width="70" />
+        <Grid.RowDefinitions>
+            <RowDefinition Height="103*"/>
+            <RowDefinition Height="102*"/>
+        </Grid.RowDefinitions>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="40*"/>
+            <ColumnDefinition Width="174*"/>
+            <ColumnDefinition Width="40*"/>
+        </Grid.ColumnDefinitions>
+
+        <StackPanel Grid.Column="0" Grid.Row="0" Grid.RowSpan="2" Margin="0,0,5,0"/>
+        <StackPanel Grid.Column="1" Grid.Row="0" Grid.RowSpan="2">
+        	<StackPanel Orientation="Vertical" Margin="30">
+                <Label x:Name="LessonNumber"  Content="Lesson 1" Foreground="#FF7BA60C" FontSize="40"></Label>
+                <Label x:Name="LessonContent" Content="Enter the missing word. " Foreground="WhiteSmoke" FontSize="20"></Label>
+			<StackPanel Orientation="Horizontal" Margin="0,50,0,0">        		
+		        <TextBlock  Text="今"  Margin="5" FontSize="45"  Foreground="WhiteSmoke"> </TextBlock>
+				<TextBlock  Text="日"  FontSize="45" Margin="5" Foreground="WhiteSmoke"> </TextBlock>
+				<TextBlock  Text="は"  FontSize="45" Margin="5" Foreground="WhiteSmoke"> </TextBlock>
+				<TextBlock  Text="買"  FontSize="45" Margin="5" Foreground="WhiteSmoke"> </TextBlock>
+				<TextBlock  Text="い"  FontSize="45" Margin="5" Foreground="WhiteSmoke"> </TextBlock>
+				<TextBox Text="____"  FontSize="45" Margin="5" Foreground="WhiteSmoke" Background="{x:Null}"> </TextBox>
+				<TextBlock  Text="に行くよ。"  FontSize="45" Margin="5" Foreground="WhiteSmoke"> </TextBlock>
+            </StackPanel>
+			</StackPanel>
+        
+        </StackPanel>
+        <Button x:Name="ButtonPrevLesson" Margin="-2.583,-98,7.583,0" Grid.Row="1" Style="{DynamicResource ButtonPreviewStyle}" Height="199" VerticalAlignment="Top" Click="PrevButton_Click" />
+        <Button x:Name="ButtonNextLesson" Grid.Column="2" Margin="12,-97,-7,100" Grid.Row="1" Style="{DynamicResource ButtonNextStyle}" RenderTransformOrigin="0.663,1.03" />
     </Grid>
 </UserControl>

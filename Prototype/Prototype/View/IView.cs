@@ -9,11 +9,11 @@ namespace Prototype.View
     {
         firstStartContent,
         mainMenuContent,
-        chooseWordSetsContent,
-        chooseSentenceSetsContent,
-        wordsExerciseContent,
-        grammarExerciseContent,
-        grammarExplanationContent,
+        chooseWordSetsContent, // Auswahl Vokabelübungen
+        chooseSentenceSetsContent, // Auswahl Text Einsetzungsübungen
+        wordsPracticeContent, // Bilder Vokabel lernen -> WordsPracticeControl.xaml
+        grammarExerciseContent, // Grammatik Text Einsetzung
+        grammarExplanationContent, // Gramatik Erklärung
         optionsContent,
         undefined,
     }

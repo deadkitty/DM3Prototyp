@@ -26,6 +26,9 @@ namespace Prototype.View
         SpeechCtrl speechCtrl;
 
         Data data;
+        DataCtrl dataCtrl;
+
+        EContentType currentContentType;
 
         int commandCounter = 0;
 
@@ -36,6 +39,8 @@ namespace Prototype.View
             InitializeComponent();
 
             data = Data.GetInstance();
+            dataCtrl = DataCtrl.GetInstance();
+            dataCtrl.View = this;
 
             windowCtrl = WindowCtrl.GetInstance();
             windowCtrl.View = this;
@@ -44,8 +49,10 @@ namespace Prototype.View
             speechCtrl = SpeechCtrl.GetInstance();
             speechCtrl.Initialize();
             speechCtrl.View = this;
+
+            currentContentType = EContentType.mainMenuContent;
         }
-        
+
         #endregion
 
         #region Events
@@ -55,27 +62,52 @@ namespace Prototype.View
 
         }
 
+        // Beendet die Applikation
+
+        private void settingButton_Click(object sender, RoutedEventArgs e)
+        {
+            windowCtrl.ChangeWindowContent(EContentType.optionsContent);
+        }
+
+        // Zeigt das Menue an
+        private void mainMenuButton_Click(object sender, RoutedEventArgs e)
+        {
+            windowCtrl.ChangeWindowContent(EContentType.mainMenuContent);
+        }
+
         #endregion
 
         #region IView
 
         public void ChangeWindowContent(EContentType newContentType)
         {
+            currentContentType = newContentType;
+
             switch (newContentType)
             {
-                case EContentType.grammarExplanationContent: contentControl.Content = new GrammarExplanationControl(); break;
-                case EContentType.   grammarExerciseContent: contentControl.Content = new    GrammarExerciseControl(); break;
-                case EContentType.          mainMenuContent: contentControl.Content = new               MainControl(); break;
+                case EContentType.mainMenuContent: contentControl.Content = new MainControl(); break;
+                case EContentType.chooseWordSetsContent: contentControl.Content = new SelectSetsControl(EContentType.grammarExplanationContent); break;
+                case EContentType.chooseSentenceSetsContent: contentControl.Content = new SelectSetsControl(EContentType.grammarExerciseContent); break;
+                case EContentType.grammarExplanationContent: contentControl.Content = new GrammarExplanationControl();
+                    mainMenuButton.Background = Brushes.Black;
+                    break;
+                case EContentType.grammarExerciseContent: contentControl.Content = new GrammarExerciseControl(); break;
+                case EContentType.wordsPracticeContent: contentControl.Content = new WordsPracticeControl(); break;
+                case EContentType.optionsContent: contentControl.Content = new SettingControl(); break;
             }
         }
 
         public void UpdateView()
         {
             Title = (++commandCounter) + data.CurrentComand;
-            if (windowCtrl.CurrentContentType == EContentType.mainMenuContent)
-                (contentControl.Content as MainControl).SelectEntries();
+
+            switch (currentContentType)
+            {
+                case EContentType.grammarExerciseContent: (contentControl.Content as GrammarExerciseControl).Update(); break;
+                case EContentType.grammarExplanationContent: (contentControl.Content as GrammarExplanationControl).Update(); break;
+            }
         }
-        
+
         #endregion
     }
 }

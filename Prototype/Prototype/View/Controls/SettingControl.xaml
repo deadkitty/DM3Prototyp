@@ -1,0 +1,24 @@
+﻿<UserControl x:Class="Prototype.View.Controls.SettingControl"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+             mc:Ignorable="d" 
+             Height="400" Width="525">
+    <Grid>
+        <StackPanel Orientation="Vertical">
+            <Label Content="Your favorite name:" FontSize="35" Foreground="WhiteSmoke"></Label>
+            <StackPanel Orientation="Horizontal">
+                <Button x:Name="masterButton" Content="Master" Margin="5" Height="50" Width="70" Click="masterNameClick"></Button>
+                <Button Content="Lord" Margin="5" Height="50" Width="70"></Button>
+                <Button Content="Wizard" Margin="5" Height="50" Width="70"></Button>
+                <Button Content="Madame" Margin="5" Height="50" Width="70"></Button>           
+
+            </StackPanel>
+            <Label x:Name="printNameBox" FontSize="30" Foreground="WhiteSmoke"></Label>
+          
+            
+            
+        </StackPanel>
+    </Grid>
+</UserControl>

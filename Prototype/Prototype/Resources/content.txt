@@ -1,4 +1,4 @@
-25
+﻿27
 Minna No Nihongo L 1|0|51
 Minna No Nihongo L 2|0|59
 Minna No Nihongo L 3|0|59
@@ -23,6 +23,8 @@ Minna No Nihongo L21|0|49
 Minna No Nihongo L22|0|25
 Minna No Nihongo L23|0|55
 Minna No Nihongo L24|0|31
+Bilder Lektion - Romaji|0|10
+Bilder Lektion - Kana|0|10
 Minna No Nihongo L24|1|9
 わたし|ich||6|0
 わたしたち|wir||11|0
@@ -1501,6 +1503,26 @@ Minna No Nihongo L24|1|9
 じぶんで|自分で||5|0
 ワゴンしゃ|ワゴン車||5|0
 べんとう|弁当||5|0
+isha|arzt.jpg||1
+aoi|blau.jpg||1
+jitensha|fahrad.png||1
+terebi|fernseher.png||1
+uchi|haus.jpg||1
+neko|katze.jpeg||1
+ame|regen.jpg||1
+akai|rot.jpg||1
+sushi|sushi.jpg||1
+takushii|taxi.png||1
+医者|arzt.jpg||1
+青い|blau.jpg||1
+自転車|fahrad.png||1
+テレビ|fernseher.png||1
+うち|haus.jpg||1
+猫|katze.jpeg||1
+雨|regen.jpg||1
+赤い|rot.jpg||1
+すし|sushi.jpg||1
+タクシー|taxi.png||1
 佐藤さん　は　私　に　クリスマスカード　を　くれました。|2,4,6|Satou-san hat mir eine Weinachtskarte geschenkt.
 私　は　木村さん　に　本　を　貸して　あげました。|2,4,6|Ich habe Frau Kimura ein Buch geliehen.
 私　は　山田さん　に　病院　の　電話番号　を　教えて　もらいました。|2,4,6,8|Yamada-san hat mir die Telefonnummer des Krankenhauses gegeben.

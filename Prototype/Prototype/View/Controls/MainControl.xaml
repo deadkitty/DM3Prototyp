@@ -4,15 +4,43 @@
              xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
              xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
              mc:Ignorable="d" 
-             Height="350" Width="525">
+             Height="400" Width="525">
+   
     <Grid>
-        <Grid.RowDefinitions>
-            <RowDefinition Height="96*" />
-            <RowDefinition Height="254*" />
-        </Grid.RowDefinitions>
-        <Button Content="Programm Beenden" Height="23" HorizontalAlignment="Left" Margin="12,68,0,0" Name="closeAppButton" VerticalAlignment="Top" Width="141" Click="closeAppButton_Click" />
-        <Button Content="Grammatik Erklärungen" Height="23" HorizontalAlignment="Left" Margin="10,10,0,0" Name="grammarExplanationButton" VerticalAlignment="Top" Width="143" Click="grammarExplanationButton_Click" />
-        <Button Content="Grammatik Übungen" Height="23" HorizontalAlignment="Left" Margin="10,39,0,0" Name="grammarExerciseButton" VerticalAlignment="Top" Width="143" Click="grammarExerciseButton_Click" />
-        <ListBox Height="326" HorizontalAlignment="Left" Margin="159,12,0,0" Name="lessonsListbox" VerticalAlignment="Top" Width="354" SelectionMode="Extended" Grid.RowSpan="2" />
+        <StackPanel  Orientation="Vertical" Width="400" Height="400" Margin="50,10,0,0">
+            <StackPanel Margin="5" x:Name="GrammarExerciseStackPanel" Background="Gray"  Orientation="Horizontal" MouseEnter="GrammarExerciseStackPanelMouseEnter" MouseLeave="GrammarExerciseStackPanelMouseLeave">
+                <Button Margin="5" Height="100" Width="100" HorizontalAlignment="Left"  x:Name="grammarExerciseButton"  VerticalAlignment="Top" Click="grammarExerciseButton_Click" >
+                    <Button.Background>
+                        <ImageBrush ImageSource="/Prototype;component/Resources/Images/Icons/Menue/grammarExcercise.png"/>
+                    </Button.Background>
+
+                </Button>
+                <StackPanel Orientation="Vertical" Margin="5">
+                    <Label x:Name="GrammarExerciseTitel" Content="Grammar Excercise" FontWeight="bold"  Foreground="WhiteSmoke" Background="Transparent" BorderBrush="Transparent" FontSize="20"/>
+                    <Label x:Name="GrammarExerciseText" Content="Irgend ein Mustertext zum Thema" Foreground="WhiteSmoke" Background="Transparent" BorderBrush="Transparent"/>
+                </StackPanel>
+            </StackPanel>
+
+            <StackPanel Margin="5" x:Name="SpeechControlStackPanel" Orientation="Horizontal" Background="Gray" MouseEnter="SpeechControlMouseEnter" MouseLeave="SpeechControlMouseLeave">
+                <Button Margin="5" Height="100" Width="100" HorizontalAlignment="Left" x:Name="wordsExercisesButton" Click="wordsExercisesButton_click">
+                    <Button.Background>
+                        <ImageBrush ImageSource="/Prototype;component/Resources/Images/Icons/Menue/SpeechControl.png"/>
+                    </Button.Background>
+                </Button>
+                <StackPanel Orientation="Vertical" Margin="5">
+                    <Label x:Name="SpeechControlTitel" Content="Speech Excercise" FontWeight="bold" FontSize="20" Foreground="WhiteSmoke" Background="Transparent" BorderBrush="Transparent"/>
+                    <Label x:Name="SpeechControlText" Content="Irgend ein Mustertext zum Thema" Foreground="WhiteSmoke" Background="Transparent" BorderBrush="Transparent"/>
+                </StackPanel>
+            </StackPanel>
+            <StackPanel Margin="5" x:Name="SettingStackPanel" Background="Gray" Orientation="Horizontal" MouseEnter="SettingMouseEnter" MouseLeave="SettingMouseLeave" >
+                <Button Margin="5" Height="100" Width="100" HorizontalAlignment="Left"  x:Name="wordsPracticeButton" VerticalAlignment="Top"  Click="wordsPracticeButton_Click" >
+
+                </Button>
+                <StackPanel Orientation="Vertical" Margin="5">
+                    <Label x:Name="SettingTitel" Content="Grammar Explain" FontWeight="bold" FontSize="20" Foreground="WhiteSmoke" Background="Transparent" BorderBrush="Transparent"/>
+                    <Label x:Name="SettingText" Content="Irgend ein Mustertext zum Thema" Foreground="WhiteSmoke" Background="Transparent" BorderBrush="Transparent"/>
+                </StackPanel>
+            </StackPanel>
+        </StackPanel>
     </Grid>
 </UserControl>

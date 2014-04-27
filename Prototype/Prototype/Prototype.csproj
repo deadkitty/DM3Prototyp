@@ -37,6 +37,8 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <ItemGroup>
+    <Reference Include="Microsoft.Expression.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL" />
+    <Reference Include="PresentationFramework.Aero" />
     <Reference Include="System" />
     <Reference Include="System.Data" />
     <Reference Include="System.Data.Linq" />
@@ -75,8 +77,21 @@
     <Compile Include="View\Controls\MainControl.xaml.cs">
       <DependentUpon>MainControl.xaml</DependentUpon>
     </Compile>
+    <Compile Include="View\Controls\SelectSetsControl.xaml.cs">
+      <DependentUpon>SelectSetsControl.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="View\Controls\SettingControl.xaml.cs">
+      <DependentUpon>SettingControl.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="View\Controls\WordsPracticeControl.xaml.cs">
+      <DependentUpon>WordsPracticeControl.xaml</DependentUpon>
+    </Compile>
     <Compile Include="View\IView.cs" />
     <Compile Include="View\WindowCtrl.cs" />
+    <Page Include="ResourceDataTemplate.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
     <Page Include="View\Controls\GrammarExerciseControl.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
@@ -88,6 +103,34 @@
     <Page Include="View\Controls\MainControl.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="View\Controls\ResourceFinsishButton.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="View\Controls\ResourceNextButton.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="View\Controls\ResourcePreviewButton.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="View\Controls\ResourceSettingButton.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="View\Controls\SelectSetsControl.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="View\Controls\SettingControl.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="View\Controls\WordsPracticeControl.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
     </Page>
     <Page Include="View\MainWindow.xaml">
       <Generator>MSBuild:Compile</Generator>
@@ -131,13 +174,37 @@
     <AppDesigner Include="Properties\" />
   </ItemGroup>
   <ItemGroup>
-    <Folder Include="Resources\Images\" />
     <Folder Include="Resources\Sounds\" />
   </ItemGroup>
   <ItemGroup>
     <CodeAnalysisDictionary Include="Resources\content.txt">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </CodeAnalysisDictionary>
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\Images\icons\fahrrad.png" />
+    <Resource Include="Resources\Images\icons\Menue\api_finished.png" />
+    <Resource Include="Resources\Images\icons\Menue\buttonWeiter.png" />
+    <Resource Include="Resources\Images\icons\Menue\buttonZurueck.png" />
+    <Resource Include="Resources\Images\icons\Menue\grammarExcercise.png" />
+    <Resource Include="Resources\Images\icons\Menue\mainmenue_off.png" />
+    <Resource Include="Resources\Images\icons\Menue\mainmenue_on.png" />
+    <Resource Include="Resources\Images\icons\Menue\setting.png" />
+    <Resource Include="Resources\Images\icons\Menue\SpeechControl.png" />
+    <Resource Include="Resources\Images\icons\Menue\sprachenlernenLogoWeltkugel.jpg" />
+    <Resource Include="Resources\Images\icons\Objects\fahrrad.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\Images\arzt.jpg" />
+    <Resource Include="Resources\Images\blau.jpg" />
+    <Resource Include="Resources\Images\fahrad.png" />
+    <Resource Include="Resources\Images\fernseher.png" />
+    <Resource Include="Resources\Images\haus.jpg" />
+    <Resource Include="Resources\Images\katze.jpeg" />
+    <Resource Include="Resources\Images\regen.jpg" />
+    <Resource Include="Resources\Images\rot.jpg" />
+    <Resource Include="Resources\Images\sushi.jpg" />
+    <Resource Include="Resources\Images\taxi.png" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
