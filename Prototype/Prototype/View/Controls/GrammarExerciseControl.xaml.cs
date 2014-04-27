@@ -23,23 +23,17 @@ namespace Prototype.View.Controls
     {
         WindowCtrl ctrl;
         Data data;
-        
-        public static Lesson selectedLesson;
-       
+               
         public GrammarExerciseControl()
         {
             InitializeComponent();
             ctrl = WindowCtrl.GetInstance();
-            data = Data.GetInstance();
-            LessonNumber.Content = "Lesson";
-            LessonContent.Content = selectedLesson.Name;
-           
+            data = Data.GetInstance();           
         }
 
         private void backButton_Click(object sender, RoutedEventArgs e)
         {
-           // ctrl.GoBack();
-            ctrl.ChangeWindowContent(EContentType.chooseSentenceSetsContent);
+            ctrl.GoBack();
         }
 
         private void mainMenuButton_Click(object sender, RoutedEventArgs e)
@@ -49,7 +43,6 @@ namespace Prototype.View.Controls
 
         private void PrevButton_Click(object sender, System.Windows.RoutedEventArgs e)
         {
-        	// TODO: Ereignishandlerimplementierung hier einfügen.
 			ctrl.GoBack();
         }
 

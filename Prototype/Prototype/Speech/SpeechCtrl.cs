@@ -83,7 +83,6 @@ namespace Prototype.Speech
             recognitionEngine.SpeechRecognized += new EventHandler<SpeechRecognizedEventArgs>(recognitionEngine_SpeechRecognized);
 
             LoadWindowOperationsGrammar();
-            LoadChooseLessonGrammar();
 
             recognitionEngine.SetInputToDefaultAudioDevice();
             recognitionEngine.RecognizeAsync(RecognizeMode.Multiple);
@@ -246,10 +245,10 @@ namespace Prototype.Speech
             {
                 switch (noun)
                 {
-                    case ENouns.grammarExercise: windowCtrl.ChangeWindowContent(EContentType.grammarExerciseContent); break;
+                    case ENouns.grammarExercise: windowCtrl.ChangeWindowContent(EContentType.grammarPracticeContent); break;
                     case ENouns.grammarExplanation: windowCtrl.ChangeWindowContent(EContentType.grammarExplanationContent); break;
                     case ENouns.menu: windowCtrl.ChangeWindowContent(EContentType.mainMenuContent); break;
-                    case ENouns.options: windowCtrl.ChangeWindowContent(EContentType.optionsContent); break;
+                    case ENouns.options: windowCtrl.ChangeWindowContent(EContentType.settingsContent); break;
                     case ENouns.wordsExercise: windowCtrl.ChangeWindowContent(EContentType.wordsPracticeContent); break;
                 }
                 return;
@@ -260,10 +259,10 @@ namespace Prototype.Speech
                 switch (noun)
                 {
                     case ENouns.back: windowCtrl.GoBack(); break;
-                    case ENouns.grammarExercise: windowCtrl.ChangeWindowContent(EContentType.grammarExerciseContent); break;
+                    case ENouns.grammarExercise: windowCtrl.ChangeWindowContent(EContentType.grammarPracticeContent); break;
                     case ENouns.grammarExplanation: windowCtrl.ChangeWindowContent(EContentType.grammarExplanationContent); break;
                     case ENouns.menu: windowCtrl.ChangeWindowContent(EContentType.mainMenuContent); break;
-                    case ENouns.options: windowCtrl.ChangeWindowContent(EContentType.optionsContent); break;
+                    case ENouns.options: windowCtrl.ChangeWindowContent(EContentType.settingsContent); break;
                     case ENouns.wordsExercise: windowCtrl.ChangeWindowContent(EContentType.wordsPracticeContent); break;
                 }
                 return;

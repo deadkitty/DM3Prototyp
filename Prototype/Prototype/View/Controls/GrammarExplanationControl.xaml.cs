@@ -22,29 +22,15 @@ namespace Prototype.View.Controls
     /// </summary>
     public partial class GrammarExplanationControl : UserControl
     {
-        WindowCtrl ctrl;
-        public static Lesson selectedLesson;
         Data data;
-        Word word;
-        int count; // anzahl der Wörter
-        int[] setIds; // Set Id der aktuellen Lesson
-        Word[] words;
+        WindowCtrl ctrl;
+
         public GrammarExplanationControl()
         {
             InitializeComponent();
-            ctrl = WindowCtrl.GetInstance();
-            data = Data.GetInstance();
-            LessonNumber.Content = "Lesson";
-            LessonContent.Content = selectedLesson.Name;
 
-            
-            setIds = new int[1];
-            setIds[0] = selectedLesson.ID;
-            count = data.GetWords(setIds).Length;
-            words = data.GetWords(setIds);
-            // erstes Word einfügen
-            word = words.First<Word>();
-            germanWord.Text = word.JWord;
+            data = Data.GetInstance();
+            ctrl = WindowCtrl.GetInstance();
         }
 
         private void backButton_Click(object sender, RoutedEventArgs e)
@@ -55,36 +41,6 @@ namespace Prototype.View.Controls
         private void mainMenuButton_Click(object sender, RoutedEventArgs e)
         {
             ctrl.ChangeWindowContent(EContentType.mainMenuContent);
-        }
-
-        private void nextButton_Click(object sender, RoutedEventArgs e)
-        {
-            bool isLesson = false;
-
-
-            foreach (Word w in data.GetWords(setIds))
-            {
-                /*if (isLesson.Equals(true))
-                {
-                    // nächste Lesson anzeigen
-                    selectedLesson = l;
-                    LessonNumber.Content = "Lesson";
-                    LessonContent.Content = selectedLesson.Name;
-                    
-                }
-                if (l.ID.Equals(selectedLesson.ID))
-                {
-                    isLesson = true;
-                }*/
-               
-                
-            }
-           
-        }
-
-        public void Update()
-        {
-
-        }      
+        }     
     }
 }

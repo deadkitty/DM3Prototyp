@@ -12,9 +12,9 @@ namespace Prototype.View
         chooseWordSetsContent, // Auswahl Vokabelübungen
         chooseSentenceSetsContent, // Auswahl Text Einsetzungsübungen
         wordsPracticeContent, // Bilder Vokabel lernen -> WordsPracticeControl.xaml
-        grammarExerciseContent, // Grammatik Text Einsetzung
+        grammarPracticeContent, // Grammatik Text Einsetzung
         grammarExplanationContent, // Gramatik Erklärung
-        optionsContent,
+        settingsContent,
         undefined,
     }
 

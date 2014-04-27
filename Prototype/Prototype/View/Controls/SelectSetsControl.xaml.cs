@@ -22,51 +22,76 @@ namespace Prototype.View.Controls
     public partial class SelectSetsControl : UserControl
     {
         WindowCtrl ctrl;
-		Data data;
+
+        Data data;
+        DataCtrl dataCtrl;
 		SpeechCtrl speech;
        
         EContentType eContentType;
 
-
         public SelectSetsControl(EContentType e)
         {
             InitializeComponent();
+
             ctrl = WindowCtrl.GetInstance();
+
 			data = Data.GetInstance();
-			speech = SpeechCtrl.GetInstance();
+            dataCtrl = DataCtrl.GetInstance();
+
+            speech = SpeechCtrl.GetInstance();
+            speech.LoadChooseLessonGrammar();
           
             eContentType = e;
 
             printTitelListBox(eContentType);
 
-			speech.LoadChooseLessonGrammar();
-           
+            int i = 1;
 			foreach (Lesson l in data.Lessons)
 			{
+                l.listIndex = i++;
 				setsListbox.Items.Add(l);                       
 			}         
-        }
-     
-        private void excerciseButtonClick(object sender, RoutedEventArgs e)
-        {
-            if (eContentType.Equals(EContentType.grammarExplanationContent))
-                GrammarExplanationControl.selectedLesson = (Lesson)setsListbox.SelectedItem;
-            if (eContentType.Equals(EContentType.grammarExerciseContent))
-                GrammarExerciseControl.selectedLesson = (Lesson)setsListbox.SelectedItem;
-            ctrl.ChangeWindowContent(eContentType);
         }
 
         private void printTitelListBox(EContentType eContentTyp)
         {
-            if (eContentType.Equals(EContentType.grammarExerciseContent) == true)
+            if (eContentType.Equals(EContentType.grammarPracticeContent) == true)
             {
-
                 TitelListBox.Text = "Grammar Exercise Lesson";
             }
 
             if (eContentType.Equals(EContentType.grammarExplanationContent) == true)
             {
                 TitelListBox.Text = "Word Exercise Lesson";
+            }
+        }
+
+        private void practiceButton_Click(object sender, System.Windows.RoutedEventArgs e)
+        {
+            if (setsListbox.SelectedItems.Count == 0)
+            {
+                MessageBox.Show("Keine Lektion ausgewählt!");
+                return;
+            }
+
+            int setsCount = setsListbox.SelectedItems.Count;
+
+            Lesson[] lessons = new Lesson[setsCount];
+
+            for (int i = 0; i < setsCount; ++i)
+            {
+                lessons[i] = setsListbox.SelectedItems[i] as Lesson;
+            }
+
+            dataCtrl.Load(lessons);
+
+            if (lessons[0].type == (int)Lesson.EType.wordsPractice)
+            {
+                ctrl.ChangeWindowContent(EContentType.wordsPracticeContent);
+            }
+            else
+            {
+                ctrl.ChangeWindowContent(EContentType.grammarPracticeContent);
             }
         }
     }

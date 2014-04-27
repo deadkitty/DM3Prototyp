@@ -66,7 +66,6 @@
     <Compile Include="Data\Tables\Lesson.cs" />
     <Compile Include="Data\Tables\Sentence.cs" />
     <Compile Include="Data\Tables\Word.cs" />
-    <Compile Include="Practice\PracticeCtrl.cs" />
     <Compile Include="Speech\ResourceStrings.cs" />
     <Compile Include="View\Controls\GrammarExerciseControl.xaml.cs">
       <DependentUpon>GrammarExerciseControl.xaml</DependentUpon>
@@ -177,34 +176,76 @@
     <Folder Include="Resources\Sounds\" />
   </ItemGroup>
   <ItemGroup>
-    <CodeAnalysisDictionary Include="Resources\content.txt">
+    <Content Include="Resources\content.txt">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
-    </CodeAnalysisDictionary>
+    </Content>
   </ItemGroup>
   <ItemGroup>
-    <Resource Include="Resources\Images\icons\fahrrad.png" />
-    <Resource Include="Resources\Images\icons\Menue\api_finished.png" />
-    <Resource Include="Resources\Images\icons\Menue\buttonWeiter.png" />
-    <Resource Include="Resources\Images\icons\Menue\buttonZurueck.png" />
-    <Resource Include="Resources\Images\icons\Menue\grammarExcercise.png" />
-    <Resource Include="Resources\Images\icons\Menue\mainmenue_off.png" />
-    <Resource Include="Resources\Images\icons\Menue\mainmenue_on.png" />
-    <Resource Include="Resources\Images\icons\Menue\setting.png" />
-    <Resource Include="Resources\Images\icons\Menue\SpeechControl.png" />
-    <Resource Include="Resources\Images\icons\Menue\sprachenlernenLogoWeltkugel.jpg" />
-    <Resource Include="Resources\Images\icons\Objects\fahrrad.png" />
+    <Resource Include="Resources\Images\icons\fahrrad.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Resource>
+    <Resource Include="Resources\Images\icons\Menue\api_finished.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Resource>
+    <Resource Include="Resources\Images\icons\Menue\buttonWeiter.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Resource>
+    <Resource Include="Resources\Images\icons\Menue\buttonZurueck.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Resource>
+    <Resource Include="Resources\Images\icons\Menue\grammarExcercise.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Resource>
+    <Resource Include="Resources\Images\icons\Menue\mainmenue_off.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Resource>
+    <Resource Include="Resources\Images\icons\Menue\mainmenue_on.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Resource>
+    <Resource Include="Resources\Images\icons\Menue\setting.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Resource>
+    <Resource Include="Resources\Images\icons\Menue\SpeechControl.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Resource>
+    <Resource Include="Resources\Images\icons\Menue\sprachenlernenLogoWeltkugel.jpg">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Resource>
+    <Resource Include="Resources\Images\icons\Objects\fahrrad.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Resource>
   </ItemGroup>
   <ItemGroup>
-    <Resource Include="Resources\Images\arzt.jpg" />
-    <Resource Include="Resources\Images\blau.jpg" />
-    <Resource Include="Resources\Images\fahrad.png" />
-    <Resource Include="Resources\Images\fernseher.png" />
-    <Resource Include="Resources\Images\haus.jpg" />
-    <Resource Include="Resources\Images\katze.jpeg" />
-    <Resource Include="Resources\Images\regen.jpg" />
-    <Resource Include="Resources\Images\rot.jpg" />
-    <Resource Include="Resources\Images\sushi.jpg" />
-    <Resource Include="Resources\Images\taxi.png" />
+    <Resource Include="Resources\Images\arzt.jpg">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Resource>
+    <Resource Include="Resources\Images\blau.jpg">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Resource>
+    <Resource Include="Resources\Images\fahrad.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Resource>
+    <Resource Include="Resources\Images\fernseher.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Resource>
+    <Resource Include="Resources\Images\haus.jpg">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Resource>
+    <Resource Include="Resources\Images\katze.jpeg">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Resource>
+    <Resource Include="Resources\Images\regen.jpg">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Resource>
+    <Resource Include="Resources\Images\rot.jpg">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Resource>
+    <Resource Include="Resources\Images\sushi.jpg">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Resource>
+    <Resource Include="Resources\Images\taxi.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Resource>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 

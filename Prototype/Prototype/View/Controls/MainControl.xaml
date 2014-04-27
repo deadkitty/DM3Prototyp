@@ -33,7 +33,7 @@
                 </StackPanel>
             </StackPanel>
             <StackPanel Margin="5" x:Name="SettingStackPanel" Background="Gray" Orientation="Horizontal" MouseEnter="SettingMouseEnter" MouseLeave="SettingMouseLeave" >
-                <Button Margin="5" Height="100" Width="100" HorizontalAlignment="Left"  x:Name="wordsPracticeButton" VerticalAlignment="Top"  Click="wordsPracticeButton_Click" >
+                <Button Margin="5" Height="100" Width="100" HorizontalAlignment="Left"  x:Name="grammarExplanationButton" VerticalAlignment="Top"  Click="grammarExplanationButton_Click" >
 
                 </Button>
                 <StackPanel Orientation="Vertical" Margin="5">

@@ -36,7 +36,14 @@ namespace Prototype.DataModel.Tables
             JWord = wordLineFragments[0];
             Translation = wordLineFragments[1];
 
-            IsImagePath = false;
+            if (wordLineFragments[2] == "0")
+            {
+                IsImagePath = false;
+            }
+            else
+            {
+                IsImagePath = true;
+            }
 
             this.SetID = setID;
         }

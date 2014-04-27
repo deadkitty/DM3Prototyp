@@ -3,9 +3,14 @@
              xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
              xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
              xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
-             mc:Ignorable="d" 
-             d:DesignHeight="300" d:DesignWidth="300">
+             mc:Ignorable="d" Height="410" Width="880">
     <Grid>
-        <TextBlock Text="Hier sind einige Grammatikerklärungen zum Thema Japan" Foreground="WhiteSmoke"> </TextBlock>
+    	<Button Name="selectLessonsButton" Content="Lektionen auswählen" HorizontalAlignment="Left" Height="49" Margin="8,0,0,8" VerticalAlignment="Bottom" Width="183" Click="selectLessonsButton_Click"/>
+    	<Button Name="skipWordButton" Content="Wort überspringen" HorizontalAlignment="Right" Margin="0,0,8,8" Width="163" Height="57" VerticalAlignment="Bottom" Click="skipWordButton_Click"/>
+    	<TextBox Name="wordTextbox" Margin="351.253,0,8,69" VerticalAlignment="Bottom" FontSize="26.667" Text="wort" KeyDown="wordTextbox_KeyDown"/>
+    	<Label Content="Wort eingeben" HorizontalAlignment="Left" Height="45" Margin="155,0,0,69" VerticalAlignment="Bottom" Width="196.253" FontSize="26.667"/>
+    	<TextBlock Margin="351.253,0,8,157.47" TextWrapping="Wrap" Text="Gesuchtes wort" Name="translationTextblock" FontSize="26.667" VerticalAlignment="Bottom"/>
+    	<TextBlock Margin="351.253,0,8,118" TextWrapping="Wrap" Text="Richtige Antwort" x:Name="correctAnswerTextblock" FontSize="26.667" VerticalAlignment="Bottom"/>
+        <Image     Margin="351.253,8,0,0" Name="imageBox" Height="245" HorizontalAlignment="Left" Stretch="Uniform"  VerticalAlignment="Top" Width="517" Source="/Prototype;component/Resources/Images/arzt.jpg" />
     </Grid>
 </UserControl>

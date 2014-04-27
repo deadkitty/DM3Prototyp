@@ -80,7 +80,6 @@ namespace Prototype.View
 
             switch (newContentType)
             {
-                case EContentType.mainMenuContent: dataCtrl.Initialize(currentContentType); break;      //TODO: zeile wieder entfernen
                 case EContentType.chooseWordSetsContent: dataCtrl.Initialize(newContentType); break;
                 case EContentType.chooseSentenceSetsContent: dataCtrl.Initialize(newContentType); break;
             }

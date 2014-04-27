@@ -28,11 +28,6 @@ namespace Prototype.View.Controls
             ctrl = WindowCtrl.GetInstance();
         }
 
-        private void grammarExplanationButton_Click(object sender, RoutedEventArgs e)
-        {
-			ctrl.ChangeWindowContent(EContentType.grammarExplanationContent);
-        }
-
         private void grammarExerciseButton_Click(object sender, RoutedEventArgs e)
 		{
 			ctrl.ChangeWindowContent(EContentType.chooseSentenceSetsContent);
@@ -43,9 +38,9 @@ namespace Prototype.View.Controls
 			ctrl.ChangeWindowContent(EContentType.chooseWordSetsContent);
 		}
 
-        private void wordsPracticeButton_Click(object sender, RoutedEventArgs e)
+        private void grammarExplanationButton_Click(object sender, RoutedEventArgs e)
         {
-            ctrl.ChangeWindowContent(EContentType.wordsPracticeContent);
+            ctrl.ChangeWindowContent(EContentType.grammarExplanationContent);
         }
 
         private void GrammarExerciseStackPanelMouseEnter(object sender, MouseEventArgs e)
@@ -89,26 +84,5 @@ namespace Prototype.View.Controls
             SettingTitel.Foreground = Brushes.WhiteSmoke;
             SettingText.Foreground = Brushes.WhiteSmoke;
         }
-
-		//public void SelectEntries()
-		//{
-		//    if (data.SelectedLessons == null)
-		//    {
-		//        lessonsListbox.SelectedItems.Clear();
-		//        return;
-		//    }
-
-		//    if (data.SelectedLessons == data.Lessons)
-		//    {
-		//        lessonsListbox.SelectAll();
-		//        return;
-		//    }
-
-		//    lessonsListbox.SelectedItems.Clear();
-		//    foreach (object o in data.SelectedLessons)
-		//    {
-		//        lessonsListbox.SelectedItems.Add(o);
-		//    }
-		//}
     }
 }

@@ -10,32 +10,8 @@
             <RowDefinition Height="103*"/>
             <RowDefinition Height="102*"/>
         </Grid.RowDefinitions>
-        <Grid.ColumnDefinitions>
-            <ColumnDefinition Width="40*"/>
-            <ColumnDefinition Width="174*"/>
-            <ColumnDefinition Width="40*"/>
-        </Grid.ColumnDefinitions>
-
-        <StackPanel Grid.Column="0" Grid.Row="0" Grid.RowSpan="2" Margin="0,0,5,0"/>
-        <StackPanel Grid.Column="1" Grid.Row="0" Grid.RowSpan="2">
-            <StackPanel Orientation="Vertical" Margin="30,0,0,0">
-                <Label x:Name="LessonNumber" Content="Lesson 1" Foreground="#FF7BA60C" FontSize="40"></Label>
-                <Label x:Name="LessonContent" Content="Translate the german word." Foreground="WhiteSmoke" FontSize="20"></Label>
-                <StackPanel Orientation="Horizontal" Margin="10,10,0,0">
-                    <Label x:Name="Image" Width="200" Height="200" Background="WhiteSmoke" BorderBrush="#FFBDCEAD" BorderThickness="3"  >
-                        <Image Margin="10,40,0,0" Height="104" Source="/Prototype;component/Resources/Images/Icons/Objects/fahrrad.png" Stretch="Fill" Width="169.565"/>
-
-                    </Label>
-                    <StackPanel Orientation="Vertical" Margin="20" Width="300">
-                        <TextBlock x:Name="germanWord" Text="Fahrrad"  FontWeight="Bold" FontSize="30" Margin="0,0,0,10" Foreground="#FFEDE5E5"></TextBlock>
-                        <TextBox x:Name="japanWord" Text="自転車" Background="#FFDCD4D4" Foreground="#FF212121" FontSize="20"></TextBox>
-                    </StackPanel>
-
-                </StackPanel>
-            </StackPanel>
-
-        </StackPanel>
-        <Button x:Name="ButtonBackLesson" Margin="0.417,-96,4.583,101" Grid.Row="1" Style="{DynamicResource ButtonPreviewStyle}" Click="backButton_Click" />
-        <Button x:Name="ButtonNextLesson" Grid.Column="2" Margin="10,-95,-5,98" Grid.Row="1" Style="{DynamicResource ButtonNextStyle}" Click="nextButton_Click"/>
+        <TextBlock Margin="12" Grid.RowSpan="2">
+            Erklärungen:            
+        </TextBlock>
     </Grid>
 </UserControl>

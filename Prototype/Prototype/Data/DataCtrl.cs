@@ -225,6 +225,7 @@ namespace Prototype.DataModel
 
             //randomize loaded items and set first item
             RandomizeLesson();
+            LoadNext();
         }
         
         #endregion
@@ -289,6 +290,7 @@ namespace Prototype.DataModel
             Word hv = data.Words[indexOfCurrent];
             data.Words[indexOfCurrent] = data.Words[data.Words.Length - skipIndex];
             data.Words[data.Words.Length - skipIndex] = hv;
+            data.ActiveWord = data.Words[indexOfCurrent];
             view.UpdateView();
         }
 
@@ -304,6 +306,7 @@ namespace Prototype.DataModel
             Sentence hv = data.Sentences[indexOfCurrent];
             data.Sentences[indexOfCurrent] = data.Sentences[data.Sentences.Length - skipIndex];
             data.Sentences[data.Sentences.Length - skipIndex] = hv;
+            data.ActiveSentence = data.Sentences[indexOfCurrent];
             view.UpdateView();
         }
         
