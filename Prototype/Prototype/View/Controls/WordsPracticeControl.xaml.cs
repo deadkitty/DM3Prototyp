@@ -53,7 +53,7 @@ namespace Prototype.View.Controls
         {
             if (e.Key == Key.Enter)
             {
-                if (dataCtrl.CheckCurrent(wordTextbox.Text))
+                if (dataCtrl.CheckWord(wordTextbox.Text))
                 {
                     dataCtrl.LoadNext();
                 }

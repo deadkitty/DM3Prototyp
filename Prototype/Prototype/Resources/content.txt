@@ -1545,12 +1545,12 @@ ai|Liebe|0
 いただきます|Guten Appetit|0
 猫|Katze|0
 愛|Liebe|0
-佐藤さん　は　私　に　クリスマスカード　を　くれました。|2,4,6|Satou-san hat mir eine Weinachtskarte geschenkt.
-私　は　木村さん　に　本　を　貸して　あげました。|2,4,6|Ich habe Frau Kimura ein Buch geliehen.
-私　は　山田さん　に　病院　の　電話番号　を　教えて　もらいました。|2,4,6,8|Yamada-san hat mir die Telefonnummer des Krankenhauses gegeben.
-母　は　私　に　セーター　を　送って　くれました。|2,4,6|Meine Mutter hat mir einen Pullover geschickt.
-太郎君　は　おばあちゃん　が　好き　ですか。　はい、　好き　です。　おばあちゃん　は　いつも　お菓子　を　くれます。|2,4,11,14|
-おいしい　ワイン　ですね。　ええ、　佐藤さん　が　くれました。　フランス　の　ワイン　です。|6,9|
-太郎君　は　母　の　日　に　お母さん　に　何　を　して　あげますか。　ピアノ　を　弾いて　あげます。|2,4,6,8,10,14|
-ミラーさん、　きのう　の　パーティー　の　料理　は　全部　は　自分　で　作りましたか。　いいえ、　ワンさん　に　手伝って　もらいました。|3,5,7,9,11,15|
-電車　で　行きましたか。　いいえ。　山田さん　が　車　で　送って　くれました。|2,6,8|
+佐藤さん　＿　私　＿　クリスマスカード　＿　くれました。|は、に、を|Satou-san hat mir eine Weinachtskarte geschenkt.
+私　＿　木村さん　＿　本　＿　貸して　あげました。|は、に、を|Ich habe Frau Kimura ein Buch geliehen.
+私　＿　山田さん　＿　病院　＿　電話番号　＿　教えて　もらいました。|は、に、の、を|Yamada-san hat mir die Telefonnummer des Krankenhauses gegeben.
+母　＿　私　＿　セーター　＿　送って　くれました。|は、に、を|Meine Mutter hat mir einen Pullover geschickt.
+太郎君　＿　おばあちゃん　＿　好き　ですか。　はい、　好き　です。　おばあちゃん　＿　いつも　お菓子　＿　くれます。|は、が、は、を|
+おいしい　ワイン　ですね。　ええ、　佐藤さん　＿　くれました。　フランス　＿　ワイン　です。|が、の|
+太郎君　＿　母　＿　日　＿　お母さん　＿　何　＿　して　あげますか。　ピアノ　＿　弾いて　あげます。|は、の、に、に、を、を|
+ミラーさん、　きのう　＿　パーティー　＿　料理　＿　全部　＿　自分　＿　作りましたか。　いいえ、　ワンさん　＿　手伝って　もらいました。|の、の、は、は、で、に|
+電車　＿　行きましたか。　いいえ。　山田さん　＿　車　＿　送って　くれました。|で、が、で|

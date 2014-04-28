@@ -15,7 +15,6 @@ namespace Prototype.DataModel
         public delegate void RandomizeLessonDel();
         public delegate void LoadNextDel();
         public delegate void SkipThisDel();
-        public delegate bool CheckCurrrentDel(String text);
 
         #endregion
 
@@ -29,7 +28,8 @@ namespace Prototype.DataModel
         public RandomizeLessonDel RandomizeLesson;
         public LoadNextDel LoadNext;
         public SkipThisDel SkipThis;
-        public CheckCurrrentDel CheckCurrent;
+
+        Random rand;
 
         IView view;
 
@@ -71,6 +71,7 @@ namespace Prototype.DataModel
         private DataCtrl()
         {
             data = Data.GetInstance();
+            rand = new Random();
         }
 
         #endregion
@@ -201,7 +202,6 @@ namespace Prototype.DataModel
                     RandomizeLesson = RandomizeSentences;
                     LoadNext = LoadNextSentence;
                     SkipThis = SkipSentence;
-                    CheckCurrent = CheckSentence;
                 }
                 else
                 {
@@ -212,7 +212,6 @@ namespace Prototype.DataModel
                     RandomizeLesson = RandomizeWords;
                     LoadNext = LoadNextWord;
                     SkipThis = SkipWord;
-                    CheckCurrent = CheckWord;
                 }
             }
 
@@ -270,7 +269,9 @@ namespace Prototype.DataModel
 
         private void LoadNextSentence()
         {
-            data.ActiveSentence = data.Sentences[indexOfCurrent++ % data.Sentences.Length];
+            data.ActiveSentence = data.Sentences[++indexOfCurrent % data.Sentences.Length];
+            data.ActiveSentence.insertParts = data.ActiveSentence.inserts.Split('、');
+            data.ActiveSentence.insertPosition = rand.Next(data.ActiveSentence.insertParts.Length);
             view.UpdateView();
         }
 
@@ -314,14 +315,20 @@ namespace Prototype.DataModel
 
         #region Check Against Userinput
 
-        private bool CheckWord(String text)
+        public bool CheckWord(String text)
         {
             return text == data.ActiveWord.JWord;
         }
 
-        private bool CheckSentence(String text)
+        public void CheckSentence(int clickedButtonIndex, int correctButtonIndex)
         {
-            return text == data.ActiveSentence.Text.Replace("　","");
+            if (clickedButtonIndex == correctButtonIndex)
+            {
+                LoadNext();
+
+                data.ItemsLeft++;
+                view.UpdateView();
+            }
         }
 
         #endregion

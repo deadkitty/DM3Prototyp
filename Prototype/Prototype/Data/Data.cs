@@ -147,7 +147,7 @@ namespace Prototype.DataModel
 
         public Sentence[] GetSentences(int[] setIDs)
         {
-            IQueryable<Sentence> setsQuery = from c in db.Sentences where setIDs.Contains(c.SetID) select c;
+            IQueryable<Sentence> setsQuery = from c in db.Sentences where setIDs.Contains(c.setID) select c;
             return setsQuery.ToArray();
         }
 

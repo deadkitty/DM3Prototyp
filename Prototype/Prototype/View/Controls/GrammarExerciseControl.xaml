@@ -5,6 +5,30 @@
              xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
              mc:Ignorable="d"
              Height="410" Width="880">
+	<UserControl.Resources>
+
+        <Storyboard x:Key="wrongButtonStoryboard">
+            <ColorAnimation 
+				x:Name="wrongColorAnim"
+				Duration="0:0:0.8" To="#FFF93F3F" 
+				Storyboard.TargetProperty="(Control.Background).(SolidColorBrush.Color)">
+                <ColorAnimation.EasingFunction>
+                    <QuarticEase EasingMode="EaseOut"/>
+                </ColorAnimation.EasingFunction>
+            </ColorAnimation>
+        </Storyboard>
+
+        <Storyboard x:Key="correctButtonStoryboard">
+            <ColorAnimation 
+				x:Name="correctColorAnim"
+				Duration="0:0:0.8" To="#FF98FF95" 
+				Storyboard.TargetProperty="(Control.Background).(SolidColorBrush.Color)">
+                <ColorAnimation.EasingFunction>
+                    <QuarticEase EasingMode="EaseOut"/>
+                </ColorAnimation.EasingFunction>
+            </ColorAnimation>
+        </Storyboard>
+    </UserControl.Resources>
     <Grid>
         <Grid.RowDefinitions>
             <RowDefinition Height="103*"/>
@@ -15,25 +39,18 @@
             <ColumnDefinition Width="174*"/>
             <ColumnDefinition Width="40*"/>
         </Grid.ColumnDefinitions>
-
-        <StackPanel Grid.Column="0" Grid.Row="0" Grid.RowSpan="2" Margin="0,0,5,0"/>
-        <StackPanel Grid.Column="1" Grid.Row="0" Grid.RowSpan="2">
-        	<StackPanel Orientation="Vertical" Margin="30">
-                <Label x:Name="LessonNumber"  Content="Lesson 1" Foreground="#FF7BA60C" FontSize="40"></Label>
-                <Label x:Name="LessonContent" Content="Enter the missing word. " Foreground="WhiteSmoke" FontSize="20"></Label>
-			<StackPanel Orientation="Horizontal" Margin="0,50,0,0">        		
-		        <TextBlock  Text="今"  Margin="5" FontSize="45"  Foreground="WhiteSmoke"> </TextBlock>
-				<TextBlock  Text="日"  FontSize="45" Margin="5" Foreground="WhiteSmoke"> </TextBlock>
-				<TextBlock  Text="は"  FontSize="45" Margin="5" Foreground="WhiteSmoke"> </TextBlock>
-				<TextBlock  Text="買"  FontSize="45" Margin="5" Foreground="WhiteSmoke"> </TextBlock>
-				<TextBlock  Text="い"  FontSize="45" Margin="5" Foreground="WhiteSmoke"> </TextBlock>
-				<TextBox Text="____"  FontSize="45" Margin="5" Foreground="WhiteSmoke" Background="{x:Null}"> </TextBox>
-				<TextBlock  Text="に行くよ。"  FontSize="45" Margin="5" Foreground="WhiteSmoke"> </TextBlock>
-            </StackPanel>
-			</StackPanel>
-        
-        </StackPanel>
-        <Button x:Name="ButtonPrevLesson" Margin="-2.583,-98,7.583,0" Grid.Row="1" Style="{DynamicResource ButtonPreviewStyle}" Height="199" VerticalAlignment="Top" Click="PrevButton_Click" />
-        <Button x:Name="ButtonNextLesson" Grid.Column="2" Margin="12,-97,-7,100" Grid.Row="1" Style="{DynamicResource ButtonNextStyle}" RenderTransformOrigin="0.663,1.03" />
+        <Button x:Name="prevButton" Margin="0,-97,0,0" Grid.Row="1" Style="{DynamicResource ButtonPreviewStyle}" Height="199" VerticalAlignment="Top" Click="prevButton_Click" />
+        <Button x:Name="skipSentenceButton" Grid.Column="2" Margin="0,-97,0,100" Grid.Row="1" Style="{DynamicResource ButtonNextStyle}" RenderTransformOrigin="0.663,1.03" Click="skipSentenceButton_Click" />
+        <Label x:Name="LessonNumber"  Content="Lesson 1" Foreground="#FF7BA60C" FontSize="40" Margin="8,8,8,0" VerticalAlignment="Top" Grid.Column="1"/>
+        <Label x:Name="LessonContent" Content="Enter the missing word. " Foreground="WhiteSmoke" FontSize="20" Margin="8,84.203,8,85.197" Grid.Column="1" d:LayoutOverrides="Height"/>
+        <TextBlock x:Name="sentenceTextblock"    Text="今日はスーパーへ買い物 ... 行きます" FontSize="32" Foreground="WhiteSmoke" TextWrapping="Wrap" TextTrimming="None" MaxWidth="565" Margin="8,120.803,8,0" Grid.Column="1" Height="Auto" VerticalAlignment="Top" />
+        <Button x:Name="answer1Button" Click="answer1Button_Click" Height="35" Margin="8,0,0,8" Grid.Row="1" VerticalAlignment="Bottom" Grid.Column="1" HorizontalAlignment="Left" Width="140" Background="#FF24BEFF" BorderBrush="#00707070" BorderThickness="0"/>
+        <Button x:Name="answer2Button" Click="answer2Button_Click" Height="35" Margin="156,0,0,8" Grid.Row="1" VerticalAlignment="Bottom" Grid.Column="1" HorizontalAlignment="Left" Width="140" Background="#FF24BEFF" BorderBrush="#00707070" BorderThickness="0"/>
+        <Button x:Name="answer3Button" Click="answer3Button_Click" Height="35" Margin="0,0,162,8" Grid.Row="1" VerticalAlignment="Bottom" Grid.Column="1" HorizontalAlignment="Right" Width="140" Background="#FF24BEFF" BorderBrush="#00707070" BorderThickness="0"/>
+        <Button x:Name="answer4Button" Click="answer4Button_Click" Height="35" Margin="0,0,15,9" Grid.Row="1" VerticalAlignment="Bottom" Grid.Column="1" HorizontalAlignment="Right" Width="140" Background="#FF24BEFF" BorderBrush="#00707070" BorderThickness="0"/>
+        <Button x:Name="answer5Button" Click="answer5Button_Click" Height="35" Margin="8,0,0,47" Grid.Row="1" VerticalAlignment="Bottom" Grid.Column="1" HorizontalAlignment="Left" Width="140" Background="#FF24BEFF" BorderBrush="#00707070" BorderThickness="0"/>
+        <Button x:Name="answer6Button" Click="answer6Button_Click" Height="35" Margin="155,0,0,47" Grid.Row="1" VerticalAlignment="Bottom" Grid.Column="1" HorizontalAlignment="Left" Width="140" Background="#FF24BEFF" BorderBrush="#00707070" BorderThickness="0"/>
+        <Button x:Name="answer7Button" Click="answer7Button_Click" Height="35" Margin="0,0,161,47" Grid.Row="1" VerticalAlignment="Bottom" Grid.Column="1" HorizontalAlignment="Right" Width="140" Background="#FF24BEFF" BorderBrush="#00707070" BorderThickness="0"/>
+        <Button x:Name="answer8Button" Click="answer8Button_Click"  Height="35" Margin="0,0,16,47" Grid.Row="1" VerticalAlignment="Bottom" Grid.Column="1" HorizontalAlignment="Right" Width="140" Background="#FF24BEFF" BorderBrush="#00707070" BorderThickness="0"/>
     </Grid>
 </UserControl>

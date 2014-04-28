@@ -1,8 +1,7 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
+using System.Windows.Documents;
 using System.Data.Linq.Mapping;
+using System.Text;
 
 namespace Prototype.DataModel.Tables
 {
@@ -10,19 +9,23 @@ namespace Prototype.DataModel.Tables
     public class Sentence
     {
         [Column(IsPrimaryKey = true, IsDbGenerated = true, DbType = "INT NOT NULL Identity", CanBeNull = false, AutoSync = AutoSync.OnInsert)]
-        public int ID;
+        public int id;
 
         [Column(CanBeNull = false)]
-        public int SetID;
+        public String text;
 
         [Column(CanBeNull = false)]
-        public String Text;
+        public String inserts;
 
         [Column(CanBeNull = false)]
-        public String InsertPositions;
+        public String translation;
 
         [Column(CanBeNull = false)]
-        public String Translation;
+        public int setID;
+
+        public int insertPosition;
+
+        public String[] insertParts;
 
         public Sentence()
         {
@@ -33,16 +36,47 @@ namespace Prototype.DataModel.Tables
         {
             String[] sentenceLineFragments = text.Split('|');
 
-            this.Text = sentenceLineFragments[0];
-            this.InsertPositions = sentenceLineFragments[1];
-            this.Translation = sentenceLineFragments[2];
+            this.text = sentenceLineFragments[0];
+            this.inserts = sentenceLineFragments[1];
+            this.translation = sentenceLineFragments[2];
 
-            this.SetID = setID;
+            this.setID = setID;
+        }
+
+        public String CreateInsertString()
+        {
+            String[] parts = text.Split('　');
+            int position = 0;
+
+            StringBuilder sb = new StringBuilder();
+
+            foreach (String s in parts)
+            {
+                if (s == "＿")
+                {
+                    if (position == insertPosition)
+                    {
+                        sb.Append(" ... ");
+                    }
+                    else
+                    {
+                        sb.Append(insertParts[position]);
+                    }
+                    position++;
+                }
+                else
+                {
+                    sb.Append(s);
+                }
+            }
+
+            return sb.ToString();
         }
 
         public override string ToString()
         {
-            return Text;
+            return text + "|" + inserts + "|" + translation;
         }
     }
 }
+
