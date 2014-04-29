@@ -21,7 +21,7 @@ namespace Prototype.DataModel
 
         Database db;
 
-        String currentComand;
+        String currentComand = "";
 
         int itemsLeft;
         int itemsCorrect;

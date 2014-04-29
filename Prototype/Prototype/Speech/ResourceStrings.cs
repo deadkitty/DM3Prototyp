@@ -11,6 +11,9 @@ namespace Prototype.Speech
         goTo = 1,
         open = 2,
         select = 3,
+        begin = 4,
+        show = 5,
+        please = 6,
         undefined = -1,
     }
 
@@ -28,6 +31,10 @@ namespace Prototype.Speech
         lessonFromTo = 9,
         all = 10,
         nothing = 11,
+        notAtAll = 12,
+        answer = 13,
+        word = 14,
+        sentence = 15,
         undefined = -1,
     }
 
@@ -36,6 +43,7 @@ namespace Prototype.Speech
         public const String actionKey = "action";
         public const String targetKey = "target";
         public const String targetLessonKey = "targetLesson";
+        public const String particleKey = "particleKey";
 
 #if japaneseVersion
         
@@ -56,6 +64,18 @@ namespace Prototype.Speech
         public const String selectMasu = "選びます";
         public const String selectTe = "選んで";
         public const String selectTekudasai = "選んでください";
+        public const String begin = "初め";
+        public const String beginRu = "始める";
+        public const String beginMasu = "始めます";
+        public const String beginMaru = "始まる";
+        public const String yesVerb = "はい";
+        public const String dontKnowNai = "わからない";
+        public const String dontKnowMasen = "わかりません";
+        public const String showRu = "見せる";
+        public const String showMasu = "見せます";
+        public const String showTe = "見せて";
+        public const String showTekudasai = "見せてください";
+        public const String please = "お願いします";
 
         //particle
         public const String he = "へ";
@@ -78,6 +98,11 @@ namespace Prototype.Speech
         public const String lesson2 = "課";
         public const String all = "全部";
         public const String nothing = "何も";
+        public const String notAtAll = "全然";
+        public const String answer = "解答";　//かいとう
+        public const String next = "次の";
+        public const String word = "言葉";    //ことば
+        public const String sentence = "文法";
 
         public const String cultureIdentifier = "ja-JP";
         
@@ -100,6 +125,18 @@ namespace Prototype.Speech
         public const String selectMasu = "selektieren";
         public const String selectTe = "markieren";
         public const String selectTekudasai = "auswählen bitte";
+        public const String begin = "starten";
+        public const String beginRu = "beginnen";
+        public const String beginMasu = "anfangen";
+        public const String beginMaru = "jo";
+        public const String yesVerb = "jup";
+        public const String dontKnowNai = "ahnung";
+        public const String dontKnowMasen = "weis nicht";
+        public const String showRu = "anzeigen";
+        public const String showMasu = "zeigen";
+        public const String showTe = "zeigen";
+        public const String showTekudasai = "zeigen";
+        public const String please = "bitte";
         
         //particle
         public const String he = " ";
@@ -121,6 +158,11 @@ namespace Prototype.Speech
         public const String lesson2 = "";
         public const String all = "alles";
         public const String nothing = "nichts";
+        public const String notAtAll = "keine";
+        public const String answer = "antwort";　//かいとう
+        public const String next = "nächstes";
+        public const String word = "wort";    //ことば
+        public const String sentence = "satz";
 
         public const String cultureIdentifier = "de-DE";
 

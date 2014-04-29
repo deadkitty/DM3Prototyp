@@ -15,16 +15,17 @@ using Prototype.DataModel;
 using Prototype.Speech;
 using System;
 using System.Windows.Media.Animation;
+using System.Windows.Threading;
 
 namespace Prototype.View.Controls
 {
     /// <summary>
     /// Interaktionslogik für GrammarExerciseControl.xaml
     /// </summary>
-    public partial class GrammarExerciseControl : UserControl
+    public partial class GrammarExerciseControl : UserControl, ISpeech, IDisposable
     {
         #region Fields
-        
+
         Button[] answerButtons;
 
         Random rand;
@@ -43,8 +44,13 @@ namespace Prototype.View.Controls
         ColorAnimation correctButtonColorAnim;
         ColorAnimation wrongButtonColorAnim;
 
+        bool skipUpdate = false;
+
+        DispatcherTimer timer = null;
 
         #region Particle
+
+#if japaneseVersion
 
         String[] particle = 
         {        
@@ -76,10 +82,43 @@ namespace Prototype.View.Controls
             "てから",
         };
 
+#else
+
+        String[] particle = 
+        {        
+            "wa",
+            "mo",
+            "no",
+            "o",
+            "ga",
+            "ni",
+            "e",
+            "de",
+            "to",
+            "ja",
+            "jo",
+            "ka",
+            "ne",
+            "ra",
+            "te",
+            "kara",
+            "made",
+            "madeni",
+            "yori",
+            "demo",
+            "toki",
+            "kute",
+            "tari",
+            "tara",
+            "temo",
+            "tekara",
+        };
+
+#endif
         #endregion
 
         #endregion
-               
+
         public GrammarExerciseControl()
         {
             InitializeComponent();
@@ -89,6 +128,9 @@ namespace Prototype.View.Controls
             dataCtrl = DataCtrl.GetInstance();
             windowCtrl = WindowCtrl.GetInstance();
             speechCtrl = SpeechCtrl.GetInstance();
+
+            speechCtrl.LoadNextItemGrammar();
+            speechCtrl.LoadShowAnswerGrammar();
 
             rand = new Random();
 
@@ -109,7 +151,13 @@ namespace Prototype.View.Controls
                 answer7Button,
                 answer8Button,
             };
+
+            timer = new DispatcherTimer();
+            timer.Interval = TimeSpan.FromMilliseconds(2000);
+            timer.Tick += new EventHandler(timer_Tick);
         }
+
+        #region Answer 1 to 8 Button Clicks
 
         private void answer1Button_Click(object sender, RoutedEventArgs e)
         {
@@ -151,6 +199,8 @@ namespace Prototype.View.Controls
             AnswerButtonClick(7);
         }
         
+        #endregion
+
         private void AnswerButtonClick(int clickedButtonIndex)
         {
             this.clickedButtonIndex = clickedButtonIndex;
@@ -164,19 +214,19 @@ namespace Prototype.View.Controls
                 correctButtonColorAnim.SetValue(Storyboard.TargetNameProperty, answerButtons[correctButtonIndex].Name);
                 correctButtonStoryboard.Begin();
             }
-            dataCtrl.CheckSentence(clickedButtonIndex, correctButtonIndex);
+            else
+            {
+                correctButtonStoryboard.Stop();
+                correctButtonColorAnim.SetValue(Storyboard.TargetNameProperty, answerButtons[correctButtonIndex].Name);
+                correctButtonStoryboard.Begin();
+                timer.Start();
+            }
         }
 
-        private void PlayCorrectButtonAnimation()
+        void timer_Tick(object sender, EventArgs e)
         {
-            ColorAnimation ca = new ColorAnimation(Colors.Green, TimeSpan.FromMilliseconds(800));
-                
-
-        }
-
-        private void PlayWrongButtonAnimation()
-        {
-
+            dataCtrl.LoadNext();
+            timer.Stop();
         }
 
         private void mainMenuButton_Click(object sender, RoutedEventArgs e)
@@ -191,11 +241,17 @@ namespace Prototype.View.Controls
         
         private void skipSentenceButton_Click(object sender, RoutedEventArgs e)
         {
-
+            dataCtrl.LoadNext();
         }
 
         public void Update()
         {
+            if (skipUpdate)
+            {
+                skipUpdate = false;
+                return;
+            }
+
             wrongButtonStoryboard.Stop();
             correctButtonStoryboard.Stop();
 
@@ -223,9 +279,46 @@ namespace Prototype.View.Controls
                     return;
                 }
             }
-
             correctButtonIndex = rand.Next(answerButtons.Length);
-            answerButtons[correctButtonIndex].Content = data.ActiveSentence.insertParts[data.ActiveSentence.insertPosition];            
+            answerButtons[correctButtonIndex].Content = data.ActiveSentence.insertParts[data.ActiveSentence.insertPosition];
+
+            String[] grammarParticle = new String[answerButtons.Length];
+            for (int i = 0; i < answerButtons.Length; ++i)
+            {
+                grammarParticle[i] = answerButtons[i].Content as String;
+            }
+            speechCtrl.UnloadChooseParticleGrammar();
+            speechCtrl.LoadChooseParticleGrammar(grammarParticle);
+        }
+
+        public void ExecuteCommand(ECommand command, object content = null)
+        {
+            switch (command)
+            {
+                case ECommand.skipItem: skipSentenceButton_Click(this, null); break;
+                case ECommand.showAnswer: AnswerButtonClick((correctButtonIndex + 1) % answerButtons.Length); skipUpdate = true; break;
+                case ECommand.setAnswer: ComputeAnswer((int)content); skipUpdate = true; break;
+            }
+        }
+
+        private void ComputeAnswer(int buttonIndex)
+        {
+            AnswerButtonClick(buttonIndex);
+            //for (int i = 0; i < answerButtons.Length; ++i)
+            //{
+            //    if (answerButtons[i].Content as String == text)
+            //    {
+            //        AnswerButtonClick(i);
+            //        break;
+            //    }
+            //}
+        }
+
+        public void Dispose()
+        {
+            speechCtrl.UnloadNextItemGrammar();
+            speechCtrl.UnloadShowAnswerGrammar();
+            speechCtrl.UnloadChooseParticleGrammar();
         }
     }
 }

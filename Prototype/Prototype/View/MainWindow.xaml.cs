@@ -40,13 +40,13 @@ namespace Prototype.View
             dataCtrl = DataCtrl.GetInstance();
             dataCtrl.View = this;
 
-            windowCtrl = WindowCtrl.GetInstance();
-            windowCtrl.View = this;
-            windowCtrl.ChangeWindowContent(EContentType.mainMenuContent);
-
             speechCtrl = SpeechCtrl.GetInstance();
             speechCtrl.Initialize();
             speechCtrl.View = this;
+
+            windowCtrl = WindowCtrl.GetInstance();
+            windowCtrl.View = this;
+            windowCtrl.ChangeWindowContent(EContentType.mainMenuContent);
 
             currentContentType = EContentType.mainMenuContent;
         }
@@ -77,6 +77,17 @@ namespace Prototype.View
 
         public void ChangeWindowContent(EContentType newContentType)
         {
+            switch (currentContentType)
+            {
+                case EContentType.mainMenuContent           :  break;
+                case EContentType.chooseWordSetsContent     : (contentControl.Content as SelectSetsControl).Dispose(); break;
+                case EContentType.chooseSentenceSetsContent : (contentControl.Content as SelectSetsControl).Dispose(); break;
+                case EContentType.wordsPracticeContent      : (contentControl.Content as WordsPracticeControl).Dispose(); break;
+                case EContentType.grammarPracticeContent    : (contentControl.Content as GrammarExerciseControl).Dispose(); break;
+                case EContentType.grammarExplanationContent : break;
+                case EContentType.settingsContent           : break;
+            }
+
             currentContentType = newContentType;
 
             switch (newContentType)
@@ -89,12 +100,18 @@ namespace Prototype.View
                 case EContentType.grammarExplanationContent : contentControl.Content = new GrammarExplanationControl(); break;
                 case EContentType.settingsContent           : contentControl.Content = new SettingControl(); break;
             }
+
+            speechCtrl.SpeechCommandExecuter = contentControl.Content as ISpeech;
         }
 
         public void UpdateView()
         {
+            Title = data.CurrentComand;
+
             switch (currentContentType)
             {
+                case EContentType.chooseSentenceSetsContent:(contentControl.Content as SelectSetsControl).Update(); break;
+                case EContentType.chooseWordSetsContent:(contentControl.Content as SelectSetsControl).Update(); break;
                 case EContentType.grammarPracticeContent: (contentControl.Content as GrammarExerciseControl).Update(); break;
                 case EContentType.wordsPracticeContent: (contentControl.Content as WordsPracticeControl).Update(); break;
             }

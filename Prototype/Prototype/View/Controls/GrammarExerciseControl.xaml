@@ -28,6 +28,7 @@
                 </ColorAnimation.EasingFunction>
             </ColorAnimation>
         </Storyboard>
+        
     </UserControl.Resources>
     <Grid>
         <Grid.RowDefinitions>
@@ -44,13 +45,13 @@
         <Label x:Name="LessonNumber"  Content="Lesson 1" Foreground="#FF7BA60C" FontSize="40" Margin="8,8,8,0" VerticalAlignment="Top" Grid.Column="1"/>
         <Label x:Name="LessonContent" Content="Enter the missing word. " Foreground="WhiteSmoke" FontSize="20" Margin="8,84.203,8,85.197" Grid.Column="1" d:LayoutOverrides="Height"/>
         <TextBlock x:Name="sentenceTextblock"    Text="今日はスーパーへ買い物 ... 行きます" FontSize="32" Foreground="WhiteSmoke" TextWrapping="Wrap" TextTrimming="None" MaxWidth="565" Margin="8,120.803,8,0" Grid.Column="1" Height="Auto" VerticalAlignment="Top" />
-        <Button x:Name="answer1Button" Click="answer1Button_Click" Height="35" Margin="8,0,0,8" Grid.Row="1" VerticalAlignment="Bottom" Grid.Column="1" HorizontalAlignment="Left" Width="140" Background="#FF24BEFF" BorderBrush="#00707070" BorderThickness="0"/>
-        <Button x:Name="answer2Button" Click="answer2Button_Click" Height="35" Margin="156,0,0,8" Grid.Row="1" VerticalAlignment="Bottom" Grid.Column="1" HorizontalAlignment="Left" Width="140" Background="#FF24BEFF" BorderBrush="#00707070" BorderThickness="0"/>
-        <Button x:Name="answer3Button" Click="answer3Button_Click" Height="35" Margin="0,0,162,8" Grid.Row="1" VerticalAlignment="Bottom" Grid.Column="1" HorizontalAlignment="Right" Width="140" Background="#FF24BEFF" BorderBrush="#00707070" BorderThickness="0"/>
-        <Button x:Name="answer4Button" Click="answer4Button_Click" Height="35" Margin="0,0,15,9" Grid.Row="1" VerticalAlignment="Bottom" Grid.Column="1" HorizontalAlignment="Right" Width="140" Background="#FF24BEFF" BorderBrush="#00707070" BorderThickness="0"/>
-        <Button x:Name="answer5Button" Click="answer5Button_Click" Height="35" Margin="8,0,0,47" Grid.Row="1" VerticalAlignment="Bottom" Grid.Column="1" HorizontalAlignment="Left" Width="140" Background="#FF24BEFF" BorderBrush="#00707070" BorderThickness="0"/>
-        <Button x:Name="answer6Button" Click="answer6Button_Click" Height="35" Margin="155,0,0,47" Grid.Row="1" VerticalAlignment="Bottom" Grid.Column="1" HorizontalAlignment="Left" Width="140" Background="#FF24BEFF" BorderBrush="#00707070" BorderThickness="0"/>
-        <Button x:Name="answer7Button" Click="answer7Button_Click" Height="35" Margin="0,0,161,47" Grid.Row="1" VerticalAlignment="Bottom" Grid.Column="1" HorizontalAlignment="Right" Width="140" Background="#FF24BEFF" BorderBrush="#00707070" BorderThickness="0"/>
-        <Button x:Name="answer8Button" Click="answer8Button_Click"  Height="35" Margin="0,0,16,47" Grid.Row="1" VerticalAlignment="Bottom" Grid.Column="1" HorizontalAlignment="Right" Width="140" Background="#FF24BEFF" BorderBrush="#00707070" BorderThickness="0"/>
+        <Button x:Name="answer1Button" Click="answer1Button_Click" Height="35" Margin="8,0,0,8" Grid.Row="1" VerticalAlignment="Bottom" Grid.Column="1" HorizontalAlignment="Left" Width="140"      Background="#FF24BEFF" BorderBrush="#00707070" BorderThickness="0"/>
+        <Button x:Name="answer2Button" Click="answer2Button_Click" Height="35" Margin="156,0,0,8" Grid.Row="1" VerticalAlignment="Bottom" Grid.Column="1" HorizontalAlignment="Left" Width="140"    Background="#FF24BEFF" BorderBrush="#00707070" BorderThickness="0"/>
+        <Button x:Name="answer3Button" Click="answer3Button_Click" Height="35" Margin="0,0,162,8" Grid.Row="1" VerticalAlignment="Bottom" Grid.Column="1" HorizontalAlignment="Right" Width="140"   Background="#FF24BEFF" BorderBrush="#00707070" BorderThickness="0"/>
+        <Button x:Name="answer4Button" Click="answer4Button_Click" Height="35" Margin="0,0,15,9" Grid.Row="1" VerticalAlignment="Bottom" Grid.Column="1" HorizontalAlignment="Right" Width="140"    Background="#FF24BEFF" BorderBrush="#00707070" BorderThickness="0"/>
+        <Button x:Name="answer5Button" Click="answer5Button_Click" Height="35" Margin="8,0,0,47" Grid.Row="1" VerticalAlignment="Bottom" Grid.Column="1" HorizontalAlignment="Left" Width="140"     Background="#FF24BEFF" BorderBrush="#00707070" BorderThickness="0"/>
+        <Button x:Name="answer6Button" Click="answer6Button_Click" Height="35" Margin="155,0,0,47" Grid.Row="1" VerticalAlignment="Bottom" Grid.Column="1" HorizontalAlignment="Left" Width="140"   Background="#FF24BEFF" BorderBrush="#00707070" BorderThickness="0"/>
+        <Button x:Name="answer7Button" Click="answer7Button_Click" Height="35" Margin="0,0,161,47" Grid.Row="1" VerticalAlignment="Bottom" Grid.Column="1" HorizontalAlignment="Right" Width="140"  Background="#FF24BEFF" BorderBrush="#00707070" BorderThickness="0"/>
+        <Button x:Name="answer8Button" Click="answer8Button_Click"  Height="35" Margin="0,0,16,47" Grid.Row="1" VerticalAlignment="Bottom" Grid.Column="1" HorizontalAlignment="Right" Width="140"  Background="#FF24BEFF" BorderBrush="#00707070" BorderThickness="0"/>
     </Grid>
 </UserControl>

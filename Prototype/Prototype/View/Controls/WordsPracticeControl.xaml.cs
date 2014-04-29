@@ -14,19 +14,26 @@ using System.Windows.Shapes;
 using Prototype.Speech;
 using Prototype.DataModel;
 using Prototype.DataModel.Tables;
+using System.Threading;
+using System.Windows.Threading;
 
 namespace Prototype.View.Controls
 {
     /// <summary>
     /// Interaktionslogik für WordsPracticeControl.xaml
     /// </summary>
-    public partial class WordsPracticeControl : UserControl
+    public partial class WordsPracticeControl : UserControl, ISpeech, IDisposable
     {
         WindowCtrl windowCtrl;
         SpeechCtrl speechCtrl;
 
         Data data;
         DataCtrl dataCtrl;
+
+        DispatcherTimer timer = null;
+
+        bool skipUpdate = false;
+        public bool wordCorrect;
 
         public WordsPracticeControl()
         {
@@ -37,6 +44,9 @@ namespace Prototype.View.Controls
             dataCtrl = DataCtrl.GetInstance();
             windowCtrl = WindowCtrl.GetInstance();
             speechCtrl = SpeechCtrl.GetInstance();
+
+            speechCtrl.LoadNextItemGrammar();
+            speechCtrl.LoadShowAnswerGrammar();
         }
 
         private void selectLessonsButton_Click(object sender, System.Windows.RoutedEventArgs e)
@@ -53,22 +63,59 @@ namespace Prototype.View.Controls
         {
             if (e.Key == Key.Enter)
             {
-                if (dataCtrl.CheckWord(wordTextbox.Text))
-                {
-                    dataCtrl.LoadNext();
-                }
-                else
-                {
-                    correctAnswerTextblock.Text = data.ActiveWord.JWord;
-                }
+                CheckAnswer(wordTextbox.Text);
                 e.Handled = true;
             }
         }
 
+        private void CheckAnswer(String text)
+        {
+            if (dataCtrl.CheckWord(text))
+            {
+                wordTextbox.Background = new SolidColorBrush(Colors.GreenYellow);
+                wordCorrect = true;
+
+                timer = new DispatcherTimer();
+                timer.Interval = TimeSpan.FromMilliseconds(2000);
+                timer.Tick += new EventHandler(timer_Tick);
+                timer.Start();
+            }
+            else
+            {
+                correctAnswerTextblock.Text = data.ActiveWord.JWord;
+            }
+        }
+
+        void timer_Tick(object sender, EventArgs e)
+        {
+            dataCtrl.LoadNext();
+            timer.Stop();
+        }
+
         public void Update()
+        {
+            if (skipUpdate)
+            {
+                skipUpdate = false;
+                return;
+            }
+
+            LoadNextWord();
+            if (wordCorrect)
+            {                
+                //nextWordTimer = new System.Threading.Timer(obj => { LoadNextWord(); }, null, 1000, System.Threading.Timeout.Infinite);
+                wordCorrect = false;
+            }
+            else
+            {
+            }
+        }
+
+        public void LoadNextWord()
         {
             Word w = data.ActiveWord;
 
+            wordTextbox.Background = new SolidColorBrush(Colors.White);
             wordTextbox.Text = "";
             correctAnswerTextblock.Text = "";
 
@@ -76,7 +123,7 @@ namespace Prototype.View.Controls
             {
                 imageBox.Visibility = System.Windows.Visibility.Visible;
                 imageBox.Source = new BitmapImage(new Uri(@"\Prototype;component\Resources\Images\" + w.Translation, UriKind.Relative));
-                
+
                 translationTextblock.Text = "";
             }
             else
@@ -84,6 +131,21 @@ namespace Prototype.View.Controls
                 imageBox.Visibility = System.Windows.Visibility.Hidden;
                 translationTextblock.Text = w.Translation;
             }
+        }
+
+        public void ExecuteCommand(ECommand command, object content = null)
+        {
+            switch (command)
+            {
+                case ECommand.skipItem: skipWordButton_Click(this, null); break;
+                case ECommand.showAnswer: CheckAnswer(""); skipUpdate = true; break;
+            }
+        }
+
+        public void Dispose()
+        {
+            speechCtrl.UnloadNextItemGrammar();
+            speechCtrl.UnloadShowAnswerGrammar();
         }
     }
 }

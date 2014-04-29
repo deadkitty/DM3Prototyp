@@ -11,6 +11,7 @@ using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
+using Prototype.Speech;
 
 
 namespace Prototype.View.Controls
@@ -18,7 +19,7 @@ namespace Prototype.View.Controls
     /// <summary>
     /// Interaktionslogik für MainControl.xaml
     /// </summary>
-    public partial class MainControl : UserControl
+    public partial class MainControl : UserControl, ISpeech
     {
         WindowCtrl ctrl;
       
@@ -83,6 +84,11 @@ namespace Prototype.View.Controls
             SettingStackPanel.Background = Brushes.Gray;
             SettingTitel.Foreground = Brushes.WhiteSmoke;
             SettingText.Foreground = Brushes.WhiteSmoke;
+        }
+
+        public void ExecuteCommand(ECommand command, object content = null)
+        {
+
         }
     }
 }

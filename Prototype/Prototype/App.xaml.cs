@@ -56,7 +56,7 @@ namespace Prototype
 
         protected override void OnExit(ExitEventArgs e)
         {
-
+            SpeechCtrl.GetInstance().DeInitialize();
         }
 
         #endregion

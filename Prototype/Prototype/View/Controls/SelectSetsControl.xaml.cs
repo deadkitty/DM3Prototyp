@@ -13,13 +13,14 @@ using System.Windows.Shapes;
 using Prototype.DataModel.Tables;
 using Prototype.DataModel;
 using Prototype.Speech;
+using System;
 
 namespace Prototype.View.Controls
 {
     /// <summary>
     /// Interaktionslogik für GrammarExcerciseControlLessonMenue.xaml
     /// </summary>
-    public partial class SelectSetsControl : UserControl
+    public partial class SelectSetsControl : UserControl, ISpeech, IDisposable
     {
         WindowCtrl ctrl;
 
@@ -40,7 +41,8 @@ namespace Prototype.View.Controls
 
             speech = SpeechCtrl.GetInstance();
             speech.LoadChooseLessonGrammar();
-          
+            speech.LoadBeginLessonsGrammar();
+
             eContentType = e;
 
             printTitelListBox(eContentType);
@@ -50,9 +52,9 @@ namespace Prototype.View.Controls
 			{
                 l.listIndex = i++;
 				setsListbox.Items.Add(l);                       
-			}         
+			}
         }
-
+        
         private void printTitelListBox(EContentType eContentTyp)
         {
             if (eContentType.Equals(EContentType.grammarPracticeContent) == true)
@@ -93,6 +95,35 @@ namespace Prototype.View.Controls
             {
                 ctrl.ChangeWindowContent(EContentType.grammarPracticeContent);
             }
+        }
+
+        public void Update()
+        {
+            if (data.SelectedLessons != null)
+            {
+                foreach (Lesson l in data.SelectedLessons)
+                {
+                    setsListbox.SelectedItems.Add(l);
+                }
+            }
+            else
+            {
+                setsListbox.SelectedItems.Clear();
+            }
+        }
+
+        public void ExecuteCommand(ECommand command, object content = null)
+        {
+            switch (command)
+            {
+                case ECommand.beginExercise: practiceButton_Click(this, null); break;
+            }
+        }
+
+        public void Dispose()
+        {
+            speech.UnloadChooseLessonGrammar();
+            speech.UnloadBeginLessonsGrammar();
         }
     }
 }

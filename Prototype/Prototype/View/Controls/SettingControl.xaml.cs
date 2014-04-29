@@ -11,13 +11,14 @@ using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
+using Prototype.Speech;
 
 namespace Prototype.View.Controls
 {
     /// <summary>
     /// Interaktionslogik für SettingControl.xaml
     /// </summary>
-    public partial class SettingControl : UserControl
+    public partial class SettingControl : UserControl, ISpeech
     {
         public SettingControl()
         {
@@ -29,5 +30,9 @@ namespace Prototype.View.Controls
             printNameBox.Content = "Your Name is Master.";
         }
 
+        public void ExecuteCommand(ECommand command, object content = null)
+        {
+            throw new NotImplementedException();
+        }
     }
 }

@@ -320,17 +320,6 @@ namespace Prototype.DataModel
             return text == data.ActiveWord.JWord;
         }
 
-        public void CheckSentence(int clickedButtonIndex, int correctButtonIndex)
-        {
-            if (clickedButtonIndex == correctButtonIndex)
-            {
-                LoadNext();
-
-                data.ItemsLeft++;
-                view.UpdateView();
-            }
-        }
-
         #endregion
 
         #endregion

@@ -20,7 +20,7 @@ namespace Prototype.View.Controls
     /// <summary>
     /// Interaktionslogik für GrammarExplanationControl.xaml
     /// </summary>
-    public partial class GrammarExplanationControl : UserControl
+    public partial class GrammarExplanationControl : UserControl, ISpeech
     {
         Data data;
         WindowCtrl ctrl;
@@ -41,6 +41,11 @@ namespace Prototype.View.Controls
         private void mainMenuButton_Click(object sender, RoutedEventArgs e)
         {
             ctrl.ChangeWindowContent(EContentType.mainMenuContent);
-        }     
+        }
+
+        public void ExecuteCommand(ECommand command, object content = null)
+        {
+
+        }
     }
 }
