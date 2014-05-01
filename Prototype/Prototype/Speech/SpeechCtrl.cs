@@ -7,6 +7,7 @@ using Prototype.View;
 using System.Globalization;
 using Prototype.DataModel;
 using Prototype.DataModel.Tables;
+using System.Diagnostics;
 
 namespace Prototype.Speech
 {
@@ -20,6 +21,9 @@ namespace Prototype.Speech
         private const String nextItemGr = "nextItemGrammar";
         private const String chooseParticleGr = "chooseParticleGrammar";
         private const String showAnswerGr = "showAnswerGrammar";
+        private const String logWordGr = "logWordGrammar";
+        private const String wordsPracticeGr = "wordPracticeGrammar";
+        private const String dictGr = "dictGrammar";
 
         WindowCtrl windowCtrl;
 
@@ -32,17 +36,23 @@ namespace Prototype.Speech
         IView view;
         ISpeech speechCommandExecuter;
 
+        //window interaction grammars
         Grammar windowOperationsGrammar;
         Grammar chooseLessonsGrammar;
         Grammar beginLessonsGrammar;
 
+        //general practice grammars
         Grammar nextItemGrammar;
-        Grammar chooseParticleGrammar;
         Grammar showAnswerGrammar;
 
-        Grammar grammarPracticeGrammar;
-        Grammar wordsPracticeGrammar;
-        
+        //grammar practice grammars
+        Grammar chooseParticleGrammar;
+                
+        //words practice grammars
+        Grammar wordsGrammar;
+        Grammar logWordGrammar;
+        DictationGrammar dictGrammar;
+
         #endregion
 
         #region Properties
@@ -257,6 +267,7 @@ namespace Prototype.Speech
             verbChoices.Add(ResourceStrings.beginMasu);
             verbChoices.Add(ResourceStrings.beginRu);
             verbChoices.Add(ResourceStrings.yesVerb);
+            verbChoices.Add(ResourceStrings.yesCausualVerb);
             gb.Append(verbChoices);
 
             //verbChoices.Add(new SemanticResultValue(ResourceStrings.begin, EVerbs.begin.ToString()));
@@ -278,7 +289,7 @@ namespace Prototype.Speech
 
         #endregion
 
-        #region Grammar Practice Grammar
+        #region Practice Grammar
 
         public void LoadNextItemGrammar()
         {
@@ -352,47 +363,107 @@ namespace Prototype.Speech
             recognitionEngine.UnloadGrammar(showAnswerGrammar);
         }
 
+        #endregion
+
+        #region Grammar Practice Grammar
+
         public void LoadChooseParticleGrammar(String[] particle)
         {
+            UnloadChooseParticleGrammar();
+
+            Debug.WriteLine("Load chooseParticle Grammar", "prototype");
             GrammarBuilder gb = new GrammarBuilder();
             gb.Culture = culture;
 
-            Choices particleChoices = new Choices();
-            particleChoices.Add(new SemanticResultValue(particle[0], "0"));
-            particleChoices.Add(new SemanticResultValue(particle[1], "1"));
-            particleChoices.Add(new SemanticResultValue(particle[2], "2"));
-            particleChoices.Add(new SemanticResultValue(particle[3], "3"));
-            particleChoices.Add(new SemanticResultValue(particle[4], "4"));
-            particleChoices.Add(new SemanticResultValue(particle[5], "5"));
-            particleChoices.Add(new SemanticResultValue(particle[6], "6"));
-            particleChoices.Add(new SemanticResultValue(particle[7], "7"));
-            gb.Append(new SemanticResultKey(ResourceStrings.particleKey, particleChoices));
+            Choices particleChoices = new Choices(particle);
+            gb.Append(particleChoices);
+            //particleChoices.Add(new SemanticResultValue(particle[0], "0"));
+            //particleChoices.Add(new SemanticResultValue(particle[1], "1"));
+            //particleChoices.Add(new SemanticResultValue(particle[2], "2"));
+            //particleChoices.Add(new SemanticResultValue(particle[3], "3"));
+            //particleChoices.Add(new SemanticResultValue(particle[4], "4"));
+            //particleChoices.Add(new SemanticResultValue(particle[5], "5"));
+            //particleChoices.Add(new SemanticResultValue(particle[6], "6"));
+            //particleChoices.Add(new SemanticResultValue(particle[7], "7"));
+            //gb.Append(new SemanticResultKey(ResourceStrings.particleKey, particleChoices));
 
-            //for(int i = 0; i < particle.Length; ++i)
-            //{
-            //    particleChoices.Add(new SemanticResultValue(particle[i], i.ToString()));
-            //}
-           
-            //String[] selectActions = 
-            //{
-            //    ResourceStrings.selectRu,
-            //    ResourceStrings.selectMasu,
-            //    ResourceStrings.selectTe,
-            //    ResourceStrings.selectTekudasai,
-            //};
-            //Choices selectActionChoices = new Choices(selectActions);
-            //gb.Append(selectActionChoices, 0, 1);
-            //gb.Append(ResourceStrings.please, 0, 1);
+            String[] selectActions = 
+            {
+                ResourceStrings.selectRu,
+                ResourceStrings.selectMasu,
+                ResourceStrings.selectTe,
+                ResourceStrings.selectTekudasai,
+                ResourceStrings.please,
+            };
+            Choices selectActionChoices = new Choices(selectActions);
+            gb.Append(ResourceStrings.wo, 0, 1);
+            gb.Append(selectActionChoices, 0, 1);
 
             chooseParticleGrammar = new Grammar(gb);
             chooseParticleGrammar.Name = chooseParticleGr;
+            chooseParticleGrammar.Priority = 127;
             recognitionEngine.LoadGrammar(chooseParticleGrammar);
         }
 
         public void UnloadChooseParticleGrammar()
         {
-            if(recognitionEngine.Grammars.Contains(chooseParticleGrammar))
+            if (recognitionEngine.Grammars.Contains(chooseParticleGrammar))
+            {
+                Debug.WriteLine("Unload chooseParticle Grammar", "prototype");
                 recognitionEngine.UnloadGrammar(chooseParticleGrammar);
+            }
+        }
+
+        #endregion
+
+        #region Words Practice Grammar
+
+        public void LoadLogWordGrammar()
+        {
+            Debug.WriteLine("Load LogWord Grammar", "prototype");
+            GrammarBuilder gb = new GrammarBuilder();
+            gb.Culture = culture;
+
+            Choices logChoices = new Choices();
+            logChoices.Add(new SemanticResultValue(ResourceStrings.yesVerb, EVerbs.select.ToString()));
+            logChoices.Add(new SemanticResultValue(ResourceStrings.yesCausualVerb, EVerbs.select.ToString()));
+            logChoices.Add(new SemanticResultValue(ResourceStrings.check, EVerbs.select.ToString()));
+            logChoices.Add(new SemanticResultValue(ResourceStrings.no, EVerbs.deselect.ToString()));
+            gb.Append(new SemanticResultKey(ResourceStrings.actionKey, logChoices));
+
+            logWordGrammar = new Grammar(gb);
+            logWordGrammar.Name = logWordGr;
+            logWordGrammar.Priority = 127;
+            recognitionEngine.LoadGrammar(logWordGrammar);
+        }
+
+        public void UnloadLogWordGrammar()
+        {
+            recognitionEngine.UnloadGrammar(logWordGrammar);
+        }
+
+        public void LoadWordsGrammar()
+        {
+            Debug.WriteLine("Load Words Practice Grammar", "prototype");
+            GrammarBuilder gb = new GrammarBuilder();
+            gb.Culture = culture;
+
+            Choices wordChoices = new Choices();
+            foreach (Word w in data.Words)
+            {
+                wordChoices.Add(w.JWord);
+            }
+            gb.Append(wordChoices);
+
+            wordsGrammar = new Grammar(gb);
+            wordsGrammar.Name = wordsPracticeGr;
+            wordsGrammar.Priority = 126;
+            recognitionEngine.LoadGrammar(wordsGrammar);
+        }
+
+        public void UnloadWordsGrammar()
+        {
+            recognitionEngine.UnloadGrammar(wordsGrammar);
         }
 
         #endregion
@@ -404,6 +475,7 @@ namespace Prototype.Speech
         void recognitionEngine_SpeechRecognized(object sender, SpeechRecognizedEventArgs e)
         {
             data.CurrentComand = ": " + e.Result.Text;
+            Debug.WriteLine(e.Result.Grammar.Name + " Recognized");
 
             switch (e.Result.Grammar.Name)
             {
@@ -412,7 +484,11 @@ namespace Prototype.Speech
                 case beginLessonsGr     : speechCommandExecuter.ExecuteCommand(ECommand.beginExercise); break;
                 case nextItemGr         : speechCommandExecuter.ExecuteCommand(ECommand.skipItem); break;
                 case showAnswerGr       : speechCommandExecuter.ExecuteCommand(ECommand.showAnswer); break;
-                case chooseParticleGr   : speechCommandExecuter.ExecuteCommand(ECommand.setAnswer, Convert.ToInt32(e.Result.Semantics[ResourceStrings.particleKey].Value as String)); break;
+                //case chooseParticleGr: speechCommandExecuter.ExecuteCommand(ECommand.setAnswer, Convert.ToInt32(e.Result.Semantics[ResourceStrings.particleKey].Value as String)); break;
+                case chooseParticleGr   : speechCommandExecuter.ExecuteCommand(ECommand.setAnswer, e.Result.Words[0].Text); break;
+                case logWordGr          : ComputeLogWordResult(e.Result); break;
+                case wordsPracticeGr    : speechCommandExecuter.ExecuteCommand(ECommand.setAnswer, e.Result.Text); break;
+                case dictGr             : speechCommandExecuter.ExecuteCommand(ECommand.setAnswer, e.Result.Text); break;
             }
 
             view.UpdateView();
@@ -570,6 +646,16 @@ namespace Prototype.Speech
 #endif
             return Convert.ToInt32(number);
 
+        }
+
+        private void ComputeLogWordResult(RecognitionResult result)
+        {
+            EVerbs action = (EVerbs)Enum.Parse(typeof(EVerbs), result.Semantics[ResourceStrings.actionKey].Value as String);
+            switch (action)
+            {
+                case EVerbs.select: speechCommandExecuter.ExecuteCommand(ECommand.logAnswer, result.Text); break;
+                case EVerbs.deselect: speechCommandExecuter.ExecuteCommand(ECommand.unlogAnswer, result.Text); break;
+            }
         }
 
         #endregion

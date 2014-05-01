@@ -14,6 +14,7 @@ namespace Prototype.Speech
         begin = 4,
         show = 5,
         please = 6,
+        deselect = 7,
         undefined = -1,
     }
 
@@ -69,6 +70,7 @@ namespace Prototype.Speech
         public const String beginMasu = "始めます";
         public const String beginMaru = "始まる";
         public const String yesVerb = "はい";
+        public const String yesCausualVerb = "ええ";
         public const String dontKnowNai = "わからない";
         public const String dontKnowMasen = "わかりません";
         public const String showRu = "見せる";
@@ -76,6 +78,8 @@ namespace Prototype.Speech
         public const String showTe = "見せて";
         public const String showTekudasai = "見せてください";
         public const String please = "お願いします";
+        public const String check = "チェック";
+        public const String no = "いいえ";
 
         //particle
         public const String he = "へ";
@@ -130,6 +134,7 @@ namespace Prototype.Speech
         public const String beginMasu = "anfangen";
         public const String beginMaru = "jo";
         public const String yesVerb = "jup";
+        public const String yesCausualVerb = "ja";
         public const String dontKnowNai = "ahnung";
         public const String dontKnowMasen = "weis nicht";
         public const String showRu = "anzeigen";
@@ -137,6 +142,8 @@ namespace Prototype.Speech
         public const String showTe = "zeigen";
         public const String showTekudasai = "zeigen";
         public const String please = "bitte";
+        public const String check = "check";
+        public const String no = "nein";
         
         //particle
         public const String he = " ";

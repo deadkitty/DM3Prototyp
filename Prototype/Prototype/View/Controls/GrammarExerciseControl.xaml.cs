@@ -16,6 +16,7 @@ using Prototype.Speech;
 using System;
 using System.Windows.Media.Animation;
 using System.Windows.Threading;
+using System.Diagnostics;
 
 namespace Prototype.View.Controls
 {
@@ -131,6 +132,7 @@ namespace Prototype.View.Controls
 
             speechCtrl.LoadNextItemGrammar();
             speechCtrl.LoadShowAnswerGrammar();
+            speechCtrl.LoadChooseParticleGrammar(particle);
 
             rand = new Random();
 
@@ -248,9 +250,12 @@ namespace Prototype.View.Controls
         {
             if (skipUpdate)
             {
+                Debug.WriteLine("Skip Update", "prototype");
                 skipUpdate = false;
                 return;
             }
+
+            Debug.WriteLine("Update", "prototype");
 
             wrongButtonStoryboard.Stop();
             correctButtonStoryboard.Stop();
@@ -287,8 +292,6 @@ namespace Prototype.View.Controls
             {
                 grammarParticle[i] = answerButtons[i].Content as String;
             }
-            speechCtrl.UnloadChooseParticleGrammar();
-            speechCtrl.LoadChooseParticleGrammar(grammarParticle);
         }
 
         public void ExecuteCommand(ECommand command, object content = null)
@@ -297,21 +300,21 @@ namespace Prototype.View.Controls
             {
                 case ECommand.skipItem: skipSentenceButton_Click(this, null); break;
                 case ECommand.showAnswer: AnswerButtonClick((correctButtonIndex + 1) % answerButtons.Length); skipUpdate = true; break;
-                case ECommand.setAnswer: ComputeAnswer((int)content); skipUpdate = true; break;
+                case ECommand.setAnswer: ComputeAnswer(content as String); skipUpdate = true; break;
             }
         }
 
-        private void ComputeAnswer(int buttonIndex)
+        private void ComputeAnswer(String text)
         {
-            AnswerButtonClick(buttonIndex);
-            //for (int i = 0; i < answerButtons.Length; ++i)
-            //{
-            //    if (answerButtons[i].Content as String == text)
-            //    {
-            //        AnswerButtonClick(i);
-            //        break;
-            //    }
-            //}
+            for (int i = 0; i < answerButtons.Length; ++i)
+            {
+                if (answerButtons[i].Content as String == text)
+                {
+                    AnswerButtonClick(i);
+                    break;
+                }
+            }
+
         }
 
         public void Dispose()

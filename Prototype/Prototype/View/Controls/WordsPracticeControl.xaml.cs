@@ -47,6 +47,8 @@ namespace Prototype.View.Controls
 
             speechCtrl.LoadNextItemGrammar();
             speechCtrl.LoadShowAnswerGrammar();
+            speechCtrl.LoadLogWordGrammar();
+            speechCtrl.LoadWordsGrammar();
         }
 
         private void selectLessonsButton_Click(object sender, System.Windows.RoutedEventArgs e)
@@ -83,6 +85,7 @@ namespace Prototype.View.Controls
             else
             {
                 correctAnswerTextblock.Text = data.ActiveWord.JWord;
+                wordTextbox.Background = new SolidColorBrush(Colors.Red);
             }
         }
 
@@ -103,11 +106,7 @@ namespace Prototype.View.Controls
             LoadNextWord();
             if (wordCorrect)
             {                
-                //nextWordTimer = new System.Threading.Timer(obj => { LoadNextWord(); }, null, 1000, System.Threading.Timeout.Infinite);
                 wordCorrect = false;
-            }
-            else
-            {
             }
         }
 
@@ -139,13 +138,42 @@ namespace Prototype.View.Controls
             {
                 case ECommand.skipItem: skipWordButton_Click(this, null); break;
                 case ECommand.showAnswer: CheckAnswer(""); skipUpdate = true; break;
+                case ECommand.logAnswer: LogWord(content as String); skipUpdate = true; break;
+                case ECommand.unlogAnswer: UnlogWord(content as String); skipUpdate = true; break;
+                case ECommand.setAnswer: wordTextbox.Text = content as String; skipUpdate = true; break;
             }
         }
 
+        public void LogWord(String text)
+        {
+            if (wordTextbox.Text.Length == 0)
+            {
+                wordTextbox.Text = text;
+            }
+            else
+            {
+                CheckAnswer(wordTextbox.Text);
+            }
+        }
+
+        public void UnlogWord(String text)
+        {
+            if (wordTextbox.Text.Length == 0)
+            {
+                wordTextbox.Text = text;
+            }
+            else
+            {
+                wordTextbox.Text = "";
+            }
+        }
+                
         public void Dispose()
         {
             speechCtrl.UnloadNextItemGrammar();
             speechCtrl.UnloadShowAnswerGrammar();
+            speechCtrl.UnloadLogWordGrammar();
+            speechCtrl.UnloadWordsGrammar();
         }
     }
 }
