@@ -6,11 +6,16 @@
 
         <ResourceDictionary>
             <ResourceDictionary.MergedDictionaries>
-                <ResourceDictionary Source="View/Controls/ResourceNextButton.xaml"/>
-                <ResourceDictionary Source="View/Controls/ResourcePreviewButton.xaml"/>
-                <ResourceDictionary Source="View/Controls/ResourceSettingButton.xaml"/>
-                <ResourceDictionary Source="View/Controls/ResourceFinsishButton.xaml"/>
-                <ResourceDictionary Source="ResourceDataTemplate.xaml"/>
+                
+              <ResourceDictionary Source="View/Controls/ResourceNextButton.xaml"/>
+              <ResourceDictionary Source="View/Controls/ResourcePreviewButton.xaml"/>
+              <ResourceDictionary Source="View/Controls/ResourceSettingButton.xaml"/>
+              <ResourceDictionary Source="View/Controls/ResourceFinsishButton.xaml"/>
+              <ResourceDictionary Source="View/Controls/ResourceGrammarStyle.xaml"/>
+
+              <ResourceDictionary Source="View/Controls/ResourceSpeechStyle.xaml"/>
+              <ResourceDictionary Source="View/Controls/ResourceExplainButton.xaml"/>            
+              <ResourceDictionary Source="View/ResourceMainButton.xaml"/>
             </ResourceDictionary.MergedDictionaries>
         </ResourceDictionary>
 

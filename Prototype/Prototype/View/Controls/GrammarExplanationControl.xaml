@@ -4,14 +4,23 @@
              xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
              xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
              mc:Ignorable="d"
-             Height="410" Width="880">
-    <Grid>
-        <Grid.RowDefinitions>
-            <RowDefinition Height="103*"/>
-            <RowDefinition Height="102*"/>
-        </Grid.RowDefinitions>
-        <TextBlock Margin="12" Grid.RowSpan="2">
-            Erklärungen:            
-        </TextBlock>
+             d:DesignHeight="400" d:DesignWidth="880">
+    <Grid >
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="140*"/>
+            <ColumnDefinition Width="607*"/>
+            <ColumnDefinition Width="133*"/>
+        </Grid.ColumnDefinitions>
+        <StackPanel Grid.ColumnSpan="1" Grid.Column="1" Background="Transparent">
+            <StackPanel  Margin="50,10,50,10"  >
+
+                <TextBlock Text="Japan Tutorial" Foreground="#FF7BA60C"  FontSize="30" FontWeight="Bold"  Height="60"></TextBlock>
+                <TextBlock  Text="Vokale" FontSize="15" Foreground="#FF7BA60C" Height="20" ></TextBlock>
+                <TextBlock  Text="Im Japanischen werden die meisten sachen genau so ausgesprochen wie sie geschrieben werden dazu kommt das Die japansiche schrift aus nem silben alphabet steht und alle zeichen entweder aus einem  der vokale a,i,u,e,o oder ner kombination aus einem oder zwei konsonanten + vokal besteht (zb ka, su, de,  to, hi ...). " Height="67" MaxWidth="Infinity" ScrollViewer.HorizontalScrollBarVisibility="Auto" Grid.IsSharedSizeScope="True" TextOptions.TextFormattingMode="Display" TextTrimming="WordEllipsis" TextWrapping="Wrap" Foreground="WhiteSmoke"  Margin="0,5,0,0"/>
+                <TextBlock  Text="Aussprache" FontSize="15" Foreground="#FF7BA60C" Height="20" ></TextBlock>
+                <TextBlock Text="Bei der Ausprache werden alle silben ungefähr gleich lang ausgesprochen. Dann Kommen noch lange Vokale  die doppelt solang ausgesprochen werden.  Das oo in ookii wird also doppelt solange gesprochen wie ein  normales o, genauso das kii in ookii.  Oft gibt es auch ou konstruktionen in den wörtern, diese werden dann auch wie oo ausgesprochen. Auch kann es vorkommen das die vokale u und i manchmal nicht mitgesprochen werden, bzw. Verschluckt  werden. Zb. wird am ende von desu und bei wörtern mit masu das u am ende nicht mitgesprochen. Oder  auch das u in suki" Foreground="WhiteSmoke"  Margin="0,10,0,0" TextWrapping="Wrap"></TextBlock>
+
+            </StackPanel>
+        </StackPanel>
     </Grid>
 </UserControl>

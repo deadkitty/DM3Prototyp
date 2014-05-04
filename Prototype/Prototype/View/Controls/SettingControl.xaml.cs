@@ -25,9 +25,9 @@ namespace Prototype.View.Controls
             InitializeComponent();
         }
 
-        private void masterNameClick(object sender, RoutedEventArgs e)
+         private void masterNameClick(object sender, RoutedEventArgs e)
         {
-            printNameBox.Content = "Your Name is Master.";
+            printNameBox.Text = "Vielen Dank, dein Name ist jetzt Master.";
         }
 
         public void ExecuteCommand(ECommand command, object content = null)

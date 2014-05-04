@@ -84,6 +84,7 @@ namespace Prototype.View.Controls
             }
             else
             {
+				textBlockRightAnswer.Text = "Richtige Antwort ist ";
                 correctAnswerTextblock.Text = data.ActiveWord.JWord;
                 wordTextbox.Background = new SolidColorBrush(Colors.Red);
             }
@@ -113,7 +114,7 @@ namespace Prototype.View.Controls
         public void LoadNextWord()
         {
             Word w = data.ActiveWord;
-
+			textBlockRightAnswer.Text = "";
             wordTextbox.Background = new SolidColorBrush(Colors.White);
             wordTextbox.Text = "";
             correctAnswerTextblock.Text = "";
@@ -129,6 +130,7 @@ namespace Prototype.View.Controls
             {
                 imageBox.Visibility = System.Windows.Visibility.Hidden;
                 translationTextblock.Text = w.Translation;
+                
             }
         }
 

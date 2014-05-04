@@ -7,7 +7,8 @@
              Height="400" Width="525">
     <Grid>
         <StackPanel Orientation="Vertical">
-            <Label Content="Your favorite name:" FontSize="35" Foreground="WhiteSmoke"></Label>
+            <Label Content="Persönliche Einstellung:" FontWeight="Bold" FontSize="25" Foreground="#FF7BA60C" Margin="0,20"></Label>
+            <Label Content="Wähle deinen Lieblingsnamen:" FontSize="15" Foreground="WhiteSmoke" Margin="5,20"></Label>
             <StackPanel Orientation="Horizontal">
                 <Button x:Name="masterButton" Content="Master" Margin="5" Height="50" Width="70" Click="masterNameClick"></Button>
                 <Button Content="Lord" Margin="5" Height="50" Width="70"></Button>
@@ -15,7 +16,7 @@
                 <Button Content="Madame" Margin="5" Height="50" Width="70"></Button>           
 
             </StackPanel>
-            <Label x:Name="printNameBox" FontSize="30" Foreground="WhiteSmoke"></Label>
+            <TextBlock  TextWrapping="Wrap" x:Name="printNameBox" FontSize="30" Foreground="WhiteSmoke" Margin="5,20" />
           
             
             

@@ -4,64 +4,83 @@
              xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
              xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
              mc:Ignorable="d"
-             Height="410" Width="900">
+             Height="410" Width="880">
     <UserControl.Resources>
-        <Style x:Key="ListBoxStyle" TargetType="ListBox">            
-           
+        <Style x:Key="ListBoxStyle" TargetType="ListBox">
             <Setter Property="Background" Value="Transparent" />
             <Setter Property="FontSize" Value="15" />
             <Setter Property="Height" Value="400" />
-            
-
         </Style>
         <Style x:Key="myListBoxStyle" TargetType="ListBox" BasedOn="{StaticResource ListBoxStyle}">
-           
             <Style.Triggers>
-            <Trigger Property="IsMouseOver" Value="True">
-                
-            </Trigger>
+                <Trigger Property="IsMouseOver" Value="True">
+                </Trigger>
             </Style.Triggers>
         </Style>
         <Style x:Key="{x:Type ListBoxItem}" TargetType="ListBoxItem" >
             <Setter Property="Foreground" Value="WhiteSmoke" />
-            <Setter Property="Margin" Value="5" />
-            <Style.Triggers>                
+            <Setter Property="Margin" Value="0,5,5,5" />
+            <Style.Triggers>
+                <MultiTrigger>
+                    <MultiTrigger.Conditions>
+                        <Condition Property="IsMouseOver" Value="True" />
+                        <Condition Property="IsSelected" Value="True" />
+                    </MultiTrigger.Conditions>
+                    <Setter Property="Background" Value="White" />
+                </MultiTrigger>
                 <Trigger Property="IsMouseOver" Value="True">
-                    <Setter Property="FontSize" Value="22" />
-                    <Setter Property="Background" Value="#FF6FA735" />
+                    <Trigger.EnterActions>
+                        <BeginStoryboard>
+                            <Storyboard>
+                                <ColorAnimation Storyboard.TargetProperty="Background.Color" To="#FF6FA735" Duration="0:0:0.5"></ColorAnimation>
+                            </Storyboard>
+                        </BeginStoryboard>
+                    </Trigger.EnterActions>
+                    <Trigger.ExitActions>
+                        <BeginStoryboard>
+                            <Storyboard>
+                                <ColorAnimation Storyboard.TargetProperty="Background.Color" To="Transparent" Duration="0:0:0.5"></ColorAnimation>
+                            </Storyboard>
+                        </BeginStoryboard>
+                    </Trigger.ExitActions>
+                    <Setter Property="FontSize" Value="25" />
                     <Setter Property="Margin" Value="10,0,0,0" />
-                </Trigger>                
+                </Trigger>
             </Style.Triggers>
-          
+        </Style>
+        <Style x:Key="{x:Type ScrollBar}" TargetType="ScrollBar" >
+            <Setter Property="Background" Value="#FF7BA60C"/>
+            <Setter Property="SnapsToDevicePixels" Value="True"/>
+            <Setter Property="OverridesDefaultStyle" Value="true"/>
+            <Setter Property="IsTabStop" Value="false"/>
+            <Setter Property="Focusable" Value="false"/>
         </Style>
         <Style x:Key="ListBoxStackPanelStyle" TargetType="StackPanel" >
             <Style.Triggers>
                 <Trigger Property="IsMouseOver" Value="True">
-                    
+                    <Setter Property="Background" Value="#FF808080" />
                 </Trigger>
             </Style.Triggers>
-           
         </Style>
-
     </UserControl.Resources>
-       
-
-
     <Grid>
         <Grid.RowDefinitions>
             <RowDefinition Height="103*"/>
             <RowDefinition Height="102*"/>
         </Grid.RowDefinitions>
         <Grid.ColumnDefinitions>
-            <ColumnDefinition Width="0.163*"/>
-            <ColumnDefinition Width="0.665*"/>
-            <ColumnDefinition Width="0.172*"/>
+            <ColumnDefinition Width="197*"/>
+            <ColumnDefinition Width="544*"/>
+            <ColumnDefinition Width="139*"/>
         </Grid.ColumnDefinitions>
         <StackPanel  Style="{StaticResource ListBoxStackPanelStyle}" x:Name="ListBoxStackPanel" Grid.Column="1" Grid.RowSpan="2" >
-            <TextBlock x:Name="TitelListBox" FontSize="25" Foreground="WhiteSmoke" Margin="10">Lektionen Auswählen</TextBlock>
-            <ListBox Style="{StaticResource myListBoxStyle}" Name="setsListbox" SelectionMode="Multiple" Margin="10" Height="336" />         
-        
+            <Label>
+                <TextBlock x:Name="TitelListBox" FontSize="25"  Foreground="WhiteSmoke" Margin="0,30,0,0" Text="Lektionen auswählen" FontWeight="Bold"/>
+            </Label>         
+
+            <ListBox ItemsSource="{Binding}" IsSynchronizedWithCurrentItem="True" Name="setsListbox" ScrollViewer.PanningMode="Both"   Style="{StaticResource myListBoxStyle}"  SelectionMode="Multiple" Margin="0,25,0,0" Height="300" Background="{x:Null}" BorderBrush="{x:Null}" Foreground="{x:Null}"  />
+   
         </StackPanel>
-        <Button Name="practiceButton" Content="Lernen" Grid.Column="2" Margin="8,64,8,8" Grid.RowSpan="2" Click="practiceButton_Click"/>
+        <Button Name="practiceButton" Content="Lernen" Grid.Column="2" Margin="10,111,-5,98" Style="{DynamicResource ButtonNextStyle}" Click="practiceButton_Click" Grid.RowSpan="2"/>
     </Grid>
 </UserControl>

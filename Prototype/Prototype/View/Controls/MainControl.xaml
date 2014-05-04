@@ -9,36 +9,39 @@
     <Grid>
         <StackPanel  Orientation="Vertical" Width="400" Height="400" Margin="50,10,0,0">
             <StackPanel Margin="5" x:Name="GrammarExerciseStackPanel" Background="Gray"  Orientation="Horizontal" MouseEnter="GrammarExerciseStackPanelMouseEnter" MouseLeave="GrammarExerciseStackPanelMouseLeave">
-                <Button Margin="5" Height="100" Width="100" HorizontalAlignment="Left"  x:Name="grammarExerciseButton"  VerticalAlignment="Top" Click="grammarExerciseButton_Click" >
+                <Button Margin="5" Height="100" Width="100" HorizontalAlignment="Left"  x:Name="grammarExerciseButton"  VerticalAlignment="Top" Click="grammarExerciseButton_Click" OverridesDefaultStyle="True" Template="{DynamicResource GrammarStyleButton}" >
                     <Button.Background>
                         <ImageBrush ImageSource="/Prototype;component/Resources/Images/Icons/Menue/grammarExcercise.png"/>
                     </Button.Background>
 
                 </Button>
                 <StackPanel Orientation="Vertical" Margin="5">
-                    <Label x:Name="GrammarExerciseTitel" Content="Grammar Excercise" FontWeight="bold"  Foreground="WhiteSmoke" Background="Transparent" BorderBrush="Transparent" FontSize="20"/>
-                    <Label x:Name="GrammarExerciseText" Content="Irgend ein Mustertext zum Thema" Foreground="WhiteSmoke" Background="Transparent" BorderBrush="Transparent"/>
+                    <Label x:Name="GrammarExerciseTitel" Content="Grammatik-Lektionen" FontWeight="bold"  Foreground="Beige" Background="Transparent" BorderBrush="Transparent" FontSize="20"/>
+                    <TextBlock x:Name="GrammarExerciseText" TextWrapping="Wrap" Margin="5,2,0,0"  Text="Erweitere deine Grammatikkenntnisse in dem du die richtig Wörter in die Sätze einfügst." Foreground="WhiteSmoke" Background="Transparent" Width="262" />
                 </StackPanel>
             </StackPanel>
 
-            <StackPanel Margin="5" x:Name="SpeechControlStackPanel" Orientation="Horizontal" Background="Gray" MouseEnter="SpeechControlMouseEnter" MouseLeave="SpeechControlMouseLeave">
-                <Button Margin="5" Height="100" Width="100" HorizontalAlignment="Left" x:Name="wordsExercisesButton" Click="wordsExercisesButton_click">
+            <StackPanel Margin="5" x:Name="SpeechControlStackPanel" Orientation="Horizontal" Background="Gray" MouseEnter="SpeechControlMouseEnter" MouseLeave="SpeechControlMouseLeave" >
+                <Button Margin="5" Height="100" Width="100" HorizontalAlignment="Left" x:Name="wordsExercisesButton" Click="wordsExercisesButton_click"  Template="{DynamicResource ButtonSpeechStyle}" OverridesDefaultStyle="True">
                     <Button.Background>
                         <ImageBrush ImageSource="/Prototype;component/Resources/Images/Icons/Menue/SpeechControl.png"/>
                     </Button.Background>
                 </Button>
                 <StackPanel Orientation="Vertical" Margin="5">
-                    <Label x:Name="SpeechControlTitel" Content="Speech Excercise" FontWeight="bold" FontSize="20" Foreground="WhiteSmoke" Background="Transparent" BorderBrush="Transparent"/>
-                    <Label x:Name="SpeechControlText" Content="Irgend ein Mustertext zum Thema" Foreground="WhiteSmoke" Background="Transparent" BorderBrush="Transparent"/>
+                    <Label x:Name="SpeechControlTitel" Content="Sprach-Lektionen" FontWeight="bold" FontSize="20" Foreground="Beige" Background="Transparent" BorderBrush="Transparent"/>
+                    <TextBlock x:Name="SpeechControlText" TextWrapping="Wrap" Margin="5,2,0,0"  Text="Hier kannst du dein Vokabular trainieren in dem du zu den Deutschen Wörtern oder einem Bild die richtige Übersetzung einfügst." Foreground="WhiteSmoke" Background="Transparent" Width="263" />
                 </StackPanel>
             </StackPanel>
             <StackPanel Margin="5" x:Name="SettingStackPanel" Background="Gray" Orientation="Horizontal" MouseEnter="SettingMouseEnter" MouseLeave="SettingMouseLeave" >
-                <Button Margin="5" Height="100" Width="100" HorizontalAlignment="Left"  x:Name="grammarExplanationButton" VerticalAlignment="Top"  Click="grammarExplanationButton_Click" >
+                <Button Margin="5" Height="100" Width="100" HorizontalAlignment="Left"  x:Name="grammarExplanationButton" VerticalAlignment="Top"  Click="grammarExplanationButton_Click" OverridesDefaultStyle="True" Template="{DynamicResource ButtonExplainStyle}">
+                    <Button.Background>
+                        <ImageBrush x:Name="academicImage"  ImageSource="/Prototype;component/Resources/Images/icons/Menue/academic.png"/>
+                    </Button.Background>
 
                 </Button>
                 <StackPanel Orientation="Vertical" Margin="5">
-                    <Label x:Name="SettingTitel" Content="Grammar Explain" FontWeight="bold" FontSize="20" Foreground="WhiteSmoke" Background="Transparent" BorderBrush="Transparent"/>
-                    <Label x:Name="SettingText" Content="Irgend ein Mustertext zum Thema" Foreground="WhiteSmoke" Background="Transparent" BorderBrush="Transparent"/>
+                    <Label x:Name="SettingTitel" Content="Grammatik Erklärung" FontWeight="bold" FontSize="20" Foreground="Beige" Background="Transparent" BorderBrush="Transparent"/>
+                    <TextBlock x:Name="SettingText" Margin="5,2,0,0" TextWrapping="Wrap" Text="Hier findest du alles Wissenswerte rund um die japanische Aussprache und Grammatik" Foreground="WhiteSmoke" Background="Transparent" Width="262" />
                 </StackPanel>
             </StackPanel>
         </StackPanel>

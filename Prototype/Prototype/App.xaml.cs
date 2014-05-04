@@ -45,13 +45,7 @@ namespace Prototype
             
             dataCtrl = DataCtrl.GetInstance();
 
-            if (settings.FirstStart)
-            {
-                dataCtrl.InitializeDatabase();
-                
-                settingsCtrl.FirstStart = false;
-                settingsCtrl.SaveSettings();
-            }
+            dataCtrl.InitializeDatabase();
         }
 
         protected override void OnExit(ExitEventArgs e)

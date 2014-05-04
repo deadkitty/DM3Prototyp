@@ -5,12 +5,12 @@
              xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
              mc:Ignorable="d"
              Height="410" Width="880">
-	<UserControl.Resources>
+    <UserControl.Resources>
 
         <Storyboard x:Key="wrongButtonStoryboard">
             <ColorAnimation 
 				x:Name="wrongColorAnim"
-				Duration="0:0:0.8" To="#FFF93F3F" 
+				Duration="0:0:0.2" To="#FFF93F3F" 
 				Storyboard.TargetProperty="(Control.Background).(SolidColorBrush.Color)">
                 <ColorAnimation.EasingFunction>
                     <QuarticEase EasingMode="EaseOut"/>
@@ -21,37 +21,51 @@
         <Storyboard x:Key="correctButtonStoryboard">
             <ColorAnimation 
 				x:Name="correctColorAnim"
-				Duration="0:0:0.8" To="#FF98FF95" 
+				Duration="0:0:0.2" To="#FF98FF95" 
 				Storyboard.TargetProperty="(Control.Background).(SolidColorBrush.Color)">
                 <ColorAnimation.EasingFunction>
                     <QuarticEase EasingMode="EaseOut"/>
                 </ColorAnimation.EasingFunction>
             </ColorAnimation>
         </Storyboard>
-        
+
     </UserControl.Resources>
     <Grid>
         <Grid.RowDefinitions>
-            <RowDefinition Height="103*"/>
-            <RowDefinition Height="102*"/>
+            <RowDefinition Height="22*"/>
+            <RowDefinition Height="36*"/>
+            <RowDefinition Height="38*"/>
+            <RowDefinition Height="16*"/>
+            <RowDefinition Height="25*"/>
+            <RowDefinition Height="82*"/>
+            <RowDefinition Height="81*"/>
+            <RowDefinition Height="110*"/>
         </Grid.RowDefinitions>
         <Grid.ColumnDefinitions>
             <ColumnDefinition Width="40*"/>
             <ColumnDefinition Width="174*"/>
             <ColumnDefinition Width="40*"/>
         </Grid.ColumnDefinitions>
-        <Button x:Name="prevButton" Margin="0,-97,0,0" Grid.Row="1" Style="{DynamicResource ButtonPreviewStyle}" Height="199" VerticalAlignment="Top" Click="prevButton_Click" />
-        <Button x:Name="skipSentenceButton" Grid.Column="2" Margin="0,-97,0,100" Grid.Row="1" Style="{DynamicResource ButtonNextStyle}" RenderTransformOrigin="0.663,1.03" Click="skipSentenceButton_Click" />
-        <Label x:Name="LessonNumber"  Content="Lesson 1" Foreground="#FF7BA60C" FontSize="40" Margin="8,8,8,0" VerticalAlignment="Top" Grid.Column="1"/>
-        <Label x:Name="LessonContent" Content="Enter the missing word. " Foreground="WhiteSmoke" FontSize="20" Margin="8,84.203,8,85.197" Grid.Column="1" d:LayoutOverrides="Height"/>
-        <TextBlock x:Name="sentenceTextblock"    Text="今日はスーパーへ買い物 ... 行きます" FontSize="32" Foreground="WhiteSmoke" TextWrapping="Wrap" TextTrimming="None" MaxWidth="565" Margin="8,120.803,8,0" Grid.Column="1" Height="Auto" VerticalAlignment="Top" />
-        <Button x:Name="answer1Button" Click="answer1Button_Click" Height="35" Margin="8,0,0,8" Grid.Row="1" VerticalAlignment="Bottom" Grid.Column="1" HorizontalAlignment="Left" Width="140"      Background="#FF24BEFF" BorderBrush="#00707070" BorderThickness="0"/>
-        <Button x:Name="answer2Button" Click="answer2Button_Click" Height="35" Margin="156,0,0,8" Grid.Row="1" VerticalAlignment="Bottom" Grid.Column="1" HorizontalAlignment="Left" Width="140"    Background="#FF24BEFF" BorderBrush="#00707070" BorderThickness="0"/>
-        <Button x:Name="answer3Button" Click="answer3Button_Click" Height="35" Margin="0,0,162,8" Grid.Row="1" VerticalAlignment="Bottom" Grid.Column="1" HorizontalAlignment="Right" Width="140"   Background="#FF24BEFF" BorderBrush="#00707070" BorderThickness="0"/>
-        <Button x:Name="answer4Button" Click="answer4Button_Click" Height="35" Margin="0,0,15,9" Grid.Row="1" VerticalAlignment="Bottom" Grid.Column="1" HorizontalAlignment="Right" Width="140"    Background="#FF24BEFF" BorderBrush="#00707070" BorderThickness="0"/>
-        <Button x:Name="answer5Button" Click="answer5Button_Click" Height="35" Margin="8,0,0,47" Grid.Row="1" VerticalAlignment="Bottom" Grid.Column="1" HorizontalAlignment="Left" Width="140"     Background="#FF24BEFF" BorderBrush="#00707070" BorderThickness="0"/>
-        <Button x:Name="answer6Button" Click="answer6Button_Click" Height="35" Margin="155,0,0,47" Grid.Row="1" VerticalAlignment="Bottom" Grid.Column="1" HorizontalAlignment="Left" Width="140"   Background="#FF24BEFF" BorderBrush="#00707070" BorderThickness="0"/>
-        <Button x:Name="answer7Button" Click="answer7Button_Click" Height="35" Margin="0,0,161,47" Grid.Row="1" VerticalAlignment="Bottom" Grid.Column="1" HorizontalAlignment="Right" Width="140"  Background="#FF24BEFF" BorderBrush="#00707070" BorderThickness="0"/>
-        <Button x:Name="answer8Button" Click="answer8Button_Click"  Height="35" Margin="0,0,16,47" Grid.Row="1" VerticalAlignment="Bottom" Grid.Column="1" HorizontalAlignment="Right" Width="140"  Background="#FF24BEFF" BorderBrush="#00707070" BorderThickness="0"/>
+
+        <Button x:Name="prevButton" Margin="0,13,0,0" Style="{DynamicResource ButtonPreviewStyle}" Height="199" VerticalAlignment="Top" Click="prevButton_Click" Grid.RowSpan="5" Grid.Row="3" />
+        <Button x:Name="skipSentenceButton" Grid.Column="2" Margin="0,13,0,100" Style="{DynamicResource ButtonNextStyle}" RenderTransformOrigin="0.663,1.03" Click="skipSentenceButton_Click" Grid.RowSpan="5" Grid.Row="3" />
+        <Label x:Name="LessonNumber"  Content="Lektion" FontWeight="Bold" Foreground="#FF7BA60C" FontSize="40" Margin="8,8,8,0" VerticalAlignment="Top" Grid.Column="1" Grid.RowSpan="3" Height="63"/>
+        <Label x:Name="LessonContent" Content="Wähle das fehlende Wort." Foreground="WhiteSmoke" FontSize="20" Margin="8,11,8,6" Grid.Column="1" Grid.Row="2" Grid.RowSpan="2"/>
+        <TextBlock x:Name="sentenceTextblock"   Grid.Column="1" Grid.Row="4" Text="今日はスーパー今日はスーパー今日はスーパー今パー今日はスーパーへ買い物日はスーパーへ買い物 ... 行きます" FontSize="32" Foreground="WhiteSmoke" TextWrapping="Wrap" TextTrimming="None" MaxWidth="565" VerticalAlignment="Top" Grid.RowSpan="3" Margin="0,5,0,0" />
+        <StackPanel Margin="0,40,0,0" Grid.Column="1" Grid.Row="6" Grid.RowSpan="2">
+
+            <StackPanel Grid.Column="1" Grid.Row="6" Grid.RowSpan="2" Orientation="Horizontal">
+                <Button x:Name="answer1Button" Click="answer1Button_Click" Height="35" Width="140" Margin="5" HorizontalAlignment="Left" Background="Beige" BorderBrush="#00707070" BorderThickness="0"/>
+                <Button x:Name="answer2Button" Click="answer2Button_Click" Height="35" Width="140" Margin="5" HorizontalAlignment="Left" Background="Beige" BorderBrush="#00707070" BorderThickness="0"/>
+                <Button x:Name="answer3Button" Click="answer3Button_Click" Height="35" Width="140" Margin="5" HorizontalAlignment="Right" Background="Beige" BorderBrush="#00707070" BorderThickness="0"/>
+                <Button x:Name="answer4Button" Click="answer4Button_Click" Height="35" Width="140" Margin="5" HorizontalAlignment="Right" Background="Beige" BorderBrush="#00707070" BorderThickness="0"/>
+            </StackPanel>
+            <StackPanel Grid.Column="1" Grid.Row="6" Grid.RowSpan="1" Orientation="Horizontal">
+                <Button x:Name="answer5Button" Click="answer5Button_Click" Height="35" Margin="5" Width="140" Background="Beige" BorderBrush="#00707070" BorderThickness="0"/>
+                <Button x:Name="answer6Button" Click="answer6Button_Click" Height="35"   Margin="5" Width="140" Background="Beige" BorderBrush="#00707070" BorderThickness="0"/>
+                <Button x:Name="answer7Button" Click="answer7Button_Click" Height="35"   Margin="5" Width="140" Background="Beige" BorderBrush="#00707070" BorderThickness="0"/>
+                <Button x:Name="answer8Button" Click="answer8Button_Click"  Height="35"  Margin="5" Width="140" Background="Beige" BorderBrush="#00707070" BorderThickness="0" />
+            </StackPanel>
+        </StackPanel>
     </Grid>
 </UserControl>

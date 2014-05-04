@@ -23,7 +23,6 @@ namespace Prototype.DataModel
         Data data;
 
         int indexOfCurrent;
-        int skipIndex;
 
         public RandomizeLessonDel RandomizeLesson;
         public LoadNextDel LoadNext;
@@ -170,8 +169,6 @@ namespace Prototype.DataModel
         {
             data.Words = null;
             data.Sentences = null;
-
-            data.ItemsWrongList.Clear();
         }
 
         /// <summary>
@@ -195,32 +192,21 @@ namespace Prototype.DataModel
                 if (lessons[0].type == (int)Lesson.EType.grammarPractice)
                 {
                     data.Sentences = data.GetSentences(setIDs);
-
-                    data.ItemsLeft = data.Sentences.Length;
-
+                    
                     //set delegates
                     RandomizeLesson = RandomizeSentences;
                     LoadNext = LoadNextSentence;
-                    SkipThis = SkipSentence;
                 }
                 else
                 {
                     data.Words = data.GetWords(setIDs);
-
-                    data.ItemsLeft = data.Words.Length;
-        
+                            
                     RandomizeLesson = RandomizeWords;
                     LoadNext = LoadNextWord;
-                    SkipThis = SkipWord;
                 }
             }
-
-            //set some over stuff
-            data.ItemsCorrect = 0;
-            data.ItemsWrong = 0;
-
+            
             indexOfCurrent = 0;
-            skipIndex = 0;
 
             //randomize loaded items and set first item
             RandomizeLesson();
@@ -275,42 +261,6 @@ namespace Prototype.DataModel
             view.UpdateView();
         }
 
-        #endregion
-
-        #region Skip Words
-
-        public void SkipWord()
-        {
-            skipIndex++;
-
-            if (indexOfCurrent == skipIndex)
-            {
-                skipIndex = 1;
-            }
-
-            Word hv = data.Words[indexOfCurrent];
-            data.Words[indexOfCurrent] = data.Words[data.Words.Length - skipIndex];
-            data.Words[data.Words.Length - skipIndex] = hv;
-            data.ActiveWord = data.Words[indexOfCurrent];
-            view.UpdateView();
-        }
-
-        public void SkipSentence()
-        {
-            skipIndex++;
-
-            if (indexOfCurrent == skipIndex)
-            {
-                skipIndex = 1;
-            }
-
-            Sentence hv = data.Sentences[indexOfCurrent];
-            data.Sentences[indexOfCurrent] = data.Sentences[data.Sentences.Length - skipIndex];
-            data.Sentences[data.Sentences.Length - skipIndex] = hv;
-            data.ActiveSentence = data.Sentences[indexOfCurrent];
-            view.UpdateView();
-        }
-        
         #endregion
 
         #region Check Against Userinput
