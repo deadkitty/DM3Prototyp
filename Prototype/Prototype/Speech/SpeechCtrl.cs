@@ -51,7 +51,6 @@ namespace Prototype.Speech
         //words practice grammars
         Grammar wordsGrammar;
         Grammar logWordGrammar;
-        DictationGrammar dictGrammar;
 
         #endregion
 
@@ -270,13 +269,6 @@ namespace Prototype.Speech
             verbChoices.Add(ResourceStrings.yesCausualVerb);
             gb.Append(verbChoices);
 
-            //verbChoices.Add(new SemanticResultValue(ResourceStrings.begin, EVerbs.begin.ToString()));
-            //verbChoices.Add(new SemanticResultValue(ResourceStrings.beginMaru, EVerbs.begin.ToString()));
-            //verbChoices.Add(new SemanticResultValue(ResourceStrings.beginMasu, EVerbs.begin.ToString()));
-            //verbChoices.Add(new SemanticResultValue(ResourceStrings.beginRu, EVerbs.begin.ToString()));
-            //verbChoices.Add(new SemanticResultValue(ResourceStrings.yesVerb, EVerbs.begin.ToString()));
-            //gb.Append(new SemanticResultKey("action", verbChoices));
-
             beginLessonsGrammar = new Grammar(gb);
             beginLessonsGrammar.Name = beginLessonsGr;
             recognitionEngine.LoadGrammar(beginLessonsGrammar);
@@ -377,15 +369,6 @@ namespace Prototype.Speech
 
             Choices particleChoices = new Choices(particle);
             gb.Append(particleChoices);
-            //particleChoices.Add(new SemanticResultValue(particle[0], "0"));
-            //particleChoices.Add(new SemanticResultValue(particle[1], "1"));
-            //particleChoices.Add(new SemanticResultValue(particle[2], "2"));
-            //particleChoices.Add(new SemanticResultValue(particle[3], "3"));
-            //particleChoices.Add(new SemanticResultValue(particle[4], "4"));
-            //particleChoices.Add(new SemanticResultValue(particle[5], "5"));
-            //particleChoices.Add(new SemanticResultValue(particle[6], "6"));
-            //particleChoices.Add(new SemanticResultValue(particle[7], "7"));
-            //gb.Append(new SemanticResultKey(ResourceStrings.particleKey, particleChoices));
 
             String[] selectActions = 
             {
